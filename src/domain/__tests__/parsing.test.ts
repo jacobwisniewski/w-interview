@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { classifyRateType, parseAudToCents, parseCdrRateToPct } from "../../src/domain/parsing.js";
+import { classifyRateType, parseAudToCents, parseCdrRateToPct } from "../parsing.js";
 
 describe("Feature: CDR Rate and Currency Parsing", () => {
   describe("Given CDR decimal interest rate strings", () => {
