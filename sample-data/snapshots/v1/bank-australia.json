@@ -1,0 +1,1621 @@
+{
+  "bankSlug": "bank-australia",
+  "bankName": "Bank Australia",
+  "sourceUrl": "https://public.cdr.bankaust.com.au/cds-au/v1/banking/products",
+  "cdrVersion": "6",
+  "capturedAt": "2026-11-25T10:25:00Z",
+  "products": [
+    {
+      "additionalInformation": {
+        "bundleUri": "https://www.bankaust.com.au/banking/home-loans/offset-home-loan",
+        "eligibilityUri": "https://www.bankaust.com.au/banking/home-loans/offset-home-loan",
+        "feesAndPricingUri": "https://www.bankaust.com.au/banking/home-loans/offset-home-loan",
+        "overviewUri": "https://www.bankaust.com.au/banking/home-loans/offset-home-loan",
+        "termsUri": "https://www.bankaust.com.au/support/disclosures"
+      },
+      "applicationUri": "https://apply.bankaust.com.au/cip/bankaustralia/p/bankaustralia/homeloan/application.html",
+      "brand": "Bank Australia",
+      "description": "A home loan packed with positives for future generations.",
+      "effectiveFrom": "2022-01-24T13:30:00.000Z",
+      "isTailored": false,
+      "lastUpdated": "2026-11-18T21:00:36.454Z",
+      "name": "Offset Home Loan Fixed",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "productId": "f6d7c058-e189-4454-81cc-dc30bc59f577",
+      "bundles": [
+        {
+          "additionalInfo": "Offset loans include an annual fee waiver for the Platinum Rewards Credit Card and everyday banking.",
+          "additionalInfoUri": "https://www.bankaust.com.au/banking/home-loans/offset-home-loan",
+          "description": "Offset Loan",
+          "name": "Offset Loan",
+          "productIds": [
+            "194",
+            "216",
+            "225",
+            "229",
+            "238",
+            "490",
+            "494"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "additionalValue": "10000.00",
+          "constraintType": "MIN_LIMIT"
+        },
+        {
+          "additionalValue": "0.95",
+          "constraintType": "MAX_LVR"
+        }
+      ],
+      "eligibility": [
+        {
+          "additionalInfo": "Individuals (natural persons) must have the legal capacity to enter into the loan contract, provide acceptable identification documentation and be 18 years or older.",
+          "additionalValue": "18",
+          "eligibilityType": "MIN_AGE"
+        },
+        {
+          "additionalInfo": "Not available for non-personal borrowers.",
+          "eligibilityType": "NATURAL_PERSON"
+        },
+        {
+          "additionalInfo": "Applications for loans are subject to the Bank's lending criteria.",
+          "eligibilityType": "OTHER"
+        },
+        {
+          "additionalInfo": "Australian citizen or permanent resident of Australia",
+          "additionalValue": "AU",
+          "eligibilityType": "RESIDENCY_STATUS"
+        }
+      ],
+      "features": [
+        {
+          "additionalInfo": "You can self-serve your day-to-day banking needs via Bank Australia's App or Internet Banking.",
+          "featureType": "DIGITAL_BANKING"
+        },
+        {
+          "additionalInfo": "A Mortgage Offset account reduces the amount of interest you pay on your home loan. The amount within this account is offset against your home loan, meaning you only pay interest on the difference. Up to a limit of $20,000.",
+          "featureType": "OFFSET"
+        },
+        {
+          "additionalInfo": "Make your loan repayments weekly, fortnightly or monthly",
+          "featureType": "OTHER"
+        },
+        {
+          "additionalInfo": "Welcoming a new family member to the family can place a pretty big strain on finances so we offer you the option of pausing your home loan repayments to give you some breathing space. This allows you to take a break from payments for three months, or halve them for six. Conditions apply",
+          "additionalInfoUri": "https://www.bankaust.com.au/page/parental-pause",
+          "featureType": "OTHER"
+        },
+        {
+          "additionalInfo": "Our Eco-Pause lets customers take a break from their mortgage repayments and redirect their money to eco upgrades such as solar panels, batteries and water tanks. With an eco-pause you can pause your repayments for three months or halve them for six. Conditions apply.",
+          "additionalInfoUri": "https://www.bankaust.com.au/page/eco-pause",
+          "featureType": "OTHER"
+        },
+        {
+          "additionalInfo": "Split loan between variable and fixed is available",
+          "featureType": "OTHER"
+        },
+        {
+          "additionalInfo": "Additional repayments up to $30,000 during the fixed rate period",
+          "featureType": "EXTRA_REPAYMENTS"
+        }
+      ],
+      "fees": [
+        {
+          "additionalValue": "P1M",
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "PERIODIC",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "name": "Monthly Offset Account Fee"
+        },
+        {
+          "additionalInfo": "Annual fee payable on all Offset Home Loans and Clean Energy Home Loans. The fee is debited to the loan annually on the anniversary date of funding and is non refundable. Only one annual fee applies per customer where multiple loans exist.",
+          "additionalValue": "P1Y",
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "PERIODIC",
+          "fixedAmount": {
+            "amount": "199.00"
+          },
+          "name": "Offset Home Loan Annual Fee"
+        },
+        {
+          "additionalInfo": "Payable when you choose to lock in the fixed rate at application.  0.10% of the total fixed loan amount for approved home loan applications (minimum fee $50). This applies to 1, 2, 3 and 5 year Fixed Rate home loans only and is non-refundable.",
+          "currency": "AUD",
+          "feeMethodUType": "rateBased",
+          "feeType": "UPFRONT",
+          "name": "Rate Lock Fee",
+          "rateBased": {
+            "amountRange": {
+              "feeMinimum": "50.00"
+            },
+            "rate": "0.001",
+            "rateType": "BALANCE"
+          }
+        },
+        {
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "UPFRONT",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "name": "Establishment Fee"
+        },
+        {
+          "additionalInfo": "An annual fee charged on your credit card.",
+          "additionalValue": "P1Y",
+          "currency": "AUD",
+          "discounts": [
+            {
+              "additionalInfo": "We won't charge the fee if this criteria is met.",
+              "description": "This fee is waived for holders of an Offset or Clean Energy Home Loan. Each Offset or Clean Energy Loan is entitled to a wavier for the future Annual Fee for one eligible card account in the name of the loan holder.",
+              "discountMethodUType": "fixedAmount",
+              "discountType": "ELIGIBILITY_ONLY",
+              "eligibility": [
+                {
+                  "additionalInfo": "This fee is waived for holders of an Offset or Clean Energy Home Loan. Each Offset or Clean Energy Loan is entitled to a wavier for the future Annual Fee for one eligible card account in the name of the loan holder.",
+                  "discountEligibilityType": "OTHER"
+                }
+              ],
+              "fixedAmount": {
+                "amount": "189.00"
+              }
+            }
+          ],
+          "feeMethodUType": "fixedAmount",
+          "feeType": "PERIODIC",
+          "fixedAmount": {
+            "amount": "189.00"
+          },
+          "name": "Platinum Rewards Credit Card Annual Fee"
+        },
+        {
+          "additionalInfo": "Payable when you request that a property securing a loan is replaced with a property that is a new security to Bank Australia.",
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "EVENT",
+          "fixedAmount": {
+            "amount": "500.00"
+          },
+          "name": "Portability Fee- New Mortgage"
+        },
+        {
+          "additionalInfo": "You may be required to pay a break fee if you pay your fixed loan off in full, make an early repayment or make certain other changes to your loan during any fixed period. The fee is calculated at the time of the event and is specifically related to your individual loan. More information is found in the loan fees and charges document.",
+          "additionalInfoUri": "https://cdn.bfldr.com/1R31Y8GR/as/5pxcb6tz9n83psz2k2knqtk/Loan_fees_schedule",
+          "currency": "AUD",
+          "feeMethodUType": "variable",
+          "feeType": "EVENT",
+          "name": "Break Fee",
+          "variable": {
+            "feeMaximum": "999999.99",
+            "feeMinimum": "0.00"
+          }
+        },
+        {
+          "additionalInfo": "Payable when you discharge the mortgage. Statutory government registration fees will still apply.",
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "EVENT",
+          "fixedAmount": {
+            "amount": "275.00"
+          },
+          "name": "Mortgage Discharge Fee"
+        },
+        {
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "EVENT",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "name": "1st Valuation Fee"
+        }
+      ],
+      "lendingRates": [
+        {
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0683",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0674",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.6",
+              "minimumValue": "0",
+              "name": "1 year - LVR 60% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0683",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0674",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.7",
+              "minimumValue": "0.601",
+              "name": "1 year - LVR 70% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0687",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0674",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.8",
+              "minimumValue": "0.701",
+              "name": "1 year - LVR 80% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0709",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0704",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.9",
+              "minimumValue": "0.801",
+              "name": "1 year - LVR 90% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0753",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0704",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "minimumValue": "0.9",
+              "name": "1 year - LVR Over 90%",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0685",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0679",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.6",
+              "minimumValue": "0",
+              "name": "2 years - LVR 60% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0685",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0679",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.7",
+              "minimumValue": "0.601",
+              "name": "2 years - LVR 70% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0689",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0679",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.8",
+              "minimumValue": "0.701",
+              "name": "2 years - LVR 80% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.071",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0704",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.9",
+              "minimumValue": "0.801",
+              "name": "2 years - LVR 90% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0751",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0709",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "minimumValue": "0.9",
+              "name": "2 years - LVR Over 90%",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0689",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0689",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.6",
+              "minimumValue": "0",
+              "name": "3 years - LVR 60% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0689",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0689",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.7",
+              "minimumValue": "0.601",
+              "name": "3 years - LVR 70% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0693",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0689",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.8",
+              "minimumValue": "0.701",
+              "name": "3 years - LVR 80% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0716",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0719",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.9",
+              "minimumValue": "0.801",
+              "name": "3 years - LVR 90% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0751",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0719",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "minimumValue": "0.9",
+              "name": "3 years - LVR Over 90%",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0698",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0699",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.6",
+              "minimumValue": "0",
+              "name": "5 years - LVR 60% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0698",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0699",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.7",
+              "minimumValue": "0.601",
+              "name": "5 years - LVR 70% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.07",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0699",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.8",
+              "minimumValue": "0.701",
+              "name": "5 years - LVR 80% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0725",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0729",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.9",
+              "minimumValue": "0.801",
+              "name": "5 years - LVR 90% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0752",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "rate": "0.0729",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "minimumValue": "0.9",
+              "name": "5 years - LVR Over 90%",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "additionalInformation": {
+        "feesAndPricingUri": "https://www.bankaust.com.au/banking/home-loans/basic-home-loan",
+        "overviewUri": "https://www.bankaust.com.au/banking/home-loans/basic-home-loan",
+        "termsUri": "https://www.bankaust.com.au/support/disclosures"
+      },
+      "applicationUri": "https://apply.bankaust.com.au/cip/bankaustralia/p/bankaustralia/homeloan/application.html",
+      "brand": "Bank Australia",
+      "description": "Our Basic Investment Loan is anything but, with low fees and feel-good features. With the certainty of a fixed rate.",
+      "effectiveFrom": "2022-01-23T13:30:00.000Z",
+      "isTailored": false,
+      "lastUpdated": "2026-11-18T21:00:36.014Z",
+      "name": "Basic Investment Loan Fixed",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "productId": "e87e18b5-7276-4c0a-9e64-af5f3d615f22",
+      "constraints": [
+        {
+          "additionalValue": "10000.00",
+          "constraintType": "MIN_LIMIT"
+        },
+        {
+          "additionalValue": "0.9",
+          "constraintType": "MAX_LVR"
+        }
+      ],
+      "eligibility": [
+        {
+          "additionalInfo": "Individuals (natural persons) must have the legal capacity to enter into the loan contract, provide acceptable identification documentation and be 18 years or older.",
+          "additionalValue": "18",
+          "eligibilityType": "MIN_AGE"
+        },
+        {
+          "additionalInfo": "Not available for non-personal borrowers.",
+          "eligibilityType": "NATURAL_PERSON"
+        },
+        {
+          "additionalInfo": "Applications for loans are subject to the Bank's lending criteria.",
+          "eligibilityType": "OTHER"
+        },
+        {
+          "additionalInfo": "Australian citizen or permanent resident of Australia",
+          "additionalValue": "AU",
+          "eligibilityType": "RESIDENCY_STATUS"
+        }
+      ],
+      "features": [
+        {
+          "additionalInfo": "You can self-serve your day-to-day banking needs via Bank Australia's App or Internet Banking.",
+          "featureType": "DIGITAL_BANKING"
+        },
+        {
+          "additionalInfo": "Addtional repayments up to $30,000 during the fixed rate period",
+          "featureType": "EXTRA_REPAYMENTS"
+        },
+        {
+          "additionalInfo": "Make your loan repayments weekly, fortnightly or monthly",
+          "featureType": "OTHER"
+        },
+        {
+          "additionalInfo": "Fixed rate lock; With our rate lock you can apply for a fixed interest rate on your home loan and lock in the rate while your home loan settles.",
+          "featureType": "OTHER"
+        },
+        {
+          "additionalInfo": "Split loan between variable and fixed is available",
+          "featureType": "OTHER"
+        }
+      ],
+      "fees": [
+        {
+          "additionalInfo": "Payable for all mortgage secured loans to cover Bank Australia administration costs including preparing security documents.",
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "UPFRONT",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "name": "Home Loan Establishment Fee"
+        },
+        {
+          "additionalInfo": "Payable when you choose to lock in the fixed rate at application.  0.10% of the total fixed loan amount for approved home loan applications (minimum fee $50). This applies to 1, 2, 3 and 5 year Fixed Rate home loans only and is non-refundable.",
+          "currency": "AUD",
+          "feeMethodUType": "rateBased",
+          "feeType": "UPFRONT",
+          "name": "Rate Lock Fee",
+          "rateBased": {
+            "amountRange": {
+              "feeMinimum": "50.00"
+            },
+            "rate": "0.001",
+            "rateType": "BALANCE"
+          }
+        },
+        {
+          "additionalInfo": "Payable when you request that a property securing a loan is replaced with a property that is a new security to Bank Australia.",
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "EVENT",
+          "fixedAmount": {
+            "amount": "500.00"
+          },
+          "name": "Portability Fee- New Mortgage"
+        },
+        {
+          "additionalInfo": "You may be required to pay a break fee if you pay your fixed loan off in full, make an early repayment or make certain other changes to your loan during any fixed period. The fee is calculated at the time of the event and is specifically related to your individual loan. More information is found in the loan fees and charges document.",
+          "additionalInfoUri": "https://cdn.bfldr.com/1R31Y8GR/as/5pxcb6tz9n83psz2k2knqtk/Loan_fees_schedule",
+          "currency": "AUD",
+          "feeMethodUType": "variable",
+          "feeType": "EVENT",
+          "name": "Break Fee",
+          "variable": {
+            "feeMaximum": "999999.99",
+            "feeMinimum": "0.00"
+          }
+        },
+        {
+          "additionalInfo": "Payable when you discharge the mortgage. Statutory government registration fees will still apply.",
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "EVENT",
+          "fixedAmount": {
+            "amount": "275.00"
+          },
+          "name": "Mortgage Discharge Fee"
+        },
+        {
+          "additionalValue": "P1Y",
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "PERIODIC",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "name": "Annual fee"
+        },
+        {
+          "additionalValue": "P1M",
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "PERIODIC",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "name": "Monthly Fee"
+        }
+      ],
+      "lendingRates": [
+        {
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0684",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0679",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.6",
+              "minimumValue": "0",
+              "name": "1 year - LVR 60% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0684",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0679",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.7",
+              "minimumValue": "0.601",
+              "name": "1 year - LVR 70% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0684",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0679",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.8",
+              "minimumValue": "0.701",
+              "name": "1 year - LVR 80% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0709",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0709",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.9",
+              "minimumValue": "0.801",
+              "name": "1 year - LVR 90% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0684",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0684",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.6",
+              "minimumValue": "0",
+              "name": "2 years - LVR 60% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0684",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0684",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.7",
+              "minimumValue": "0.601",
+              "name": "2 years - LVR 70% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0684",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0684",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.8",
+              "minimumValue": "0.701",
+              "name": "2 years - LVR 80% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0709",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0709",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.9",
+              "minimumValue": "0.801",
+              "name": "2 year - LVR 90% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0687",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0694",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.6",
+              "minimumValue": "0",
+              "name": "3 years - LVR 60% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0687",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0694",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.7",
+              "minimumValue": "0.601",
+              "name": "3 years - LVR 70% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0687",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0694",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.8",
+              "minimumValue": "0.701",
+              "name": "3 years - LVR 80% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0714",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0724",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.9",
+              "minimumValue": "0.801",
+              "name": "3 year - LVR 90% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0693",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0704",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.6",
+              "minimumValue": "0",
+              "name": "5 years - LVR 60% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0693",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0704",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.7",
+              "minimumValue": "0.601",
+              "name": "5 years - LVR 70% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0693",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0704",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.8",
+              "minimumValue": "0.701",
+              "name": "5 years - LVR 80% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0718",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0729",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "maximumValue": "0.9",
+              "minimumValue": "0.801",
+              "name": "5 year - LVR 90% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "additionalInformation": {
+        "bundleUri": "https://www.bankaust.com.au/banking/home-loans/offset-home-loan",
+        "eligibilityUri": "https://www.bankaust.com.au/banking/home-loans/offset-home-loan",
+        "feesAndPricingUri": "https://www.bankaust.com.au/banking/home-loans/offset-home-loan",
+        "overviewUri": "https://www.bankaust.com.au/banking/home-loans/offset-home-loan",
+        "termsUri": "https://www.bankaust.com.au/support/disclosures"
+      },
+      "applicationUri": "https://apply.bankaust.com.au/cip/bankaustralia/p/bankaustralia/homeloan/application.html",
+      "brand": "Bank Australia",
+      "description": "A home loan packed with positives for future generations.",
+      "effectiveFrom": "2022-01-24T13:30:00.000Z",
+      "isTailored": false,
+      "lastUpdated": "2026-11-18T21:00:35.497Z",
+      "name": "Offset Investment Loan Fixed IO",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "productId": "dfcc20c7-75b4-44e9-bf84-cc44344f51ae",
+      "bundles": [
+        {
+          "additionalInfo": "Offset loans include an annual fee waiver for the Platinum Rewards Credit Card and everyday banking.",
+          "additionalInfoUri": "https://www.bankaust.com.au/banking/home-loans/offset-home-loan",
+          "description": "Offset Loan",
+          "name": "Offset Loan",
+          "productIds": [
+            "194",
+            "216",
+            "225",
+            "229",
+            "238",
+            "490",
+            "494"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "additionalValue": "10000.00",
+          "constraintType": "MIN_LIMIT"
+        },
+        {
+          "additionalValue": "0.9",
+          "constraintType": "MAX_LVR"
+        }
+      ],
+      "eligibility": [
+        {
+          "additionalInfo": "Individuals (natural persons) must have the legal capacity to enter into the loan contract, provide acceptable identification documentation and be 18 years or older.",
+          "additionalValue": "18",
+          "eligibilityType": "MIN_AGE"
+        },
+        {
+          "additionalInfo": "Not available for non-personal borrowers.",
+          "eligibilityType": "NATURAL_PERSON"
+        },
+        {
+          "additionalInfo": "Applications for loans are subject to the Bank's lending criteria.",
+          "eligibilityType": "OTHER"
+        },
+        {
+          "additionalInfo": "Australian citizen or permanent resident of Australia",
+          "additionalValue": "AU",
+          "eligibilityType": "RESIDENCY_STATUS"
+        }
+      ],
+      "features": [
+        {
+          "additionalInfo": "You can self-serve your day-to-day banking needs via Bank Australia's App or Internet Banking.",
+          "featureType": "DIGITAL_BANKING"
+        },
+        {
+          "additionalInfo": "Addtional repayments up to $30,000 during the fixed rate period",
+          "featureType": "EXTRA_REPAYMENTS"
+        },
+        {
+          "additionalInfo": "A Mortgage Offset account reduces the amount of interest you pay on your home loan. The amount within this account is offset against your home loan, meaning you only pay interest on the difference. Up to a limit of $20,000.",
+          "featureType": "OFFSET"
+        },
+        {
+          "additionalInfo": "Fixed rate lock; With our rate lock you can apply for a fixed interest rate on your home loan and lock in the rate while your home loan settles.",
+          "featureType": "OTHER"
+        },
+        {
+          "additionalInfo": "Split loan between variable and fixed is available",
+          "featureType": "OTHER"
+        }
+      ],
+      "fees": [
+        {
+          "additionalValue": "P1M",
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "PERIODIC",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "name": "Monthly Offset Account Fee"
+        },
+        {
+          "additionalInfo": "Annual fee payable on all Offset Home Loans and Clean Energy Home Loans. The fee is debited to the loan annually on the anniversary date of funding and is non refundable. Only one annual fee applies per customer where multiple loans exist.",
+          "additionalValue": "P1Y",
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "PERIODIC",
+          "fixedAmount": {
+            "amount": "199.00"
+          },
+          "name": "Offset Home Loan Annual Fee"
+        },
+        {
+          "additionalInfo": "Payable when you choose to lock in the fixed rate at application.  0.10% of the total fixed loan amount for approved home loan applications (minimum fee $50). This applies to 1, 2, 3 and 5 year Fixed Rate home loans only and is non-refundable.",
+          "currency": "AUD",
+          "feeMethodUType": "rateBased",
+          "feeType": "UPFRONT",
+          "name": "Rate Lock Fee",
+          "rateBased": {
+            "amountRange": {
+              "feeMinimum": "50.00"
+            },
+            "rate": "0.001",
+            "rateType": "BALANCE"
+          }
+        },
+        {
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "UPFRONT",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "name": "Establishment Fee"
+        },
+        {
+          "additionalInfo": "An annual fee charged on your credit card.",
+          "additionalValue": "P1Y",
+          "currency": "AUD",
+          "discounts": [
+            {
+              "additionalInfo": "We won't charge the fee if this criteria is met.",
+              "description": "This fee is waived for holders of an Offset or Clean Energy Home Loan. Each Offset or Clean Energy Loan is entitled to a wavier for the future Annual Fee for one eligible card account in the name of the loan holder.",
+              "discountMethodUType": "fixedAmount",
+              "discountType": "ELIGIBILITY_ONLY",
+              "eligibility": [
+                {
+                  "additionalInfo": "This fee is waived for holders of an Offset or Clean Energy Home Loan. Each Offset or Clean Energy Loan is entitled to a wavier for the future Annual Fee for one eligible card account in the name of the loan holder.",
+                  "discountEligibilityType": "OTHER"
+                }
+              ],
+              "fixedAmount": {
+                "amount": "189.00"
+              }
+            }
+          ],
+          "feeMethodUType": "fixedAmount",
+          "feeType": "PERIODIC",
+          "fixedAmount": {
+            "amount": "189.00"
+          },
+          "name": "Platinum Rewards Credit Card Annual Fee"
+        },
+        {
+          "additionalInfo": "Payable when you request that a property securing a loan is replaced with a property that is a new security to Bank Australia.",
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "EVENT",
+          "fixedAmount": {
+            "amount": "500.00"
+          },
+          "name": "Portability Fee- New Mortgage"
+        },
+        {
+          "additionalInfo": "You may be required to pay a break fee if you pay your fixed loan off in full, make an early repayment or make certain other changes to your loan during any fixed period. The fee is calculated at the time of the event and is specifically related to your individual loan. More information is found in the loan fees and charges document.",
+          "additionalInfoUri": "https://cdn.bfldr.com/1R31Y8GR/as/5pxcb6tz9n83psz2k2knqtk/Loan_fees_schedule",
+          "currency": "AUD",
+          "feeMethodUType": "variable",
+          "feeType": "EVENT",
+          "name": "Break Fee",
+          "variable": {
+            "feeMaximum": "999999.99",
+            "feeMinimum": "0.00"
+          }
+        },
+        {
+          "additionalInfo": "Payable when you discharge the mortgage. Statutory government registration fees will still apply.",
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "EVENT",
+          "fixedAmount": {
+            "amount": "275.00"
+          },
+          "name": "Mortgage Discharge Fee"
+        },
+        {
+          "currency": "AUD",
+          "feeMethodUType": "fixedAmount",
+          "feeType": "EVENT",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "name": "1st Valuation Fee"
+        }
+      ],
+      "lendingRates": [
+        {
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0695",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0704",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "maximumValue": "0.6",
+              "minimumValue": "0",
+              "name": "1 year - LVR 60% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.07",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0704",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "maximumValue": "0.7",
+              "minimumValue": "0.601",
+              "name": "1 year - LVR 70% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0704",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0704",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "maximumValue": "0.8",
+              "minimumValue": "0.701",
+              "name": "1 year - LVR 80% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0739",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0744",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "maximumValue": "0.9",
+              "minimumValue": "0.801",
+              "name": "1 year - LVR 90% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0699",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0709",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "maximumValue": "0.6",
+              "minimumValue": "0",
+              "name": "2 years - LVR 60% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0703",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0709",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "maximumValue": "0.7",
+              "minimumValue": "0.601",
+              "name": "2 years - LVR 70% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0707",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0709",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "maximumValue": "0.8",
+              "minimumValue": "0.701",
+              "name": "2 years - LVR 80% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0742",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0744",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "maximumValue": "0.9",
+              "minimumValue": "0.801",
+              "name": "2 year - LVR 90% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0705",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0719",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "maximumValue": "0.6",
+              "minimumValue": "0",
+              "name": "3 years - LVR 60% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0708",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0719",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "maximumValue": "0.7",
+              "minimumValue": "0.601",
+              "name": "3 years - LVR 70% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0712",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0719",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "maximumValue": "0.8",
+              "minimumValue": "0.701",
+              "name": "3 years - LVR 80% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.075",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0764",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "maximumValue": "0.9",
+              "minimumValue": "0.801",
+              "name": "3 year - LVR 90% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0715",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0729",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "maximumValue": "0.6",
+              "minimumValue": "0",
+              "name": "5 years - LVR 60% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        },
+        {
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "applicationType": "PERIODIC",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0718",
+          "interestPaymentDue": "IN_ARREARS",
+          "lendingRateType": "FIXED",
+          "loanPurpose": "INVESTMENT",
+          "rate": "0.0729",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "maximumValue": "0.7",
+              "minimumValue": "0.601",
+              "name": "5 years - LVR 70% or less",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "unitOfMeasure": "PERCENT"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

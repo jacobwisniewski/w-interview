@@ -1,0 +1,945 @@
+{
+  "bankSlug": "the-capricornian",
+  "bankName": "The Capricornian",
+  "sourceUrl": "https://public.cdr.onlinebanking.capricornian.com.au/cds-au/v1/banking/products",
+  "cdrVersion": "6",
+  "capturedAt": "2026-11-25T10:25:00Z",
+  "products": [
+    {
+      "brand": "THE CAPRICORNIAN",
+      "description": "Our No Frills Home Loan is available to home buyers looking for a variable interest rate with features designed for a smooth and easy experience.",
+      "isTailored": false,
+      "lastUpdated": "2026-11-15T22:41:31.727679Z",
+      "name": "No Frills Owner Occupied Home Loan",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "productId": "8f169e0c-9488-40fa-97fe-d614ec6bf293",
+      "additionalInformation": {
+        "overviewUri": "https://www.capricornian.com.au/loans/home-loans/no-frills-home-loan/",
+        "termsUri": "https://www.capricornian.com.au/documents/conditions-of-use/",
+        "eligibilityUri": "https://www.capricornian.com.au/loans/home-loans/no-frills-home-loan/",
+        "feesAndPricingUri": "https://www.capricornian.com.au/about-us/product-rate-fee-disclosures/",
+        "bundleUri": null,
+        "additionalOverviewUris": null,
+        "additionalTermsUris": null,
+        "additionalEligibilityUris": null,
+        "additionalFeesAndPricingUris": null,
+        "additionalBundleUris": null
+      },
+      "applicationUri": "https://capricornian.apply-online.com.au/#/0cc551c1-69fe-42bb-a75b-4dec12ce6a72",
+      "brandName": "THE CAPRICORNIAN",
+      "cardArt": [],
+      "effectiveFrom": "2024-01-22T14:00:00Z",
+      "effectiveTo": null,
+      "bundles": [],
+      "constraints": [
+        {
+          "constraintType": "MAX_LVR",
+          "additionalInfo": "Lenders Mortgage Insurance (LMI) is required where the loan is greater than 80% of the value of the security property for Principal and Interest Loans or 78% for Interest Only Loans. This may vary based on the size and location of the property.",
+          "additionalInfoUri": "https://www.capricornian.com.au/loans/home-loans/no-frills-home-loan/",
+          "additionalValue": "0.97"
+        },
+        {
+          "constraintType": "MIN_LIMIT",
+          "additionalInfo": null,
+          "additionalInfoUri": "https://www.capricornian.com.au/loans/home-loans/no-frills-home-loan/",
+          "additionalValue": "150000.00"
+        }
+      ],
+      "depositRates": [],
+      "eligibility": [
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "New Loans Only or existing borrowers who apply for an increase in their home loan of $150,000 or more.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "You will need to become a member of the Credit Union before The Capricornian can accept a loan application.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "RESIDENCY_STATUS",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "Individuals must be citizens or permanent residents of Australia."
+        },
+        {
+          "eligibilityType": "MIN_AGE",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "18"
+        }
+      ],
+      "features": [
+        {
+          "featureType": "OTHER",
+          "additionalInfo": "Interest Only option available on request",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "NPP_PAYID",
+          "additionalInfo": "An account of this product type can be used to receive funds as a result of a BSB/Number based NPP payment",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "NPP_ENABLED",
+          "additionalInfo": "An account of this product type can be used as the target of an NPP PayID",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "DIGITAL_BANKING",
+          "additionalInfo": "Access using The Capricornian Internet Banking or The Cap App",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "REDRAW",
+          "additionalInfo": "Redraw of repaid principal above minimum required is available",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "NOTIFICATIONS",
+          "additionalInfo": "SMS and/or email notifications available",
+          "additionalInfoUri": null,
+          "additionalValue": "Notification via email, SMS or secure message in online banking."
+        },
+        {
+          "featureType": "EXTRA_REPAYMENTS",
+          "additionalInfo": "Additional repayment options without penalty.",
+          "additionalInfoUri": "https://www.capricornian.com.au/loans/home-loans/no-frills-home-loan/",
+          "additionalValue": null
+        }
+      ],
+      "fees": [
+        {
+          "feeType": "EVENT",
+          "name": "Mortgage Discharge Fee",
+          "additionalInfo": "This fee is payable in addition to solicitors fees, registration, searches and other third party fees that may apply.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "300.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Establishment Fee",
+          "additionalInfo": "Includes one valuation up to the cost of $300 - Excludes additional valuation costs and solicitors costs to prepare mortgage documents and settlement fees.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "600.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Contract Variation & Consent Fee",
+          "additionalInfo": "A fee is charged when a member applies to vary their loan conditions",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "400.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Arrears Fees - Default Notice Fee",
+          "additionalInfo": "If you don’t make your payment after a period of time in arrears, you will be issued with a default notice.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "40.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Arrears Fees - Reminder call fee",
+          "additionalInfo": "Applies when you fail to make your contracted repayments by the repayment due date.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "5.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Further Advance Establishment Fee",
+          "additionalInfo": "Includes one valuation up to the cost of $300 - Excludes additional valuation costs and solicitors costs to prepare mortgage documents and settlement fees.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "400.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        }
+      ],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0689",
+          "additionalInfo": "Comparison rate based on $150,000 loan over 25 years. WARNING: This comparison rate is true only for the examples given and may not include all fees and charges. Different terms, fees or other loan amounts might result in a different comparison rate.",
+          "additionalInfoUri": "https://www.capricornian.com.au/loans/home-loans/no-frills-home-loan/",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0694",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "Loan to valuation ratio greater than 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.97",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": [],
+              "additionalInfoUri": "https://www.capricornian.com.au/loans/home-loans/no-frills-home-loan/"
+            }
+          ],
+          "applicabilityConditions": [
+            {
+              "additionalInfo": "Aged 18 years or older",
+              "additionalInfoUri": null,
+              "rateApplicabilityType": "OTHER",
+              "additionalValue": null
+            }
+          ],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0649",
+          "additionalInfo": "Comparison rate based on $150,000 loan over 25 years. WARNING: This comparison rate is true only for the examples given and may not include all fees and charges. Different terms, fees or other loan",
+          "additionalInfoUri": "https://www.capricornian.com.au/home-loan-rates/",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0654",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "Loan to valuation ratio equal to or less than 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [
+            {
+              "additionalInfo": "Aged 18 years or older",
+              "additionalInfoUri": null,
+              "rateApplicabilityType": "OTHER",
+              "additionalValue": null
+            }
+          ],
+          "applicationType": "PERIODIC"
+        }
+      ]
+    },
+    {
+      "brand": "THE CAPRICORNIAN",
+      "description": "Improve your lifestyle by unlocking your home’s equity",
+      "isTailored": false,
+      "lastUpdated": "2026-11-12T20:00:00.90739Z",
+      "name": "Mortgage Plus Home Loan",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "productId": "05f887ed-9578-47b5-83d2-02397405f2bd",
+      "additionalInformation": {
+        "overviewUri": "https://www.capricornian.com.au/loans/home-loans/mortgage-plus-home-loan/",
+        "termsUri": "https://www.capricornian.com.au/documents/conditions-of-use/",
+        "eligibilityUri": "https://www.capricornian.com.au/loans/home-loans/mortgage-plus-home-loan/",
+        "feesAndPricingUri": "https://www.capricornian.com.au/about-us/product-rate-fee-disclosures/",
+        "bundleUri": null,
+        "additionalOverviewUris": null,
+        "additionalTermsUris": null,
+        "additionalEligibilityUris": null,
+        "additionalFeesAndPricingUris": null,
+        "additionalBundleUris": null
+      },
+      "applicationUri": "https://capricornian.apply-online.com.au/",
+      "brandName": "THE CAPRICORNIAN",
+      "cardArt": [],
+      "effectiveFrom": "2024-01-22T14:00:00Z",
+      "effectiveTo": null,
+      "bundles": [],
+      "constraints": [
+        {
+          "constraintType": "MIN_LIMIT",
+          "additionalInfo": "Maximum limit of 75% of the property value",
+          "additionalInfoUri": null,
+          "additionalValue": "100000.00"
+        },
+        {
+          "constraintType": "MAX_LVR",
+          "additionalInfo": "Maximum LVR is 75% there is no option for LMI ",
+          "additionalInfoUri": null,
+          "additionalValue": "0.75"
+        }
+      ],
+      "depositRates": [
+        {
+          "depositRateType": "VARIABLE",
+          "rate": "0.0923",
+          "additionalInfo": null,
+          "additionalInfoUri": "https://www.capricornian.com.au/loans/home-loans/mortgage-plus-home-loan/",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "tiers": [
+            {
+              "name": "MORTGAGE PLUS HOME",
+              "unitOfMeasure": "DOLLAR",
+              "minimumValue": "100000.00",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicationType": "PERIODIC",
+          "applicabilityConditions": [
+            {
+              "additionalInfo": "Must have and be willing to offer appropriate security.",
+              "additionalInfoUri": "https://www.capricornian.com.au/loans/home-loans/mortgage-plus-home-loan/",
+              "rateApplicabilityType": "OTHER",
+              "additionalValue": null
+            }
+          ]
+        }
+      ],
+      "eligibility": [
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "You will need to become a member of the Credit Union before The Capricornian can accept a loan application.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "RESIDENCY_STATUS",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "Individuals must be citizens or permanent residents of Australia."
+        },
+        {
+          "eligibilityType": "MIN_AGE",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "18"
+        }
+      ],
+      "features": [
+        {
+          "featureType": "DIGITAL_BANKING",
+          "additionalInfo": "Access is available to online banking features for the product.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "DIGITAL_WALLET",
+          "additionalInfo": null,
+          "additionalInfoUri": "https://www.capricornian.com.au/google-pay/google-pay-terms-and-conditions/",
+          "additionalValue": "Google Pay"
+        },
+        {
+          "featureType": "NPP_PAYID",
+          "additionalInfo": "An account of this product type can be used as the target of an NPP PayID.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "NPP_ENABLED",
+          "additionalInfo": "An account of this product type can be used to receive funds as a result of a BSB/Number based NPP payment.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "NOTIFICATIONS",
+          "additionalInfo": "SMS and/or email notifications available.",
+          "additionalInfoUri": null,
+          "additionalValue": "Notification via email, SMS or secure message in online banking."
+        },
+        {
+          "featureType": "CARD_ACCESS",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "Visa Debit Card"
+        },
+        {
+          "featureType": "DIGITAL_WALLET",
+          "additionalInfo": null,
+          "additionalInfoUri": "https://www.capricornian.com.au/apple-pay/apple-pay-terms-and-conditions/",
+          "additionalValue": "Apple Pay"
+        }
+      ],
+      "fees": [
+        {
+          "feeType": "EVENT",
+          "name": "Arrears Fees - Reminder call fee",
+          "additionalInfo": "Applies when you fail to make your contracted repayments by the repayment due date.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "5.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Contract Variation & Consent Fee",
+          "additionalInfo": "A fee is charged when a member applies to vary their loan conditions",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "400.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "TRANSACTION",
+          "name": "EFTPOS incl declined transactions",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.70"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "TRANSACTION",
+          "name": "Visa Debit Cash Advance",
+          "additionalInfo": "Where credit option is selected for cash/cash and purchase transaction",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.70"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Arrears Fees - 2nd and Subsequent Reminder Letter Fee",
+          "additionalInfo": "Applies when you fail to make your contracted repayments by the repayment due date.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "20.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Arrears Fees - Default Notice Fee",
+          "additionalInfo": "If you don’t make your payment after a period of time in arrears, you will be issued with a default notice.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "40.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Establishment Fee",
+          "additionalInfo": "Includes one valuation up to the cost of $300 - Excludes additional valuation costs and solicitors costs to prepare mortgage documents and settlement fees.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "600.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Further Advance Establishment Fee",
+          "additionalInfo": "Includes one valuation up to the cost of $300 - Excludes additional valuation costs and solicitors costs to prepare mortgage documents and settlement fees.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "400.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EXIT",
+          "name": "Mortgage Discharge Fee",
+          "additionalInfo": "This fee is payable in addition to solicitors fees, registration, searches and other third party fees that may apply.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "300.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "PERIODIC",
+          "name": "Overdraft Service Fee",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "P1M",
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "10.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "PERIODIC",
+          "name": "Card Fee",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "P3M",
+          "currency": "AUD",
+          "discounts": [
+            {
+              "description": "Card Fee",
+              "discountType": "ELIGIBILITY_ONLY",
+              "additionalInfo": null,
+              "additionalInfoUri": null,
+              "additionalValue": null,
+              "eligibility": [
+                {
+                  "discountEligibilityType": "MAX_AGE",
+                  "additionalInfo": null,
+                  "additionalInfoUri": null,
+                  "additionalValue": "26"
+                }
+              ],
+              "discountMethodUType": "fixedAmount",
+              "fixedAmount": {
+                "amount": "6.00"
+              },
+              "rateBased": null
+            }
+          ],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "6.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        }
+      ],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0948",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": null,
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "UNCONSTRAINED",
+          "tiers": [],
+          "applicabilityConditions": [
+            {
+              "additionalInfo": "Aged 18 years or older",
+              "additionalInfoUri": null,
+              "rateApplicabilityType": "OTHER",
+              "additionalValue": null
+            }
+          ],
+          "applicationType": "PERIODIC"
+        }
+      ]
+    },
+    {
+      "brand": "THE CAPRICORNIAN",
+      "description": "Our No Frills Investment Home Loan is available to investors looking for a variable interest rate with features designed for a smooth and easy experience.",
+      "isTailored": false,
+      "lastUpdated": "2026-11-12T20:00:00.874412Z",
+      "name": "No Frills Investment Home Loan",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "productId": "e7773481-c5c4-45dc-9621-231d9492df56",
+      "additionalInformation": {
+        "overviewUri": "https://www.capricornian.com.au/loans/home-loans/no-frills-home-loan/",
+        "termsUri": "https://www.capricornian.com.au/documents/conditions-of-use/",
+        "eligibilityUri": "https://www.capricornian.com.au/loans/home-loans/no-frills-home-loan/",
+        "feesAndPricingUri": "https://www.capricornian.com.au/about-us/product-rate-fee-disclosures/",
+        "bundleUri": null,
+        "additionalOverviewUris": null,
+        "additionalTermsUris": null,
+        "additionalEligibilityUris": null,
+        "additionalFeesAndPricingUris": null,
+        "additionalBundleUris": null
+      },
+      "applicationUri": "https://capricornian.apply-online.com.au/#/0cc551c1-69fe-42bb-a75b-4dec12ce6a72",
+      "brandName": "THE CAPRICORNIAN",
+      "cardArt": [],
+      "effectiveFrom": "2024-07-18T14:00:00Z",
+      "effectiveTo": null,
+      "bundles": [],
+      "constraints": [
+        {
+          "constraintType": "MIN_LIMIT",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "150000.00"
+        },
+        {
+          "constraintType": "MAX_LVR",
+          "additionalInfo": "Lenders Mortgage Insurance (LMI) is required where the loan is greater than 80% of the value of the security property for Principal and Interest Loans or 78% for Interest Only Loans. This may vary based on the size and location of the property.",
+          "additionalInfoUri": "https://www.capricornian.com.au/loans/home-loans/no-frills-home-loan/",
+          "additionalValue": "0.97"
+        }
+      ],
+      "depositRates": [],
+      "eligibility": [
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "New Loans Only or existing borrowers who apply for an increase in their home loan of $150,000 or more.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "You will need to become a member of the Credit Union before The Capricornian can accept a loan application.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "RESIDENCY_STATUS",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "Individuals must be citizens or permanent residents of Australia."
+        },
+        {
+          "eligibilityType": "MIN_AGE",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "18"
+        }
+      ],
+      "features": [
+        {
+          "featureType": "OTHER",
+          "additionalInfo": "Interest Only option available on request",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "NPP_PAYID",
+          "additionalInfo": "An account of this product type can be used to receive funds as a result of a BSB/Number based NPP payment",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "NPP_ENABLED",
+          "additionalInfo": "An account of this product type can be used as the target of an NPP PayID",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "DIGITAL_BANKING",
+          "additionalInfo": "Access is available to online banking features for the product",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "REDRAW",
+          "additionalInfo": "Redraw of repaid principal above minimum required is available",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "NOTIFICATIONS",
+          "additionalInfo": "SMS and/or email notifications available",
+          "additionalInfoUri": null,
+          "additionalValue": "Notification via email, SMS or secure message in online banking."
+        },
+        {
+          "featureType": "EXTRA_REPAYMENTS",
+          "additionalInfo": "Additional repayment options without penalty",
+          "additionalInfoUri": "https://www.capricornian.com.au/loans/home-loans/no-frills-home-loan/",
+          "additionalValue": null
+        }
+      ],
+      "fees": [
+        {
+          "feeType": "EVENT",
+          "name": "Contract Variation & Consent Fee",
+          "additionalInfo": "A fee is charged when a member applies to vary their loan conditions",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "400.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Establishment Fee",
+          "additionalInfo": "Includes one valuation up to the cost of $300 - Excludes additional valuation costs and solicitors costs to prepare mortgage documents and settlement fees.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "600.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EXIT",
+          "name": "Mortgage Discharge Fee",
+          "additionalInfo": "This fee is payable in addition to solicitors fees, registration, searches and other third party fees that may apply.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "300.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Further Advance Establishment Fee",
+          "additionalInfo": "This fee is payable in addition to solicitors fees, registration, searches and other third party fees that may apply.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "400.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Arrears Fees - 2nd and Subsequent Reminder Letter Fee",
+          "additionalInfo": "Applies when you fail to make your contracted repayments by the repayment due date.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "20.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Arrears Fees - Default Notice Fee",
+          "additionalInfo": "If you don’t make your payment after a period of time in arrears, you will be issued with a default notice.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "40.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        }
+      ],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0669",
+          "additionalInfo": "Comparison rate based on $150,000 loan over 25 years. WARNING: This comparison rate is true only for the examples given and may not include all fees and charges. Different terms, fees or other loan",
+          "additionalInfoUri": "https://www.capricornian.com.au/home-loan-rates/",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0674",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "Loan to valuation ratio equal to or less than 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": [],
+              "additionalInfoUri": "https://www.capricornian.com.au/loans/home-loans/no-frills-home-loan/"
+            }
+          ],
+          "applicabilityConditions": [
+            {
+              "additionalInfo": "Aged 18 years or older",
+              "additionalInfoUri": null,
+              "rateApplicabilityType": "OTHER",
+              "additionalValue": null
+            }
+          ],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0709",
+          "additionalInfo": "Comparison rate based on $150,000 loan over 25 years. WARNING: This comparison rate is true only for the examples given and may not include all fees and charges. Different terms, fees or other loan amounts might result in a different comparison rate.",
+          "additionalInfoUri": "https://www.capricornian.com.au/loans/home-loans/no-frills-home-loan/",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0714",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "Loan to valuation ratio greater than 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.97",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": [],
+              "additionalInfoUri": "https://www.capricornian.com.au/loans/home-loans/"
+            }
+          ],
+          "applicabilityConditions": [
+            {
+              "additionalInfo": "Aged over 18 years of age",
+              "additionalInfoUri": null,
+              "rateApplicabilityType": "OTHER",
+              "additionalValue": null
+            }
+          ],
+          "applicationType": "PERIODIC"
+        }
+      ]
+    }
+  ]
+}

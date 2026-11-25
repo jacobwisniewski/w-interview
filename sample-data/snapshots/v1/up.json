@@ -1,0 +1,255 @@
+{
+  "bankSlug": "up",
+  "bankName": "Up",
+  "sourceUrl": "https://api.up.com.au/cds-au/v1/banking/products",
+  "cdrVersion": "6",
+  "capturedAt": "2026-11-25T10:25:00Z",
+  "products": [
+    {
+      "productId": "up-home",
+      "effectiveFrom": "2022-03-16T00:00:00+11:00",
+      "effectiveTo": "9999-12-30T01:00:00+11:00",
+      "lastUpdated": "2026-11-12T00:00:13+11:00",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "name": "Up Home Loan",
+      "description": "Up Home is a simple loan that works seamlessly with your Up banking. Starting from 10% LVR, it’s first time owner friendly too. Use the Up features you love to own your own home faster.",
+      "brand": "Up",
+      "brandName": "Up",
+      "isTailored": false,
+      "additionalInformation": {
+        "overviewUri": "https://up.com.au/home-loans",
+        "termsUri": "https://up.com.au/product-terms/",
+        "eligibilityUri": "https://up.com.au/product-terms/#keyfeaturestable",
+        "feesAndPricingUri": "https://up.com.au/pricing/"
+      },
+      "features": [
+        {
+          "featureType": "DIGITAL_BANKING",
+          "additionalInfo": "Apply for and manage your Up Home loan online through Up’s mobile banking application."
+        },
+        {
+          "featureType": "EXTRA_REPAYMENTS",
+          "additionalInfo": "For fixed rate loans, extra repayments are allowed up to $30,000 in total during the fixed rate period. Extra repayments above this limit may incur a prepayment fee. For variable rate loans, extra repayments are unlimited."
+        },
+        {
+          "featureType": "OFFSET",
+          "additionalInfo": "Use your Up spending account and Savers as offsets."
+        },
+        {
+          "featureType": "REDRAW",
+          "additionalInfo": "Redraws are limited to the total amount prepaid, less one repayment. Other conditions may apply as per Loan Schedule and Home Loan Booklet."
+        }
+      ],
+      "constraints": [
+        {
+          "constraintType": "MAX_LVR",
+          "additionalValue": "0.90",
+          "additionalInfo": "A maximum 90% Loan to Value Ratio applies. A minimum 10% deposit is required."
+        },
+        {
+          "constraintType": "MAX_LIMIT",
+          "additionalValue": "7500000.00",
+          "additionalInfo": "A maximum borrowable amount for the loan."
+        },
+        {
+          "constraintType": "MIN_LIMIT",
+          "additionalValue": "50000.00",
+          "additionalInfo": "A minimum borrowable amount for the loan."
+        }
+      ],
+      "eligibility": [
+        {
+          "eligibilityType": "MIN_AGE",
+          "additionalValue": "18"
+        },
+        {
+          "eligibilityType": "RESIDENCY_STATUS",
+          "additionalValue": "Australian resident"
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "Credit and lending criteria apply"
+        }
+      ],
+      "fees": [
+        {
+          "name": "Bank Cheque Fee",
+          "feeType": "EVENT",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "12.75"
+          },
+          "currency": "AUD"
+        }
+      ],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0645",
+          "comparisonRate": "0.0645",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": "IN_ARREARS",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "additionalInfo": "Variable rate",
+          "additionalInfoUri": "https://up.com.au/pricing/"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0645",
+          "comparisonRate": "0.0645",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": "IN_ARREARS",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "additionalValue": "P1Y",
+          "additionalInfo": "Fixed for 1 year",
+          "additionalInfoUri": "https://up.com.au/pricing/"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0645",
+          "comparisonRate": "0.0645",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": "IN_ARREARS",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "additionalValue": "P2Y",
+          "additionalInfo": "Fixed for 2 years",
+          "additionalInfoUri": "https://up.com.au/pricing/"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0655",
+          "comparisonRate": "0.0648",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": "IN_ARREARS",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "additionalValue": "P3Y",
+          "additionalInfo": "Fixed for 3 years",
+          "additionalInfoUri": "https://up.com.au/pricing/"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0665",
+          "comparisonRate": "0.0652",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": "IN_ARREARS",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "additionalValue": "P4Y",
+          "additionalInfo": "Fixed for 4 years",
+          "additionalInfoUri": "https://up.com.au/pricing/"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0665",
+          "comparisonRate": "0.0653",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": "IN_ARREARS",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "additionalValue": "P5Y",
+          "additionalInfo": "Fixed for 5 years",
+          "additionalInfoUri": "https://up.com.au/pricing/"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.066",
+          "comparisonRate": "0.066",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": "IN_ARREARS",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "INVESTMENT",
+          "additionalInfo": "Variable rate",
+          "additionalInfoUri": "https://up.com.au/pricing/"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.066",
+          "comparisonRate": "0.066",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": "IN_ARREARS",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "INVESTMENT",
+          "additionalValue": "P1Y",
+          "additionalInfo": "Fixed for 1 year",
+          "additionalInfoUri": "https://up.com.au/pricing/"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.066",
+          "comparisonRate": "0.066",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": "IN_ARREARS",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "INVESTMENT",
+          "additionalValue": "P2Y",
+          "additionalInfo": "Fixed for 2 years",
+          "additionalInfoUri": "https://up.com.au/pricing/"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.067",
+          "comparisonRate": "0.0663",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": "IN_ARREARS",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "INVESTMENT",
+          "additionalValue": "P3Y",
+          "additionalInfo": "Fixed for 3 years",
+          "additionalInfoUri": "https://up.com.au/pricing/"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.068",
+          "comparisonRate": "0.0667",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": "IN_ARREARS",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "INVESTMENT",
+          "additionalValue": "P4Y",
+          "additionalInfo": "Fixed for 4 years",
+          "additionalInfoUri": "https://up.com.au/pricing/"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.068",
+          "comparisonRate": "0.0669",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": "IN_ARREARS",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "INVESTMENT",
+          "additionalValue": "P5Y",
+          "additionalInfo": "Fixed for 5 years",
+          "additionalInfoUri": "https://up.com.au/pricing/"
+        }
+      ]
+    }
+  ]
+}
