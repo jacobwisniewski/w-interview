@@ -1,0 +1,554 @@
+{
+  "bankSlug": "bank-first",
+  "bankName": "Bank First",
+  "sourceUrl": "https://public.cdr.bankfirst.com.au/cds-au/v1/banking/products",
+  "cdrVersion": "6",
+  "capturedAt": "2026-11-25T10:25:00Z",
+  "products": [
+    {
+      "brand": "Bank First",
+      "description": "Complete Home Loan Owner Occupied Construction Variable LVR>90%",
+      "isTailored": false,
+      "lastUpdated": "2026-11-23T22:05:07.235519Z",
+      "name": "Complete Home Loan Owner Occupied Construction Variable LVR>90%",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "productId": "48079deb-2f1a-4839-855f-47986c19bfa6",
+      "additionalInformation": {
+        "overviewUri": "https://www.bankfirst.com.au/loans/home-loans/complete-home-loan-owner-occupied",
+        "termsUri": "https://www.bankfirst.com.au/disclosure-documents",
+        "eligibilityUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_a.pdf?la=en&hash=1BD3E51F84EC9362648BB08285FA0082715FEDB6",
+        "feesAndPricingUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_b.pdf?la=en&hash=172D55D317D95FDB13F24CDFDE6D3B6B2E7C7F37",
+        "bundleUri": null,
+        "additionalOverviewUris": null,
+        "additionalTermsUris": null,
+        "additionalEligibilityUris": null,
+        "additionalFeesAndPricingUris": null,
+        "additionalBundleUris": null
+      },
+      "applicationUri": "https://applications.bankfirst.com.au/cip/bankfirst/p/bankfirst/homeloan/application.html",
+      "brandName": "Bank First Production",
+      "cardArt": [],
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "bundles": [],
+      "constraints": [
+        {
+          "constraintType": "MIN_LVR",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "0.00"
+        },
+        {
+          "constraintType": "MAX_LVR",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "0.98"
+        }
+      ],
+      "depositRates": [],
+      "eligibility": [
+        {
+          "eligibilityType": "MIN_AGE",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "18"
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "Available to members only.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "RESIDENCY_STATUS",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "Individual applications must be permanent residents and joint accounts require at least one permanent resident as well as additional requirements for the non-resident applicants."
+        }
+      ],
+      "features": [
+        {
+          "featureType": "NPP_PAYID",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "DIGITAL_BANKING",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "REDRAW",
+          "additionalInfo": "Minimum of $500 per redraw",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "EXTRA_REPAYMENTS",
+          "additionalInfo": "Ability to make additional repayments on a variable rate loan with no cost",
+          "additionalInfoUri": "https://cdn.intelligencebank.com/au/share/e3Gq6M/188Xz/w88az/original/Complete_Home_Loan_TMD",
+          "additionalValue": null
+        },
+        {
+          "featureType": "OFFSET",
+          "additionalInfo": "Not available during fixed interest rate period. When you link a transaction account to an offset facility, you earn no interest under the transaction account even if the balance of the transaction account exceeds the loan balance.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        }
+      ],
+      "fees": [
+        {
+          "feeType": "UPFRONT",
+          "name": "Settlement Fee",
+          "additionalInfo": "Costs associated with processing the documentation and settlement of the loan",
+          "additionalInfoUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_b.pdf?la=en&hash=172D55D317D95FDB13F24CDFDE6D3B6B2E7C7F37",
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "595.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EXIT",
+          "name": "Discharge Of Mortgage Fee",
+          "additionalInfo": "$395.00 per Title.",
+          "additionalInfoUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_b.pdf?la=en&hash=172D55D317D95FDB13F24CDFDE6D3B6B2E7C7F37",
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "395.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "LATE_PAYMENT",
+          "name": "Arrears Fee",
+          "additionalInfo": "Applies when a loan is 7 and 30 calendar days in arrears",
+          "additionalInfoUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_b.pdf?la=en&hash=172D55D317D95FDB13F24CDFDE6D3B6B2E7C7F37",
+          "additionalValue": "7",
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "20.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        }
+      ],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0789",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0772",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR above 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.9001",
+              "maximumValue": "0.98",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        }
+      ]
+    },
+    {
+      "brand": "Bank First",
+      "description": "Complete Home Loan Owner Occupied Variable LVR 60-70%\n",
+      "isTailored": false,
+      "lastUpdated": "2026-11-23T22:04:49.047324Z",
+      "name": "Complete Home Loan Owner Occupied Variable LVR 60-70%",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "productId": "bb3d7f6c-0fac-44f4-b44c-8c10e77b96e4",
+      "additionalInformation": {
+        "overviewUri": "https://www.bankfirst.com.au/loans/home-loans/complete-home-loan-owner-occupied",
+        "termsUri": "https://www.bankfirst.com.au/disclosure-documents",
+        "eligibilityUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_a.pdf?la=en&hash=1BD3E51F84EC9362648BB08285FA0082715FEDB6",
+        "feesAndPricingUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_b.pdf?la=en&hash=172D55D317D95FDB13F24CDFDE6D3B6B2E7C7F37",
+        "bundleUri": null,
+        "additionalOverviewUris": null,
+        "additionalTermsUris": null,
+        "additionalEligibilityUris": null,
+        "additionalFeesAndPricingUris": null,
+        "additionalBundleUris": null
+      },
+      "applicationUri": "https://applications.bankfirst.com.au/cip/bankfirst/p/bankfirst/homeloan/application.html",
+      "brandName": "Bank First Production",
+      "cardArt": [],
+      "effectiveFrom": "2024-11-14T13:00:00Z",
+      "effectiveTo": null,
+      "bundles": [],
+      "constraints": [
+        {
+          "constraintType": "MAX_LVR",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "0.98"
+        },
+        {
+          "constraintType": "MIN_LVR",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "0.00"
+        }
+      ],
+      "depositRates": [],
+      "eligibility": [
+        {
+          "eligibilityType": "RESIDENCY_STATUS",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "Individual applications must be permanent residents and joint accounts require at least one permanent resident as well as additional requirements for the non-residant applicants."
+        },
+        {
+          "eligibilityType": "MIN_AGE",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "18"
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "Available to members only.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        }
+      ],
+      "features": [
+        {
+          "featureType": "NPP_PAYID",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "DIGITAL_BANKING",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "EXTRA_REPAYMENTS",
+          "additionalInfo": "Ability to make additional repayments on a variable rate loan with no cost",
+          "additionalInfoUri": "https://cdn.intelligencebank.com/au/share/e3Gq6M/188Xz/w88az/original/Complete_Home_Loan_TMD",
+          "additionalValue": null
+        },
+        {
+          "featureType": "REDRAW",
+          "additionalInfo": "Minimum of $500 per redraw",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "OFFSET",
+          "additionalInfo": "Not available during fixed interest rate period. When you link a transaction account to an offset facility, you earn no interest under the transaction account even if the balance of the transaction account exceeds the loan balance.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        }
+      ],
+      "fees": [
+        {
+          "feeType": "LATE_PAYMENT",
+          "name": "Arrears Fee",
+          "additionalInfo": "Applies when a loan is 7 and 30 calendar days in arrears",
+          "additionalInfoUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_b.pdf?la=en&hash=172D55D317D95FDB13F24CDFDE6D3B6B2E7C7F37",
+          "additionalValue": "7",
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "20.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Settlement Fee",
+          "additionalInfo": "Costs associated with processing the documentation and settlement of the loan",
+          "additionalInfoUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_b.pdf?la=en&hash=172D55D317D95FDB13F24CDFDE6D3B6B2E7C7F37",
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "595.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EXIT",
+          "name": "Discharge Of Mortgage Fee",
+          "additionalInfo": "$395.00 per Title.",
+          "additionalInfoUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_b.pdf?la=en&hash=172D55D317D95FDB13F24CDFDE6D3B6B2E7C7F37",
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "395.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        }
+      ],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0664",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0669",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR above 60%- 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.6001",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        }
+      ]
+    },
+    {
+      "brand": "Bank First",
+      "description": "Premier Package Home Loan Investment Variable IO LVR 80-90%",
+      "isTailored": false,
+      "lastUpdated": "2026-11-23T22:04:28.650936Z",
+      "name": "Premier Package Home Loan Investment Variable IO LVR 80-90%",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "productId": "7c17882a-921f-4e6a-9372-debc7f926f88",
+      "additionalInformation": {
+        "overviewUri": "https://www.bankfirst.com.au/loans/home-loans/premier-package-home-loan",
+        "termsUri": "https://www.bankfirst.com.au/disclosure-documents",
+        "eligibilityUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_a.pdf?la=en&hash=1BD3E51F84EC9362648BB08285FA0082715FEDB6",
+        "feesAndPricingUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_b.pdf?la=en&hash=172D55D317D95FDB13F24CDFDE6D3B6B2E7C7F37",
+        "bundleUri": null,
+        "additionalOverviewUris": null,
+        "additionalTermsUris": null,
+        "additionalEligibilityUris": null,
+        "additionalFeesAndPricingUris": null,
+        "additionalBundleUris": null
+      },
+      "applicationUri": "https://applications.bankfirst.com.au/cip/bankfirst/p/bankfirst/homeloan/application.html",
+      "brandName": "Bank First Production",
+      "cardArt": [],
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "bundles": [],
+      "constraints": [
+        {
+          "constraintType": "MAX_LVR",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "0.91"
+        },
+        {
+          "constraintType": "MIN_LVR",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "0.00"
+        }
+      ],
+      "depositRates": [],
+      "eligibility": [
+        {
+          "eligibilityType": "MIN_AGE",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "18"
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "Available to members only.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "RESIDENCY_STATUS",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "Individual applications must be permanent residents and joint accounts require at least one permanent resident as well as additional requirements for the non-residant applicants."
+        }
+      ],
+      "features": [
+        {
+          "featureType": "OFFSET",
+          "additionalInfo": "Not available during fixed interest rate period. When you link a transaction account to an offset facility, you earn no interest under the transaction account even if the balance of the transaction account exceeds the loan balance.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "NPP_PAYID",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "DIGITAL_BANKING",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "REDRAW",
+          "additionalInfo": "Minimum of $500 per redraw",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "EXTRA_REPAYMENTS",
+          "additionalInfo": "Ability to make additional repayments on a variable rate loan with no cost",
+          "additionalInfoUri": "https://cdn.intelligencebank.com/au/share/e3Gq6M/188Xz/oGGzn/original/Premier_Package_Home_Loan_TMD",
+          "additionalValue": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalInfo": "Split Loan: You can split your home loan into a variable and fixed option.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        }
+      ],
+      "fees": [
+        {
+          "feeType": "PERIODIC",
+          "name": "Premier Package Home Loan Fee",
+          "additionalInfo": "$390 per annum",
+          "additionalInfoUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_b.pdf?la=en&hash=172D55D317D95FDB13F24CDFDE6D3B6B2E7C7F37",
+          "additionalValue": "P1Y",
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "390.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EXIT",
+          "name": "Discharge Of Mortgage Fee",
+          "additionalInfo": "$395.00 per Title.",
+          "additionalInfoUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_b.pdf?la=en&hash=172D55D317D95FDB13F24CDFDE6D3B6B2E7C7F37",
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "395.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "LATE_PAYMENT",
+          "name": "Arrears Fee",
+          "additionalInfo": "Applies when a loan is 7 and 30 calendar days in arrears",
+          "additionalInfoUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_b.pdf?la=en&hash=172D55D317D95FDB13F24CDFDE6D3B6B2E7C7F37",
+          "additionalValue": "7",
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "20.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Settlement Fee",
+          "additionalInfo": "Costs associated with processing the documentation and settlement of the loan",
+          "additionalInfoUri": "https://www.bankfirst.com.au/-/media/bankfirst/pdfs/termsandconditions/tc_part_b.pdf?la=en&hash=172D55D317D95FDB13F24CDFDE6D3B6B2E7C7F37",
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "595.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        }
+      ],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0818",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0841",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR above 80% - 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.8001",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        }
+      ]
+    }
+  ]
+}

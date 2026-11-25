@@ -1,0 +1,49 @@
+{
+  "bankSlug": "example-bank",
+  "bankName": "Example Bank (Synthetic Fixture)",
+  "sourceUrl": "https://example.invalid/cds-au/v1/banking/products",
+  "cdrVersion": "4",
+  "capturedAt": "2026-11-26T10:25:00Z",
+  "products": [
+    {
+      "productId": "ex-missing-comparison-rate",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "name": "Example Variable Home Loan (Missing Comparison Rate)",
+      "description": "Synthetic fixture missing comparisonRate to verify MANUAL_REVIEW_REQUIRED abstain.",
+      "brand": "Example Bank",
+      "lastUpdated": "2026-11-25T09:00:00Z",
+      "additionalInformation": {
+        "overviewUri": "https://example.invalid/home-loans/variable"
+      },
+      "features": [
+        {
+          "featureType": "OFFSET",
+          "additionalInfo": "100% offset account"
+        }
+      ],
+      "fees": [
+        {
+          "name": "Annual Package Fee",
+          "feeType": "PERIODIC",
+          "amount": "395.00",
+          "currency": "AUD",
+          "additionalValue": "P1Y"
+        }
+      ],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0619",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "OWNER_OCCUPIED"
+        }
+      ]
+    },
+    {
+      "productId": "ex-malformed-record",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "name": "",
+      "lendingRates": "not-an-array"
+    }
+  ]
+}

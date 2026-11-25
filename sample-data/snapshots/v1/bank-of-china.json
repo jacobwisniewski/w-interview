@@ -1,0 +1,258 @@
+{
+  "bankSlug": "bank-of-china",
+  "bankName": "Bank of China",
+  "sourceUrl": "https://api-gateway.bankofchina.com.au/cds-au/v1/banking/products",
+  "cdrVersion": "6",
+  "capturedAt": "2026-11-25T10:25:00Z",
+  "products": [
+    {
+      "productId": "10391363",
+      "effectiveFrom": "2021-07-01T00:00:00.000+10:00",
+      "effectiveTo": "9999-12-31T00:00:00.000+11:00",
+      "lastUpdated": "2026-11-16T06:00:00.000+11:00",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "name": "Discount Home Loan (With Principal and Interest Repayment)",
+      "description": "Discount Home Loan (With Principal and Interest Repayment)",
+      "brand": "BCA",
+      "brandName": "Bank of China",
+      "isTailored": false,
+      "additionalInformation": {
+        "overviewUri": "https://www.bankofchina.com/au/en/pbservice/pb2/201801/t20180131_11319422.html"
+      },
+      "bundles": [],
+      "features": [
+        {
+          "featureType": "EXTRA_REPAYMENTS"
+        },
+        {
+          "featureType": "REDRAW"
+        },
+        {
+          "featureType": "DIGITAL_BANKING"
+        }
+      ],
+      "constraints": [
+        {
+          "constraintType": "MIN_LIMIT",
+          "additionalValue": "250000",
+          "additionalInfo": "Minimum Loan Amount AUD 250,000"
+        },
+        {
+          "constraintType": "MAX_LVR",
+          "additionalValue": "0.9",
+          "additionalInfo": "Max 90% with LMI"
+        }
+      ],
+      "eligibility": [
+        {
+          "eligibilityType": "NATURAL_PERSON",
+          "additionalInfo": "Individuals"
+        }
+      ],
+      "fees": [
+        {
+          "name": "Annual Fee",
+          "feeType": "PERIODIC",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "190.00"
+          },
+          "currency": "AUD",
+          "additionalValue": "pay yearly"
+        }
+      ],
+      "depositRates": [],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0643",
+          "comparisonRate": "0.0663",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "additionalValue": "Minimum Loan Amount: $250,000, with LVR <= 80%."
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0819",
+          "comparisonRate": "0.0838",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "additionalValue": "Minimum Loan Amount: $250,000, with LVR > 80% and = 90%."
+        }
+      ]
+    },
+    {
+      "productId": "10391363Plus",
+      "effectiveFrom": "2021-07-01T00:00:00.000+10:00",
+      "effectiveTo": "9999-12-31T00:00:00.000+11:00",
+      "lastUpdated": "2026-11-16T06:00:00.000+11:00",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "name": "Discount Plus Home Loan (with Principal and Interest Repayment)",
+      "description": "Discount Plus Home Loan (with Principal and Interest Repayment)",
+      "brand": "BCA",
+      "brandName": "Bank of China",
+      "isTailored": false,
+      "additionalInformation": {
+        "overviewUri": "https://www.bankofchina.com/au/en/pbservice/pb2/201801/t20180131_11319422.html"
+      },
+      "bundles": [],
+      "features": [
+        {
+          "featureType": "EXTRA_REPAYMENTS"
+        },
+        {
+          "featureType": "REDRAW"
+        },
+        {
+          "featureType": "OFFSET"
+        },
+        {
+          "featureType": "DIGITAL_BANKING"
+        }
+      ],
+      "constraints": [
+        {
+          "constraintType": "MIN_LIMIT",
+          "additionalValue": "100000",
+          "additionalInfo": "Minimum Loan Amount AUD 100,000"
+        },
+        {
+          "constraintType": "MAX_LVR",
+          "additionalValue": "0.9",
+          "additionalInfo": "Max 90% with LMI"
+        }
+      ],
+      "eligibility": [
+        {
+          "eligibilityType": "NATURAL_PERSON",
+          "additionalInfo": "Individuals"
+        }
+      ],
+      "fees": [
+        {
+          "name": "Annual Fee",
+          "feeType": "PERIODIC",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "395.00"
+          },
+          "currency": "AUD",
+          "additionalValue": "pay yearly"
+        }
+      ],
+      "depositRates": [],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0643",
+          "comparisonRate": "0.0681",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "additionalValue": "Minimum Loan Amount: $100,000, with LVR <= 80%."
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0819",
+          "comparisonRate": "0.0854",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "additionalValue": "Minimum Loan Amount: $100,000, with LVR > 80% and = 90%."
+        }
+      ]
+    },
+    {
+      "productId": "10391364",
+      "effectiveFrom": "2021-07-01T00:00:00.000+10:00",
+      "effectiveTo": "9999-12-31T00:00:00.000+11:00",
+      "lastUpdated": "2026-11-16T06:00:00.000+11:00",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "name": "Discount Home Loan (with Interest Only Repayment)",
+      "description": "Discount Home Loan (with Interest Only Repayment)",
+      "brand": "BCA",
+      "brandName": "Bank of China",
+      "isTailored": false,
+      "additionalInformation": {
+        "overviewUri": "https://www.bankofchina.com/au/en/pbservice/pb2/201801/t20180131_11319422.html"
+      },
+      "bundles": [],
+      "features": [
+        {
+          "featureType": "EXTRA_REPAYMENTS"
+        },
+        {
+          "featureType": "REDRAW"
+        },
+        {
+          "featureType": "DIGITAL_BANKING"
+        }
+      ],
+      "constraints": [
+        {
+          "constraintType": "MIN_LIMIT",
+          "additionalValue": "250000",
+          "additionalInfo": "Minimum Loan Amount AUD 250,000"
+        },
+        {
+          "constraintType": "MAX_LVR",
+          "additionalValue": "0.9",
+          "additionalInfo": "Max 90% with LMI"
+        }
+      ],
+      "eligibility": [
+        {
+          "eligibilityType": "NATURAL_PERSON",
+          "additionalInfo": "Individuals"
+        }
+      ],
+      "fees": [
+        {
+          "name": "Annual Fee",
+          "feeType": "PERIODIC",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "190.00"
+          },
+          "currency": "AUD",
+          "additionalValue": "pay yearly"
+        }
+      ],
+      "depositRates": [],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0713",
+          "comparisonRate": "0.0733",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "repaymentType": "INTEREST_ONLY",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "additionalValue": "Minimum Loan Amount: $250,000,  with LVR <= 80%."
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0819",
+          "comparisonRate": "0.0838",
+          "calculationFrequency": "P1D",
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "repaymentType": "INTEREST_ONLY",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "additionalValue": "Minimum Loan Amount: $250,000, with LVR > 80% and = 90%."
+        }
+      ]
+    }
+  ]
+}

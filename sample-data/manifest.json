@@ -1,0 +1,287 @@
+{
+  "capturedAt": "2026-11-25T10:25:00Z",
+  "source": "Australian Consumer Data Right (CDR) Public Product Reference Data",
+  "realBankCount": 40,
+  "banks": [
+    {
+      "bankSlug": "afg-home-loans-alpha",
+      "bankName": "AFG Home Loans Alpha",
+      "cdrVersion": "6",
+      "productCount": 2,
+      "sourceUrl": "https://api.afg.app.bendigobank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "amp-my-amp",
+      "bankName": "AMP - My AMP",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://api.cdr-api.amp.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "arab-bank-australia-limited",
+      "bankName": "Arab Bank Australia Limited",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://public.cdr.arabbank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "aussie-elevate",
+      "bankName": "Aussie Elevate",
+      "cdrVersion": "6",
+      "productCount": 2,
+      "sourceUrl": "https://api.aussie.app.bendigobank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "australian-military-bank",
+      "bankName": "Australian Military Bank",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://public.open.australianmilitarybank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "bank-australia",
+      "bankName": "Bank Australia",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://public.cdr.bankaust.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "bank-first",
+      "bankName": "Bank First",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://public.cdr.bankfirst.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "bank-of-china",
+      "bankName": "Bank of China",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://api-gateway.bankofchina.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "bank-of-queensland-limited",
+      "bankName": "Bank of Queensland Limited",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://api.cds.boq.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "bank-of-sydney",
+      "bankName": "Bank of Sydney",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://openbank.api.banksyd.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "bendigo-bank",
+      "bankName": "Bendigo Bank",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://api.cdr.bendigobank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "bnk-bank-goldfields-money-bchl",
+      "bankName": "BNK Bank (Goldfields Money/BCHL)",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://public.cdr.bnk.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "boq-specialist",
+      "bankName": "BOQ Specialist",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://api.cds.boqspecialist.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "border-bank",
+      "bankName": "Border Bank",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://public.cdr.prd.borderbank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "cairns-bank",
+      "bankName": "Cairns bank",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://openbanking.cairnsbank.com.au/OpenBanking/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "connective-select",
+      "bankName": "Connective Select",
+      "cdrVersion": "6",
+      "productCount": 2,
+      "sourceUrl": "https://api.connective.app.bendigobank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "credit-union-sa",
+      "bankName": "Credit Union SA",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://openbanking.api.creditunionsa.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "defence-bank",
+      "bankName": "Defence Bank",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://product.defencebank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "greater-bank",
+      "bankName": "Greater Bank",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://public.cdr.greater.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "imb-bank",
+      "bankName": "IMB Bank",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://openbank.openbanking.imb.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "judo-bank",
+      "bankName": "Judo Bank",
+      "cdrVersion": "6",
+      "productCount": 1,
+      "sourceUrl": "https://public.open.judo.bank/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "liberty-financial",
+      "bankName": "Liberty Financial",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://services.liberty.com.au/api/data-holder-public/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "macquarie-bank-limited",
+      "bankName": "Macquarie Bank Limited",
+      "cdrVersion": "6",
+      "productCount": 2,
+      "sourceUrl": "https://api.macquariebank.io/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "me-bank-me-go",
+      "bankName": "ME Bank - ME Go",
+      "cdrVersion": "6",
+      "productCount": 2,
+      "sourceUrl": "https://api.cds.mebank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "mystate-bank",
+      "bankName": "MyState Bank",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://public.cdr.mystate.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "national-australia-bank",
+      "bankName": "NATIONAL AUSTRALIA BANK",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://openbank.api.nab.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "newcastle-permanent",
+      "bankName": "Newcastle Permanent",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://openbank.newcastlepermanent.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "northern-inland-credit-union-limited",
+      "bankName": "Northern Inland Credit Union Limited",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://secure.nicu.com.au/OpenBanking/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "nrma-home-loans",
+      "bankName": "NRMA Home Loans",
+      "cdrVersion": "6",
+      "productCount": 2,
+      "sourceUrl": "https://api.nrma.app.bendigobank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "people-first-and-heritage-bank",
+      "bankName": "People First and Heritage Bank",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://public.openbanking.peoplefirstbank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "police-bank",
+      "bankName": "Police Bank",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://public.cdr.prd.policebank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "qantas-money-basic-offset-home-loans",
+      "bankName": "Qantas Money Basic/Offset Home Loans",
+      "cdrVersion": "6",
+      "productCount": 2,
+      "sourceUrl": "https://api.qantas.app.bendigobank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "qudos-bank",
+      "bankName": "Qudos Bank",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://public.cdr.qudosbank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "regional-australia-bank",
+      "bankName": "Regional Australia Bank",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://public-data.cdr.regaustbank.io/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "the-capricornian",
+      "bankName": "The Capricornian",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://public.cdr.onlinebanking.capricornian.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "tiimely-home",
+      "bankName": "Tiimely Home",
+      "cdrVersion": "6",
+      "productCount": 2,
+      "sourceUrl": "https://api.tiimely.app.bendigobank.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "unloan",
+      "bankName": "Unloan",
+      "cdrVersion": "6",
+      "productCount": 1,
+      "sourceUrl": "https://public.api.cdr.unloan.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "up",
+      "bankName": "Up",
+      "cdrVersion": "6",
+      "productCount": 1,
+      "sourceUrl": "https://api.up.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "virgin-money",
+      "bankName": "Virgin Money",
+      "cdrVersion": "6",
+      "productCount": 2,
+      "sourceUrl": "https://api.cds.virginmoney.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "woolworths-team-bank",
+      "bankName": "Woolworths Team Bank",
+      "cdrVersion": "6",
+      "productCount": 3,
+      "sourceUrl": "https://online.woolworthsteambank.com.au/OpenBanking/cds-au/v1/banking/products"
+    }
+  ]
+}
