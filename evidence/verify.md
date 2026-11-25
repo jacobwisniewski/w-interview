@@ -9,8 +9,8 @@ pnpm run verify   # executes scripts/verify.sh
 | Check | Tool | Scope | Result |
 |---|---|---|---|
 | Type safety | `tsc --noEmit` (`strict`, `noUncheckedIndexedAccess`) | `src/**/*.ts` | Pass |
-| Static analysis | `oxlint src tests` (96 rules) | `src/`, `tests/` | Pass (0 warnings, 0 errors) |
-| Formatting | `oxfmt --check src tests` | `src/`, `tests/` | Pass |
+| Static analysis | `oxlint src __tests__` (96 rules) | `src/`, `__tests__/` | Pass (0 warnings, 0 errors) |
+| Formatting | `oxfmt --check src __tests__` | `src/`, `__tests__/` | Pass |
 | Unit & integration tests | `vitest run` (5 files, 17 tests) | Config, 41-bank CDR parsing, quarantine, `MANUAL_REVIEW_REQUIRED`, atomic rollback, degraded sync, `x-v` 406 negotiation, SSRF allowlist, HTTP API | Pass (17/17) |
 | Production build | `tsc -p tsconfig.json` | Emits `dist/` | Pass |
 | End-to-end smoke test | `scripts/verify.sh` against compiled `dist/index.js` | Boots server on ephemeral port + temp SQLite DB, verifies `/health`, Westpac query, quarantine, `v2` rate diff (`+15 bps`), and `simulate-degrade` | Pass |
@@ -22,5 +22,5 @@ pnpm run verify   # executes scripts/verify.sh
 
 ## Known Gaps
 - No headless browser E2E test (Playwright) for `public/index.html`; UI relies on the tested JSON API contracts.
-- Live CDR network tests are mocked in CI (`tests/live-client.test.ts`) to keep builds deterministic; live endpoints are verified manually via `pnpm run sync:live`.
+- Live CDR network tests are mocked in CI (`__tests__/live-client.test.ts`) to keep builds deterministic; live endpoints are verified manually via `pnpm run sync:live`.
 - No load/concurrency benchmark for high-write SQLite contention (in production, PostgreSQL/Aurora handles concurrent writers).
