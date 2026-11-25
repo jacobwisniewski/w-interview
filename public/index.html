@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AU CDR Home Loan Rate & Change Monitor</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #1e293b;
+        --border: #334155;
+        --text: #f8fafc;
+        --muted: #94a3b8;
+        --accent: #38bdf8;
+        --ok: #22c55e;
+        --warn: #f59e0b;
+        --bad: #ef4444;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.45;
+      }
+      .wrap { max-width: 1200px; margin: 0 auto; padding: 24px 16px 48px; }
+      header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 18px; }
+      h1 { margin: 0; font-size: 1.5rem; }
+      .sub { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+      .disclaimer {
+        background: rgba(56, 189, 248, 0.1);
+        border: 1px solid rgba(56, 189, 248, 0.35);
+        border-radius: 8px;
+        padding: 10px 14px;
+        font-size: 0.85rem;
+        color: #bae6fd;
+        margin-bottom: 18px;
+      }
+      .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+      button {
+        background: var(--panel);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+      button:hover { border-color: var(--accent); }
+      button.primary { background: #0284c7; border-color: #0284c7; }
+      button.warn { border-color: var(--warn); color: #fde68a; }
+      .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 18px; }
+      .kpi { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+      .kpi-label { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+      .kpi-val { font-size: 1.4rem; font-weight: 700; margin-top: 4px; }
+      .tabs { display: flex; gap: 8px; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
+      .tab { background: transparent; border: none; border-bottom: 2px solid transparent; border-radius: 0; padding: 10px 14px; color: var(--muted); }
+      .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+      .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; align-items: center; }
+      input, select {
+        background: var(--panel);
+        color: var(--text);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 7px 10px;
+        font-size: 0.85rem;
+      }
+      label.chk { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--muted); }
+      .card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; overflow-x: auto; }
+      table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+      th, td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+      th { color: var(--muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+      tr:last-child td { border-bottom: none; }
+      .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 0.74rem; font-weight: 600; }
+      .b-ok { background: rgba(34, 197, 94, 0.16); color: #86efac; }
+      .b-warn { background: rgba(245, 158, 11, 0.18); color: #fde68a; }
+      .b-bad { background: rgba(239, 68, 68, 0.18); color: #fca5a5; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+      .muted { color: var(--muted); font-size: 0.8rem; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      #toast { margin-bottom: 12px; font-size: 0.85rem; color: #bae6fd; min-height: 1.2em; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div>
+          <h1>AU Open Banking (CDR) Home Loan Monitor</h1>
+          <div class="sub">Normalised residential mortgage rates, compliance guardrails, quarantine audit, and snapshot diffs</div>
+        </div>
+        <div class="actions">
+          <button class="primary" onclick="runIngest({ mode: 'snapshot', version: 'v2' })">Apply v2 Rate Delta</button>
+          <button class="warn" onclick="runIngest({ mode: 'simulate-degrade', bankSlug: 'up', reason: 'Simulated HTTP 406 UnsupportedVersion' })">Simulate 406 Degrade (Up)</button>
+          <button onclick="runIngest({ mode: 'snapshot', version: 'v1' })">Reload v1 Baseline</button>
+        </div>
+      </header>
+
+      <div class="disclaimer">
+        <strong>Indicative market reference only:</strong> Built from public Australian CDR Product Reference Data (PRD) plus synthetic edge-case fixtures. Not credit advice or a lending decision. Products lacking a valid comparison rate are flagged <code>MANUAL_REVIEW_REQUIRED</code>.
+      </div>
+
+      <div id="toast"></div>
+
+      <section class="kpis">
+        <div class="kpi"><div class="kpi-label">Service Health</div><div class="kpi-val" id="k-health">...</div></div>
+        <div class="kpi"><div class="kpi-label">Banks Monitored</div><div class="kpi-val" id="k-banks">-</div></div>
+        <div class="kpi"><div class="kpi-label">Ready Products</div><div class="kpi-val" id="k-ready">-</div></div>
+        <div class="kpi"><div class="kpi-label">Manual Review</div><div class="kpi-val" id="k-manual">-</div></div>
+        <div class="kpi"><div class="kpi-label">Quarantined</div><div class="kpi-val" id="k-quarantine">-</div></div>
+      </section>
+
+      <nav class="tabs">
+        <button class="tab active" data-tab="products" onclick="switchTab('products')">Products</button>
+        <button class="tab" data-tab="changes" onclick="switchTab('changes')">Rate Changes</button>
+        <button class="tab" data-tab="quarantine" onclick="switchTab('quarantine')">Quarantine Audit</button>
+        <button class="tab" data-tab="health" onclick="switchTab('health')">Bank Health</button>
+      </nav>
+
+      <section id="panel-products">
+        <div class="filters">
+          <input id="f-search" type="search" placeholder="Search bank or loan..." oninput="loadProducts()" />
+          <select id="f-rateType" onchange="loadProducts()">
+            <option value="">All rate types</option>
+            <option value="VARIABLE">Variable</option>
+            <option value="FIXED">Fixed</option>
+          </select>
+          <select id="f-status" onchange="loadProducts()">
+            <option value="">All review statuses</option>
+            <option value="READY">READY</option>
+            <option value="MANUAL_REVIEW_REQUIRED">MANUAL_REVIEW_REQUIRED</option>
+          </select>
+          <label class="chk"><input id="f-offset" type="checkbox" onchange="loadProducts()" /> Offset only</label>
+          <label class="chk"><input id="f-redraw" type="checkbox" onchange="loadProducts()" /> Redraw only</label>
+        </div>
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Bank</th>
+                <th>Product</th>
+                <th>Type</th>
+                <th>Headline</th>
+                <th>Comparison</th>
+                <th>Annual Fee</th>
+                <th>Features</th>
+                <th>Guardrail</th>
+              </tr>
+            </thead>
+            <tbody id="tb-products"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="panel-changes" style="display:none">
+        <div class="card">
+          <table>
+            <thead>
+              <tr><th>Bank</th><th>Product</th><th>Headline</th><th>Delta (bps)</th><th>Comparison</th><th>Delta (bps)</th></tr>
+            </thead>
+            <tbody id="tb-changes"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="panel-quarantine" style="display:none">
+        <div class="card">
+          <table>
+            <thead>
+              <tr><th>Bank</th><th>Product ID</th><th>Validation Error</th><th>Recorded At</th></tr>
+            </thead>
+            <tbody id="tb-quarantine"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="panel-health" style="display:none">
+        <div class="card">
+          <table>
+            <thead>
+              <tr><th>Bank</th><th>CDR x-v</th><th>Status</th><th>Valid</th><th>Quarantined</th><th>Last Synced / Error</th></tr>
+            </thead>
+            <tbody id="tb-health"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const fmtPct = (v) => (v == null ? "—" : `${Number(v).toFixed(2)}%`);
+      const fmtAud = (c) => `$${(c / 100).toFixed(0)}`;
+      const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
+
+      function switchTab(name) {
+        for (const t of document.querySelectorAll(".tab")) t.classList.toggle("active", t.dataset.tab === name);
+        for (const p of ["products", "changes", "quarantine", "health"]) {
+          document.getElementById(`panel-${p}`).style.display = p === name ? "block" : "none";
+        }
+      }
+
+      async function loadProducts() {
+        const params = new URLSearchParams();
+        const search = document.getElementById("f-search").value.trim();
+        const rateType = document.getElementById("f-rateType").value;
+        const reviewStatus = document.getElementById("f-status").value;
+        if (search) params.set("search", search);
+        if (rateType) params.set("rateType", rateType);
+        if (reviewStatus) params.set("reviewStatus", reviewStatus);
+        if (document.getElementById("f-offset").checked) params.set("hasOffset", "true");
+        if (document.getElementById("f-redraw").checked) params.set("hasRedraw", "true");
+
+        const res = await fetch(`/api/products?${params.toString()}`);
+        const data = await res.json();
+        document.getElementById("k-ready").textContent = data.readyCount;
+        document.getElementById("k-manual").textContent = data.manualReviewCount;
+
+        const rows = data.products.map((p) => {
+          const link = p.overviewUri ? `<a href="${esc(p.overviewUri)}" target="_blank" rel="noreferrer">${esc(p.name)}</a>` : esc(p.name);
+          const feats = [p.hasOffset ? "Offset" : null, p.hasRedraw ? "Redraw" : null].filter(Boolean).join(", ") || "—";
+          const badge = p.reviewStatus === "READY"
+            ? `<span class="badge b-ok">READY</span>`
+            : `<span class="badge b-warn">MANUAL REVIEW</span><div class="muted">${esc(p.reviewReasons.join(", "))}</div>`;
+          return `<tr>
+            <td><strong>${esc(p.bankName)}</strong></td>
+            <td>${link}</td>
+            <td class="mono">${esc(p.rateType)}</td>
+            <td class="mono">${fmtPct(p.headlineRatePct)}</td>
+            <td class="mono"><strong>${fmtPct(p.comparisonRatePct)}</strong></td>
+            <td class="mono">${fmtAud(p.annualFeeCents)}</td>
+            <td>${feats}</td>
+            <td>${badge}</td>
+          </tr>`;
+        });
+        document.getElementById("tb-products").innerHTML = rows.join("") || `<tr><td colspan="8" class="muted">No matching products.</td></tr>`;
+      }
+
+      async function loadAll() {
+        const [health, changes, quarantine] = await Promise.all([
+          fetch("/health").then((r) => r.json()),
+          fetch("/api/changes").then((r) => r.json()),
+          fetch("/api/quarantine").then((r) => r.json()),
+        ]);
+
+        const healthEl = document.getElementById("k-health");
+        healthEl.innerHTML = health.status === "ok"
+          ? `<span class="badge b-ok">OK</span>`
+          : `<span class="badge b-warn">DEGRADED (${health.degradedCount})</span>`;
+        document.getElementById("k-banks").textContent = health.bankCount;
+        document.getElementById("k-quarantine").textContent = quarantine.total;
+
+        document.getElementById("tb-changes").innerHTML =
+          changes.changes.map((c) => {
+            const cls = (c.headlineDeltaBps ?? 0) > 0 ? "b-bad" : "b-ok";
+            const sign = (n) => (n == null ? "—" : `${n > 0 ? "+" : ""}${n} bps`);
+            return `<tr>
+              <td><strong>${esc(c.bankName)}</strong></td>
+              <td>${esc(c.productName)}</td>
+              <td class="mono">${fmtPct(c.previousHeadlinePct)} → ${fmtPct(c.currentHeadlinePct)}</td>
+              <td><span class="badge ${cls}">${sign(c.headlineDeltaBps)}</span></td>
+              <td class="mono">${fmtPct(c.previousComparisonPct)} → ${fmtPct(c.currentComparisonPct)}</td>
+              <td><span class="badge ${cls}">${sign(c.comparisonDeltaBps)}</span></td>
+            </tr>`;
+          }).join("") || `<tr><td colspan="6" class="muted">No rate changes yet. Click "Apply v2 Rate Delta" above to compare snapshots.</td></tr>`;
+
+        document.getElementById("tb-quarantine").innerHTML =
+          quarantine.records.map((q) => `<tr>
+            <td><strong>${esc(q.bankSlug)}</strong></td>
+            <td class="mono">${esc(q.productId ?? "unknown")}</td>
+            <td class="mono">${esc(q.reason)}</td>
+            <td class="muted">${esc(q.recordedAt)}</td>
+          </tr>`).join("") || `<tr><td colspan="4" class="muted">No quarantined payloads.</td></tr>`;
+
+        document.getElementById("tb-health").innerHTML =
+          health.banks.map((b) => `<tr>
+            <td><strong>${esc(b.bankName)}</strong></td>
+            <td class="mono">x-v: ${esc(b.cdrVersion)}</td>
+            <td>${b.degraded ? `<span class="badge b-warn">DEGRADED</span>` : `<span class="badge b-ok">OK</span>`}</td>
+            <td class="mono">${b.validProductCount}</td>
+            <td class="mono">${b.quarantinedCount}</td>
+            <td class="muted">${esc(b.lastError ?? b.lastSyncedAt)}</td>
+          </tr>`).join("");
+
+        await loadProducts();
+      }
+
+      async function runIngest(payload) {
+        const toast = document.getElementById("toast");
+        toast.textContent = "Running operation...";
+        const res = await fetch("/api/ingest", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+        toast.textContent = res.ok ? `Done: ${JSON.stringify(data.summary ?? data)}` : `Error: ${data.message ?? res.status}`;
+        await loadAll();
+      }
+
+      loadAll();
+    </script>
+  </body>
+</html>
