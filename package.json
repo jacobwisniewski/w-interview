@@ -12,7 +12,7 @@
     "format": "oxfmt src",
     "format:check": "oxfmt --check src",
     "test": "vitest run --passWithNoTests",
-    "sync:live": "tsx src/cli/sync.ts --live",
+    "sync": "tsx src/cli/sync.ts",
     "verify": "bash scripts/verify.sh"
   },
   "dependencies": {
