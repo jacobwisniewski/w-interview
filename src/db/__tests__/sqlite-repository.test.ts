@@ -24,9 +24,9 @@ function withInMemoryRepo<T>(
   }
 }
 
-describe("Feature: Transactional SQLite Snapshot Persistence", () => {
-  describe("Given valid and edge-case bank snapshots are ingested", () => {
-    it("Then products can be filtered by review status and malformed payloads are audited in quarantine", () => {
+describe("Transactional SQLite Snapshot Persistence", () => {
+  describe("GIVEN valid and edge-case bank snapshots are ingested", () => {
+    it("THEN products can be filtered by review status and malformed payloads are audited in quarantine", () => {
       withInMemoryRepo((repo) => {
         const up = loadFixture("sample-data/snapshots/v1/up.json");
         const example = loadFixture("sample-data/snapshots/v1/example-bank.json");
@@ -52,8 +52,8 @@ describe("Feature: Transactional SQLite Snapshot Persistence", () => {
     });
   });
 
-  describe("Given a snapshot batch violates a database uniqueness constraint mid-write", () => {
-    it("Then the entire transaction rolls back leaving zero partial products or bank statuses", () => {
+  describe("GIVEN a snapshot batch violates a database uniqueness constraint mid-write", () => {
+    it("THEN the entire transaction rolls back leaving zero partial products or bank statuses", () => {
       withInMemoryRepo((repo) => {
         const up = loadFixture("sample-data/snapshots/v1/up.json");
         const dupProduct = up.batch.valid[0]!;
@@ -73,8 +73,8 @@ describe("Feature: Transactional SQLite Snapshot Persistence", () => {
     });
   });
 
-  describe("Given a bank already has a verified snapshot and a later live sync fails", () => {
-    it("Then the bank is marked degraded while readers continue seeing the last verified snapshot", () => {
+  describe("GIVEN a bank already has a verified snapshot and a later live sync fails", () => {
+    it("THEN the bank is marked degraded while readers continue seeing the last verified snapshot", () => {
       withInMemoryRepo((repo) => {
         const up = loadFixture("sample-data/snapshots/v1/up.json");
         repo.recordSnapshot({
@@ -102,8 +102,8 @@ describe("Feature: Transactional SQLite Snapshot Persistence", () => {
     });
   });
 
-  describe("Given two consecutive verified snapshots exist for a bank", () => {
-    it("Then rate changes between the two snapshots are surfaced in basis points", () => {
+  describe("GIVEN two consecutive verified snapshots exist for a bank", () => {
+    it("THEN rate changes between the two snapshots are surfaced in basis points", () => {
       withInMemoryRepo((repo) => {
         const upV1 = loadFixture("sample-data/snapshots/v1/up.json");
         const upV2 = loadFixture("sample-data/snapshots/v2/up.json");
