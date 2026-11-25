@@ -9,9 +9,9 @@ pnpm run verify   # executes scripts/verify.sh
 | Check | Tool | Scope | Result |
 |---|---|---|---|
 | Type safety | `tsc --noEmit` (`strict`, `noUncheckedIndexedAccess`) | `src/**/*.ts` | Pass |
-| Static analysis | `oxlint src __tests__` (96 rules) | `src/`, `__tests__/` | Pass (0 warnings, 0 errors) |
+| Static analysis | `oxlint src __tests__` (99 rules incl. `local/no-comments`, `local/no-let`, `local/no-array-mutation`) | `src/`, `__tests__/` | Pass (0 warnings, 0 errors) |
 | Formatting | `oxfmt --check src __tests__` | `src/`, `__tests__/` | Pass |
-| Unit & integration tests | `vitest run` (5 files, 17 tests) | Config, 41-bank CDR parsing, quarantine, `MANUAL_REVIEW_REQUIRED`, atomic rollback, degraded sync, `x-v` 406 negotiation, SSRF allowlist, HTTP API | Pass (17/17) |
+| Unit & integration tests | `vitest run` (8 BDD files, 23 tests) | Config, parsing, guardrails, diff, 41-bank CDR normalise, Drizzle migrations/rollback, degraded sync, `x-v` 406 negotiation, SSRF allowlist, HTTP API | Pass (23/23) |
 | Production build | `tsc -p tsconfig.json` | Emits `dist/` | Pass |
 | End-to-end smoke test | `scripts/verify.sh` against compiled `dist/index.js` | Boots server on ephemeral port + temp SQLite DB, verifies `/health`, Westpac query, quarantine, `v2` rate diff (`+15 bps`), and `simulate-degrade` | Pass |
 

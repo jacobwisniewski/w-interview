@@ -7,7 +7,7 @@ A locally runnable vertical slice that ingests, validates, normalises, and compa
 ---
 
 ## Prerequisites
-- **Node.js `>= 22.5.0`** (uses built-in `node:sqlite`; verified on Node `24.16.0`)
+- **Node.js `>= 22.5.0`** (verified on Node `24.16.0`)
 - **pnpm `10.x`** (`corepack enable` or `npm i -g pnpm`)
 
 ## Setup
@@ -19,7 +19,12 @@ pnpm install
 ```bash
 pnpm dev
 ```
-Open [http://localhost:3000](http://localhost:3000) in your browser. On first boot, the server automatically seeds the bundled `sample-data/snapshots/v1/` snapshot (41 real AU banks + 1 synthetic edge-case fixture) into `./data/cdr-monitor.db`.
+Open [http://localhost:3000](http://localhost:3000) in your browser. On first boot, the server runs versioned **Drizzle SQL migrations** (`drizzle/`) against `./data/cdr-monitor.db` (`better-sqlite3`) and seeds the bundled `sample-data/snapshots/v1/` snapshot (41 real AU banks + 1 synthetic edge-case fixture).
+
+Regenerate migrations after schema changes:
+```bash
+pnpm run db:generate
+```
 
 Optional live sync against public allowlisted CDR endpoints:
 ```bash
@@ -30,7 +35,7 @@ pnpm run sync:live -- --bank=up
 ```bash
 pnpm run verify
 ```
-Runs `typecheck`, `oxlint`, `oxfmt --check`, `vitest` (17 tests), `tsc` build, and an end-to-end smoke test booting `dist/index.js` against an ephemeral SQLite DB.
+Runs `typecheck`, `oxlint` (including custom `local/no-comments`, `local/no-let`, and `local/no-array-mutation` rules), `oxfmt --check`, `vitest` (23 BDD tests across 8 files), `tsc` build, and an end-to-end smoke test booting `dist/index.js` against an ephemeral SQLite DB.
 
 ## Example Workflow (API)
 ```bash

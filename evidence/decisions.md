@@ -1,9 +1,9 @@
 # Architecture Decision Records (ADRs)
 
-## ADR-001: Built-in `node:sqlite` Behind a `ProductRepository` Interface
-- **Decision:** Use Node 22.5+/24's built-in `node:sqlite` (`DatabaseSync`) for local persistence behind `src/db/repository.ts`.
-- **Why:** Guarantees clean-checkout reproducibility without requiring Docker or native C++ builds (`better-sqlite3`), while still providing real ACID transactions (`BEGIN IMMEDIATE ... COMMIT`), SQL filtering, and `:memory:` databases for fast isolated tests.
-- **Trade-off:** Single-node writer lock; not suitable for multi-replica cloud deployments. Mitigated by isolating all SQL inside `SqliteProductRepository` so production swaps cleanly to managed PostgreSQL/Aurora.
+## ADR-001: Drizzle ORM + `better-sqlite3` + Versioned SQL Migrations Behind `ProductRepository`
+- **Decision:** Use **Drizzle ORM** (`src/db/schema.ts`), `better-sqlite3`, and `drizzle-kit` versioned SQL migrations (`drizzle/`) behind the `ProductRepository` interface (`src/db/repository.ts`).
+- **Why:** Provides strongly-typed relational queries, repeatable versioned SQL migrations, and real ACID transactions (`db.transaction()`) locally without requiring Docker, while keeping tests fast via `:memory:` databases.
+- **Trade-off:** Adds a native SQLite driver (`better-sqlite3`, configured in `pnpm.onlyBuiltDependencies`), and SQLite is single-node. Mitigated by isolating all Drizzle/SQLite code behind `ProductRepository` so cloud deployment swaps cleanly to Drizzle + managed PostgreSQL/Aurora.
 
 ## ADR-002: Bundled Public CDR Snapshots as Default + Allowlisted Optional Live Sync
 - **Decision:** Bundle 41 real Australian banks' public CDR snapshots (`sample-data/snapshots/v1/`) for default boot and CI, with optional live sync constrained to `sample-data/manifest.json`.

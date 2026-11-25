@@ -6,11 +6,15 @@
 ## Work Decomposition (Stacked PRs & Conventional Commits)
 Rather than generating a monolithic commit, work was decomposed into 5 focused, reviewable PRs using Conventional Commits and GitHub branch protection on `main` (requiring the `verify` CI check via PR, blocking direct pushes, preserving merge-commit history without squashing):
 
-1. **PR #1 (`chore/pnpm-oxlint-oxfmt-ci`)**: `pnpm`, `oxlint`, `oxfmt`, GitHub Actions `verify` workflow, branch protection, and fail-fast `src/config.ts` + tests.
-2. **PR #2 (`feat/cdr-sample-data`)**: Captured 41 real Australian banks' public CDR `RESIDENTIAL_MORTGAGES` snapshots (including Westpac) via the CDR Register + synthetic `v2` rate-change and edge-case fixtures.
-3. **PR #3 (`feat/cdr-domain-and-sqlite`)**: Structured logger, CDR Zod schemas, normalisation + `MANUAL_REVIEW_REQUIRED` guardrails, transactional `node:sqlite` repository, rate diffing, and 12 unit/integration tests.
-4. **PR #4 (`feat/cdr-client-and-api`)**: Allowlisted live CDR client with `x-v` negotiation + degrade mode, Hono HTTP API, CLI sync, and 5 integration/mocked-fetch tests.
-5. **PR #5 (`feat/ui-verify-and-docs`)**: Single-page comparison UI, `./scripts/verify.sh` (including live server smoke test), `README.md`, and this evidence pack.
+1. **PR #1**: `pnpm`, `oxlint`, `oxfmt`, GitHub Actions `verify` workflow, `main` branch protection, and fail-fast `src/config.ts`.
+2. **PR #2**: Captured 41 real Australian banks' public CDR `RESIDENTIAL_MORTGAGES` snapshots (including Westpac via `x-v: 7`) + `v2` rate-change and edge-case fixtures.
+3. **PR #3**: Structured logger, CDR Zod schemas, normalisation + `MANUAL_REVIEW_REQUIRED` guardrails, initial SQLite repository, and domain/DB tests.
+4. **PR #4**: Allowlisted live CDR client with `x-v` negotiation + degrade mode, Hono HTTP API, CLI sync, and integration tests.
+5. **PR #5**: Comparison Web UI (`public/index.html`), `./scripts/verify.sh`, `README.md`, `__tests__/` layout, and `evidence/` pack.
+6. **PR #6**: Custom `oxlint` JS plugin (`lint/strict-style-plugin.mjs`) enforcing `local/no-comments`, `local/no-let`, and `local/no-array-mutation`, immutable functional refactors, and Given/When/Then BDD tests.
+7. **PR #7**: Split `src/domain/` and `__tests__/domain/` into focused single-responsibility modules (`types`, `parsing`, `guardrails`, `diff`, `normalise`).
+8. **PR #8**: Migrated persistence behind `ProductRepository` to **Drizzle ORM** + `better-sqlite3` + `drizzle-kit` versioned SQL migrations (`drizzle/`).
+9. **PR #9**: Split `src/server/` into modular route/middleware files with explicit DI ports (`Clock`, `HttpFetcher`, `ProductRepository`, `Logger`) and synced docs.
 
 ## Representative Steering & Human Interventions
 - **Scope & non-AI choice:** Rejected generic "AI governance" mockups and steered toward a genuinely non-AI, deterministic problem using real public Australian Open Banking (CDR) data so nothing felt contrived.
