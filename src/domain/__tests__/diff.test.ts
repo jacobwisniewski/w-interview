@@ -9,9 +9,9 @@ function readSnapshot(relPath: string) {
   return BankSnapshotSchema.parse(JSON.parse(readFileSync(join(process.cwd(), relPath), "utf8")));
 }
 
-describe("Feature: Snapshot Rate Change Diffing", () => {
-  describe("Given consecutive v1 and v2 snapshots where Up Bank raised rates by 15 bps", () => {
-    it("Then a +15 bps headline and comparison rate change is detected", () => {
+describe("Snapshot Rate Change Diffing", () => {
+  describe("GIVEN consecutive v1 and v2 snapshots where Up Bank raised rates by 15 bps", () => {
+    it("THEN a +15 bps headline and comparison rate change is detected", () => {
       const v1 = readSnapshot("sample-data/snapshots/v1/up.json");
       const v2 = readSnapshot("sample-data/snapshots/v2/up.json");
 
@@ -26,8 +26,8 @@ describe("Feature: Snapshot Rate Change Diffing", () => {
     });
   });
 
-  describe("Given two identical snapshots with unchanged rates", () => {
-    it("Then zero rate changes are emitted", () => {
+  describe("GIVEN two identical snapshots with unchanged rates", () => {
+    it("THEN zero rate changes are emitted", () => {
       const v1 = readSnapshot("sample-data/snapshots/v1/up.json");
       const products = validateAndNormaliseBatch(v1.bankSlug, v1.bankName, v1.products).valid;
       expect(computeRateDiffs(products, products)).toEqual([]);

@@ -16,9 +16,9 @@ async function withRepo<T>(
   }
 }
 
-describe("Feature: Allowlisted Live CDR Client & Version Negotiation", () => {
-  describe("Given an upstream bank rejects x-v=6 with HTTP 406 and accepts x-v=7", () => {
-    it("Then the client negotiates to x-v=7 and persists the normalised mortgage product", async () => {
+describe("Allowlisted Live CDR Client & Version Negotiation", () => {
+  describe("GIVEN an upstream bank rejects x-v=6 with HTTP 406 and accepts x-v=7", () => {
+    it("THEN the client negotiates to x-v=7 and persists the normalised mortgage product", async () => {
       await withRepo(async (repo) => {
         const mockFetch = (async (input: string | URL | Request, init?: RequestInit) => {
           const url = String(input);
@@ -68,8 +68,8 @@ describe("Feature: Allowlisted Live CDR Client & Version Negotiation", () => {
     });
   });
 
-  describe("Given an upstream CDR endpoint times out", () => {
-    it("Then the bank is marked degraded with the error reason recorded", async () => {
+  describe("GIVEN an upstream CDR endpoint times out", () => {
+    it("THEN the bank is marked degraded with the error reason recorded", async () => {
       await withRepo(async (repo) => {
         const failingFetch = (async () => {
           throw new Error("ConnectTimeoutError");
@@ -90,8 +90,8 @@ describe("Feature: Allowlisted Live CDR Client & Version Negotiation", () => {
     });
   });
 
-  describe("Given a caller requests a bank slug not present in the static allowlist", () => {
-    it("Then the client rejects the request to prevent SSRF", async () => {
+  describe("GIVEN a caller requests a bank slug not present in the static allowlist", () => {
+    it("THEN the client rejects the request to prevent SSRF", async () => {
       await withRepo(async (repo) => {
         await expect(
           syncLiveBanks(repo, silentLogger, {
