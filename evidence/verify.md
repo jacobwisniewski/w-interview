@@ -1,25 +1,27 @@
-# Verification — Checks, Results, and CI Split
+# Verification
 
-## Single Verification Command
+Run all checks locally with:
+
 ```bash
-pnpm run verify   # executes scripts/verify.sh
+pnpm run verify
 ```
 
-## Checks Run & Results
-| Check | Tool | Scope | Result |
-|---|---|---|---|
-| Type safety | `tsc --noEmit` (`strict`, `noUncheckedIndexedAccess`) | `src/**/*.ts` | Pass |
-| Static analysis | `oxlint src` (100 rules incl. `local/no-comments`, `local/no-let`, `local/no-array-mutation`, `local/no-classes`) | `src/` (incl. colocated `__tests__/`) | Pass (0 warnings, 0 errors) |
-| Formatting | `oxfmt --check src` | `src/` (incl. colocated `__tests__/`) | Pass |
-| Unit & integration tests | `vitest run` (8 colocated BDD files, 37 tests) | Config, parsing, guardrails, diff, 41-bank CDR normalise, Drizzle migrations/rollback, degraded sync, snapshot directory loader, HTTP API | Pass (37/37) |
-| Production build | `tsc -p tsconfig.json` | Emits `dist/` | Pass |
-| End-to-end smoke test | `scripts/verify.sh` against compiled `dist/index.js` | Boots server on ephemeral port + temp SQLite DB, verifies `/health`, Westpac query, quarantine, `v2` rate diff (`+15 bps`), and `simulate-degrade` | Pass |
+## Checks and results
 
-## Local vs PR vs Deployment Pipeline Split
-- **Local pre-push:** `pnpm run verify` (fast full loop, < 5 seconds, 100% offline).
-- **PR gate (implemented in `.github/workflows/ci.yml`, enforced on `main`):** `pnpm install --frozen-lockfile`, `typecheck`, `lint`, `format:check`, `test`, `build`.
-- **Enterprise CI/CD additions (not run in 3-hour slice):** Dependency vulnerability scan (`pnpm audit` / Snyk), SAST (CodeQL/Semgrep), container image build & Trivy scan, staging deploy + synthetic CDR replay soak, and canary `/health` gate before full production promotion.
+- Typecheck (`tsc --noEmit` in strict mode): passed.
+- Lint (`oxlint`, 100 rules including custom rules banning comments, `let`/`var`, array mutations, and classes): passed with 0 warnings and 0 errors.
+- Format (`oxfmt --check`): passed.
+- Tests (`vitest`, 8 colocated BDD files, 37 tests): passed (37/37), covering config validation, rate and fee parsing, disclosure guardrails, basis-point diffs, 41-bank CDR normalisation, quarantine, Drizzle migrations and transaction rollback, degraded-sync preservation, snapshot loading, and HTTP routes.
+- Build (`tsc`): passed.
+- Live smoke test: boots the compiled server on an ephemeral port with a temporary SQLite database and verifies `/health`, Westpac product queries, quarantine audit, `v2` rate diffs, and degraded-mode handling. Passed.
 
-## Known Gaps
-- No headless browser E2E test (Playwright) for `public/index.html`; UI relies on the tested JSON API contracts.
-- No load/concurrency benchmark for high-write SQLite contention (in production, PostgreSQL/Aurora handles concurrent writers).
+## Local, PR, and pipeline split
+
+- Local: `pnpm run verify` runs the full suite offline in a few seconds.
+- PR gate (required on `main`): frozen lockfile install, typecheck, lint, format check, tests, and build.
+- Production pipeline additions: dependency vulnerability scanning, SAST, container image build and scanning, staging deploy with snapshot replay, and progressive rollout gated on `/health`.
+
+## Known gaps
+
+- No Playwright browser E2E test for the UI; it relies on the tested JSON API contracts and was visually checked via screenshot.
+- No concurrent-writer load test against SQLite (production would use PostgreSQL/Aurora for concurrent writes).

@@ -1,20 +1,25 @@
-# Architecture Decision Records (ADRs)
+# Decisions
 
-## ADR-001: Drizzle ORM + `better-sqlite3` + Versioned SQL Migrations Behind `ProductRepository`
-- **Decision:** Use **Drizzle ORM** (`src/db/schema.ts`), `better-sqlite3`, and `drizzle-kit` versioned SQL migrations (`drizzle/`) behind the `ProductRepository` interface (`src/db/repository.ts`).
-- **Why:** Provides strongly-typed relational queries, repeatable versioned SQL migrations, and real ACID transactions (`db.transaction()`) locally without requiring Docker, while keeping tests fast via `:memory:` databases.
-- **Trade-off:** Adds a native SQLite driver (`better-sqlite3`, configured in `pnpm.onlyBuiltDependencies`), and SQLite is single-node. Mitigated by isolating all Drizzle/SQLite code behind `ProductRepository` so cloud deployment swaps cleanly to Drizzle + managed PostgreSQL/Aurora.
+## ADR-001: Drizzle ORM and SQLite behind a repository boundary
 
-## ADR-002: Deterministic Offline Public CDR Snapshots (No Runtime Outbound HTTP)
-- **Decision:** Bundle 41 real Australian banks' public CDR snapshots (`sample-data/snapshots/v1/`) plus `v2` rate-change deltas for 100% deterministic offline ingestion—intentionally removing runtime outbound HTTP calls.
-- **Why:** Guarantees zero-credential, repeatable local/CI verification with zero SSRF or external-availability flakiness while exercising real Australian Open Banking schemas (including Westpac's `x-v: 7` detail endpoint).
-- **Trade-off:** Snapshots are point-in-time; in production, a separate scheduled ingestion worker would fetch upstream CDR endpoints and write snapshots into the same `ProductRepository` boundary.
+Use Drizzle ORM, `better-sqlite3`, and `drizzle-kit` SQL migrations behind a plain repository interface implemented as a factory function.
 
-## ADR-003: Compliance-Safe `MANUAL_REVIEW_REQUIRED` Abstain + Malformed Quarantine
-- **Decision:** Never drop malformed products silently and never display unverified/incomplete headline rates as `READY`. Quarantine schema failures into `quarantined_products` and flag products missing `comparisonRate` or with out-of-bounds/suspicious spreads as `MANUAL_REVIEW_REQUIRED`.
-- **Why:** In regulated Australian lending, silent partial ingestion or displaying a headline rate without a comparison rate is a compliance/trust failure. Explicit abstain + auditability keeps humans in control.
+This provides typed relational queries, versioned migrations, and real ACID transactions locally without requiring Docker, while in-memory databases keep tests fast. The trade-off is a native SQLite driver and single-node write concurrency; isolating persistence behind the repository boundary makes swapping to Drizzle on managed PostgreSQL straightforward in cloud.
 
-## ADR-004: Lean Toolchain (`pnpm`, `oxlint`, `oxfmt`, Vanilla HTML UI) & Intentional Non-Goals
-- **Decision:** Use `pnpm` + `oxlint` + `oxfmt` + Hono + Zod + a single-file HTML/JS UI rather than a heavy multi-package monorepo or runtime LLM layer.
-- **Why:** Fits the 3-hour timebox with sub-second lint/format/test feedback and minimal supply-chain surface (only 3 runtime dependencies: `hono`, `@hono/node-server`, `zod`).
-- **Intentionally Not Built:** Authenticated CDR consumer consent (mTLS/OAuth), non-mortgage product categories, RBAC/auth, and runtime AI/LLM inference (per brief, product AI is optional and would add key/non-determinism overhead).
+## ADR-002: Offline public CDR snapshots instead of runtime outbound HTTP
+
+Bundle 41 real Australian banks' public CDR snapshots plus rate-change deltas for offline ingestion, and omit runtime outbound HTTP calls.
+
+This keeps local runs and CI deterministic with zero credentials, zero SSRF surface, and no flakiness when external bank endpoints throttle or change versions, while still exercising real CDR payloads. In production, a separate scheduled worker would fetch upstream feeds into the same repository boundary.
+
+## ADR-003: Explicit manual-review abstain and quarantine
+
+Never drop malformed products silently and never mark incomplete mortgage disclosures as ready. Schema failures are quarantined, and products missing a comparison rate or with out-of-bounds/diverging rates are flagged for manual review with explicit reasons.
+
+In Australian lending, showing a headline rate without a valid comparison rate is a compliance and trust risk. Keeping humans in the loop via an explicit abstain state is safer than guessing.
+
+## ADR-004: Strict functional lint rules and a lightweight UI
+
+Enforce no comments, no `let`/`var`, no mutating array methods, and no classes via custom `oxlint` rules alongside `oxfmt`, and serve a single-file HTML/JS UI rather than a separate frontend build pipeline.
+
+This keeps lint, format, and test feedback under a second, nudges the codebase toward readable immutable functions, and avoids spending the timebox on frontend bundler setup. Authenticated CDR consent, non-mortgage products, RBAC, and runtime LLM inference were intentionally left out of scope.

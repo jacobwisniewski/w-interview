@@ -1,30 +1,33 @@
-# Operate — Runbook, Observability, Failure Modes, and Cloud Promotion
+# Operate
 
-## Running Locally
+## Running locally
+
 ```bash
 pnpm install
-pnpm dev              # http://localhost:3000 (auto-seeds v1 snapshot into ./data/cdr-monitor.db)
-pnpm run sync -- --version=v2     # ingest v2 delta snapshot via CLI
-pnpm run verify       # full CI + live server smoke check
+pnpm dev
+pnpm run sync -- --version=v2
+pnpm run verify
 ```
 
-## Configuration & Secrets
-- Validated fail-fast at startup by `src/config.ts` (invalid port/timeout exits immediately with a clear error).
-- See `.env.example` for supported variables: `PORT`, `DB_PATH`, `LOG_LEVEL`.
-- **Secrets approach:** Zero secrets required locally. In a cloud environment, DB credentials or future authenticated CDR mTLS certificates would be injected via AWS Secrets Manager / Azure Key Vault and rotated without baking into images.
+## Configuration and secrets
 
-## Logs & Health Status
-- **Structured JSON logs** (`src/logger.ts`) emitted to stdout with `timestamp`, `level`, `msg`, `requestId`, `method`, `path`, `status`, `durationMs`, and `bankSlug`.
-- **`GET /health`** returns `status: "ok" | "degraded"`, `bankCount`, `degradedCount`, and per-bank `lastSyncedAt`, `cdrVersion`, `validProductCount`, `quarantinedCount`, and `lastError`.
+Environment variables (`PORT`, `DB_PATH`, `LOG_LEVEL`) are validated at startup with Zod so invalid config fails immediately. No secrets are required locally; in cloud, database credentials or future authenticated CDR certificates would come from a managed secret store at runtime rather than container images.
 
-## Known Failure Modes & Degrade / Rollback Thinking
-1. **Upstream CDR `406 UnsupportedVersion` or `5xx` / timeout:** `syncLiveBanks` negotiates `x-v` (`7 -> 3`) on `406` and aborts after `CDR_TIMEOUT_MS`. If still failing, `recordDegradedSync` marks `bank_status.degraded = 1` while **preserving `last_good_sync_run_id`**, so API/UI consumers keep reading the last verified snapshot cleanly.
-2. **Malformed CDR payload from a bank:** Isolated per-product into `quarantined_products` with Zod error details; valid sibling products still commit.
-3. **Mid-batch DB failure:** Wrapped in SQLite `BEGIN IMMEDIATE ... COMMIT` with automatic `ROLLBACK`, preventing half-updated rates.
-4. **Bad release / rollback:** Because schema migrations are additive and each sync creates an immutable `sync_run_id`, rolling back a container image or reverting a bad snapshot only requires repointing `last_good_sync_run_id` (or re-ingesting the prior verified snapshot).
+## Logs and health
 
-## Local-to-Cloud Promotion
-1. Merge PR after `verify` passes on GitHub Actions.
-2. Build immutable multi-stage Node 24 container image, run SAST + image scan, push to private registry.
-3. Deploy to Staging with `DB_PATH` replaced by managed Aurora PostgreSQL, run smoke + synthetic CDR replay.
-4. Promote to Production via blue/green or canary deployment gated on `/health` and 5xx/latency alarms.
+- Structured JSON logs go to stdout with timestamps, levels, request IDs, durations, and bank identifiers.
+- `GET /health` reports overall status (`ok` or `degraded`), bank counts, freshness timestamps, and any degraded bank errors.
+
+## Failure modes and rollback
+
+- Malformed CDR records are quarantined individually so valid products in the same batch still commit.
+- Mid-batch database errors roll back the entire snapshot transaction so half-updated rates are never served.
+- Degraded syncs record the error and mark the bank degraded while keeping the last verified snapshot live for readers.
+- Because migrations are additive and each sync creates a new run record, rolling back a bad release or snapshot only requires reverting the container image or re-ingesting the prior verified snapshot.
+
+## Local-to-cloud promotion
+
+1. Merge PR after CI passes on protected `main`.
+2. Build a multi-stage Node 24 container image, run SAST and image vulnerability scanning, and push to a private registry.
+3. Deploy to staging backed by managed PostgreSQL, run migrations, and verify with snapshot replay and smoke checks.
+4. Promote to production via canary or blue/green rollout gated on `/health` and error-rate alarms.

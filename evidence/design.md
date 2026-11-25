@@ -1,45 +1,36 @@
-# Design — AU Open Banking (CDR) Home Loan Rate & Change Monitor
+# Design
 
-## Architecture Overview
-```text
-+-------------------+       +------------------------+       +--------------------+
-| Public CDR APIs   |  OR   | Bundled CDR Snapshots  |       |  Web UI / Clients  |
-| (optional live)   |       | (sample-data/ default) |       | (public/index.html)|
-+---------+---------+       +-----------+------------+       +---------+----------+
-          |                             |                              |
-          +--------------+--------------+                              | HTTP/JSON
-                         v                                             v
-               +--------------------+                        +--------------------+
-               |  CDR Client/Loader |                        |  Hono HTTP Server  |
-               |  (x-v negotiation, |                        |  (/health, /api/*) |
-               |   allowlist,       |                        +---------+----------+
-               |   timeout/degrade) |                                  |
-               +---------+----------+                                  v
-                         v                                   +--------------------+
-               +--------------------+                        |  SQLite Repository |
-               |  Domain & Guardrails|<--------------------->|  (node:sqlite,     |
-               |  (Zod validation,  |                        |   BEGIN IMMEDIATE  |
-               |   normalisation,   |                        |   atomic txns)     |
-               |   abstain, diffs)  |                        +--------------------+
-               +--------------------+
+## Architecture
+
+The service is a small TypeScript/Node.js monolith separated into ingestion, pure domain logic, relational persistence, and an HTTP API with a lightweight web UI. Dependencies like the clock, logger, and repository are passed in explicitly rather than wired globally, and the codebase uses plain functions and immutable data instead of classes.
+
+```mermaid
+flowchart LR
+  Snapshots["Bundled CDR Snapshots (v1 / v2)"] --> Loader["Snapshot Loader"]
+  Loader --> Validation["Zod Boundary Validation"]
+  Validation -->|Invalid| Quarantine["Quarantined Payloads"]
+  Validation -->|Valid| Normalise["Normalisation & Guardrails"]
+  Normalise --> Repo["Repository (Drizzle + SQLite)"]
+  Quarantine --> Repo
+  Repo --> Api["Hono HTTP API"]
+  Api --> Ui["Comparison Web UI"]
 ```
 
-## Data Flow & Component Boundaries
-- **`src/config.ts`**: Fail-fast Zod validation of env vars (`PORT`, `DB_PATH`, `LOG_LEVEL`, `CDR_TIMEOUT_MS`, `ALLOW_LIVE_SYNC`).
-- **`src/logger.ts`**: Structured JSON logger with `requestId` / child context propagation.
-- **`src/cdr/schema.ts`**: Strict Zod schemas for CDR `BankingProductDetail` and snapshot envelopes.
-- **`src/domain/normalise.ts`**: Pure functions (zero I/O) parsing CDR decimal rates to percentage points, AUD fees to integer cents, selecting representative Owner-Occupied P&I rates, flagging `MANUAL_REVIEW_REQUIRED` on missing/out-of-bounds comparison rates, quarantining invalid payloads, and computing basis-point diffs.
-- **`src/db/repository.ts` & `src/db/sqlite-repository.ts`**: `ProductRepository` interface backed by Node's built-in `node:sqlite`. Every snapshot ingest runs inside `BEGIN IMMEDIATE ... COMMIT` (rolling back all writes on any error) and degraded syncs preserve `last_good_sync_run_id`.
-- **`src/cdr/live-client.ts`**: Allowlist-only live CDR fetcher negotiating `x-v` downward on HTTP `406` with `AbortSignal.timeout`.
-- **`src/server/app.ts`**: Hono REST API with Zod query/body validation, `X-Request-Id`, safe 500 error boundary, and static UI serving.
+## Data flow
 
-## Security & Privacy Considerations
-- **Public data only:** Strictly public CDR Product Reference Data; no PII or secrets.
-- **SSRF protection:** Live sync only accepts `bankSlug` values present in `sample-data/manifest.json` (never user-supplied URLs) and can be disabled with `ALLOW_LIVE_SYNC=false`.
-- **SQL & boundary safety:** Parameterised SQL queries only; all external JSON and HTTP params validated via Zod; internal stack traces are logged server-side and never returned to HTTP clients.
+1. The loader reads public CDR snapshot files and validates each product record at the boundary.
+2. Malformed records are quarantined with their validation errors while valid products continue.
+3. Valid mortgage products are normalised to a representative Owner-Occupied P&I rate, percentage points, and integer-cent fees. Products missing a comparison rate or with out-of-bounds/diverging rates are flagged for manual review instead of being treated as ready.
+4. Each snapshot commit runs inside a single database transaction covering the sync audit record, normalised products, quarantined payloads, and bank status so readers never see half-updated rates.
+5. The HTTP layer serves filtered product comparisons, product detail, quarantine records, basis-point diffs between snapshots, and health status.
 
-## Likely Production / Cloud Shape
-- **Compute:** Containerised Node.js service (ECS Fargate / AKS) behind an API Gateway + WAF with internal OIDC/mTLS auth.
-- **Database:** Managed PostgreSQL (Amazon Aurora Multi-AZ with KMS encryption) implementing `ProductRepository`.
-- **Ingestion:** Scheduled EventBridge/cron worker per bank with circuit breakers, DLQ alerting on quarantine spikes, and OpenTelemetry export.
-- **CI/CD:** GitHub Actions PR gate (`verify` check on protected `main`, already configured in `.github/workflows/ci.yml`) → container build/scan (SAST + Trivy) → staging replay against synthetic/public CDR fixtures → progressive production rollout with `/health`-gated rollback.
+## Security and privacy
+
+- Only public CDR Product Reference Data and synthetic fixtures are used—no PII, customer data, or secrets.
+- External JSON and query inputs are validated with Zod, and all database access uses parameterised Drizzle queries.
+- There are no outbound network requests at runtime.
+- Unexpected server errors are logged with a request ID and return a generic 500 response.
+
+## Cloud deployment shape
+
+In an enterprise cloud environment (AWS or Azure), this would run as a containerised Node service behind an API Gateway and WAF with internal OIDC or mTLS authentication. The SQLite repository would be swapped for Drizzle on managed PostgreSQL (such as Aurora Multi-AZ with KMS encryption) behind the same repository interface. A separate scheduled worker would pull upstream CDR feeds with circuit breakers and alerting on quarantine spikes, while CI/CD promotes immutable container builds through staging soak tests into production with health-gated rollbacks.
