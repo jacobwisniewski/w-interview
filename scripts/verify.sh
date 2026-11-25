@@ -18,7 +18,7 @@ pnpm run build
 
 echo "==> 6/6 End-to-end live server smoke test (offline clean DB)"
 TMP_DB="$(mktemp -t cdr-smoke-XXXXXX.db)"
-PORT=3499 DB_PATH="$TMP_DB" LOG_LEVEL=warn ALLOW_LIVE_SYNC=false node dist/index.js &
+PORT=3499 DB_PATH="$TMP_DB" LOG_LEVEL=warn node dist/index.js &
 SERVER_PID=$!
 cleanup() {
   kill "$SERVER_PID" 2>/dev/null || true

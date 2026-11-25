@@ -4,13 +4,13 @@
 ```bash
 pnpm install
 pnpm dev              # http://localhost:3000 (auto-seeds v1 snapshot into ./data/cdr-monitor.db)
-pnpm run sync:live -- --bank=up   # optional live sync for one allowlisted bank
+pnpm run sync -- --version=v2     # ingest v2 delta snapshot via CLI
 pnpm run verify       # full CI + live server smoke check
 ```
 
 ## Configuration & Secrets
 - Validated fail-fast at startup by `src/config.ts` (invalid port/timeout exits immediately with a clear error).
-- See `.env.example` for supported variables: `PORT`, `DB_PATH`, `LOG_LEVEL`, `CDR_TIMEOUT_MS`, `ALLOW_LIVE_SYNC`.
+- See `.env.example` for supported variables: `PORT`, `DB_PATH`, `LOG_LEVEL`.
 - **Secrets approach:** Zero secrets required locally. In a cloud environment, DB credentials or future authenticated CDR mTLS certificates would be injected via AWS Secrets Manager / Azure Key Vault and rotated without baking into images.
 
 ## Logs & Health Status

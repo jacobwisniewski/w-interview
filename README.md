@@ -4,6 +4,8 @@ A locally runnable vertical slice that ingests, validates, normalises, and compa
 
 > **Indicative reference only:** Uses public unauthenticated CDR Product Reference Data plus synthetic edge-case fixtures. No private credentials, paid API keys, customer PII, or confidential data are used.
 
+![AU Open Banking (CDR) Home Loan Monitor UI](docs/ui-preview.png)
+
 ---
 
 ## Prerequisites
@@ -26,16 +28,16 @@ Regenerate migrations after schema changes:
 pnpm run db:generate
 ```
 
-Optional live sync against public allowlisted CDR endpoints:
+Run snapshot ingestion via CLI:
 ```bash
-pnpm run sync:live -- --bank=up
+pnpm run sync -- --version=v2
 ```
 
 ## Run All Verification Checks (CI Equivalent)
 ```bash
 pnpm run verify
 ```
-Runs `typecheck`, `oxlint` (including custom `local/no-comments`, `local/no-let`, and `local/no-array-mutation` rules), `oxfmt --check`, `vitest` (23 BDD tests across 8 files), `tsc` build, and an end-to-end smoke test booting `dist/index.js` against an ephemeral SQLite DB.
+Runs `typecheck`, `oxlint` (100 rules including custom `local/no-comments`, `local/no-let`, `local/no-array-mutation`, and `local/no-classes`), `oxfmt --check`, `vitest` (37 BDD tests across 8 colocated files), `tsc` build, and an end-to-end smoke test booting `dist/index.js` against an ephemeral SQLite DB.
 
 ## Example Workflow (API)
 ```bash

@@ -5,10 +5,10 @@
 - **Why:** Provides strongly-typed relational queries, repeatable versioned SQL migrations, and real ACID transactions (`db.transaction()`) locally without requiring Docker, while keeping tests fast via `:memory:` databases.
 - **Trade-off:** Adds a native SQLite driver (`better-sqlite3`, configured in `pnpm.onlyBuiltDependencies`), and SQLite is single-node. Mitigated by isolating all Drizzle/SQLite code behind `ProductRepository` so cloud deployment swaps cleanly to Drizzle + managed PostgreSQL/Aurora.
 
-## ADR-002: Bundled Public CDR Snapshots as Default + Allowlisted Optional Live Sync
-- **Decision:** Bundle 41 real Australian banks' public CDR snapshots (`sample-data/snapshots/v1/`) for default boot and CI, with optional live sync constrained to `sample-data/manifest.json`.
-- **Why:** Satisfies zero-credential, offline deterministic verification while exercising real Australian Open Banking schemas (including Westpac's `x-v: 7` detail endpoint) and eliminating SSRF risk from arbitrary URLs.
-- **Trade-off:** Bundled snapshots become stale over time; mitigated by exposing `lastSyncedAt` in `/health` and supporting `pnpm run sync:live`.
+## ADR-002: Deterministic Offline Public CDR Snapshots (No Runtime Outbound HTTP)
+- **Decision:** Bundle 41 real Australian banks' public CDR snapshots (`sample-data/snapshots/v1/`) plus `v2` rate-change deltas for 100% deterministic offline ingestion—intentionally removing runtime outbound HTTP calls.
+- **Why:** Guarantees zero-credential, repeatable local/CI verification with zero SSRF or external-availability flakiness while exercising real Australian Open Banking schemas (including Westpac's `x-v: 7` detail endpoint).
+- **Trade-off:** Snapshots are point-in-time; in production, a separate scheduled ingestion worker would fetch upstream CDR endpoints and write snapshots into the same `ProductRepository` boundary.
 
 ## ADR-003: Compliance-Safe `MANUAL_REVIEW_REQUIRED` Abstain + Malformed Quarantine
 - **Decision:** Never drop malformed products silently and never display unverified/incomplete headline rates as `READY`. Quarantine schema failures into `quarantined_products` and flag products missing `comparisonRate` or with out-of-bounds/suspicious spreads as `MANUAL_REVIEW_REQUIRED`.
