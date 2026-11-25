@@ -26,4 +26,4 @@ Rather than generating a monolithic commit, work was decomposed into 5 focused, 
 
 ## Review & Verification Approach
 - Every PR was gated by both local checks (`typecheck`, `oxlint`, `oxfmt --check`, `vitest`, `tsc` build) and GitHub Actions `verify`.
-- All 41 real bank JSON snapshots were exercised end-to-end by `__tests__/normalise.test.ts` and `__tests__/api.test.ts` to prove the Zod schemas handle real-world CDR quirks (nullable fields, missing descriptions, varied fee/rate structures) without false quarantines.
+- All 41 real bank JSON snapshots were exercised end-to-end by `src/domain/__tests__/normalise.test.ts` and `src/server/__tests__/api.test.ts` to prove the Zod schemas handle real-world CDR quirks (nullable fields, missing descriptions, varied fee/rate structures) without false quarantines.
