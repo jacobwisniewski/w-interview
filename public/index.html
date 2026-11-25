@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AU CDR Home Loan Monitor</title>
+    <style>
+      :root {
+        --gel-red: #da1710;
+        --gel-red-hover: #b8130d;
+        --gel-bg: #f3f4f6;
+        --gel-surface: #ffffff;
+        --gel-surface-subtle: #f9fafb;
+        --gel-border: #e2e4e8;
+        --gel-border-strong: #c7cbd1;
+        --gel-ink: #181b25;
+        --gel-ink-soft: #4b505c;
+        --gel-muted: #686d78;
+        --gel-ok-bg: #edf7ed;
+        --gel-ok-ink: #1b5e20;
+        --gel-warn-bg: #fff4e5;
+        --gel-warn-ink: #8a4b00;
+        --gel-bad-bg: #fdecea;
+        --gel-bad-ink: #b42318;
+        --gel-radius: 6px;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background: var(--gel-bg);
+        color: var(--gel-ink);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      .site-header {
+        background: var(--gel-surface);
+        border-top: 4px solid var(--gel-red);
+        border-bottom: 1px solid var(--gel-border);
+        padding: 20px 24px;
+      }
+      .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 1.55rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: var(--gel-ink);
+        line-height: 1.25;
+      }
+      .sub {
+        color: var(--gel-muted);
+        font-size: 0.88rem;
+        margin-top: 3px;
+      }
+      button {
+        font-family: inherit;
+        font-size: 0.84rem;
+        font-weight: 600;
+        border-radius: var(--gel-radius);
+        padding: 9px 14px;
+        cursor: pointer;
+        transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+      }
+      .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 24px 48px;
+      }
+      .notice {
+        background: var(--gel-surface);
+        border: 1px solid var(--gel-border);
+        border-left: 3px solid var(--gel-ink);
+        border-radius: var(--gel-radius);
+        padding: 11px 16px;
+        font-size: 0.84rem;
+        color: var(--gel-ink-soft);
+        margin-bottom: 16px;
+      }
+      .notice strong { color: var(--gel-ink); }
+      .notice code {
+        background: var(--gel-bg);
+        padding: 1px 5px;
+        border-radius: 3px;
+        color: var(--gel-ink);
+        font-size: 0.8rem;
+      }
+      #toast {
+        font-size: 0.83rem;
+        color: var(--gel-ink-soft);
+        min-height: 1.2em;
+        margin-bottom: 10px;
+      }
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .kpi {
+        background: var(--gel-surface);
+        border: 1px solid var(--gel-border);
+        border-radius: var(--gel-radius);
+        padding: 14px 16px;
+      }
+      .kpi-label {
+        color: var(--gel-muted);
+        font-size: 0.74rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .kpi-val {
+        font-size: 1.55rem;
+        font-weight: 700;
+        color: var(--gel-ink);
+        margin-top: 4px;
+        font-variant-numeric: tabular-nums;
+      }
+      .tabs {
+        display: flex;
+        gap: 4px;
+        border-bottom: 1px solid var(--gel-border);
+        margin-bottom: 16px;
+      }
+      .tab {
+        background: transparent;
+        border: none;
+        border-bottom: 3px solid transparent;
+        border-radius: 0;
+        padding: 10px 16px;
+        color: var(--gel-muted);
+        font-weight: 600;
+      }
+      .tab:hover { color: var(--gel-ink); }
+      .tab.active {
+        color: var(--gel-ink);
+        border-bottom-color: var(--gel-red);
+      }
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 14px;
+        align-items: center;
+      }
+      input[type="search"], select {
+        background: var(--gel-surface);
+        color: var(--gel-ink);
+        border: 1px solid var(--gel-border-strong);
+        border-radius: var(--gel-radius);
+        padding: 8px 11px;
+        font-size: 0.85rem;
+        font-family: inherit;
+      }
+      input[type="search"]:focus, select:focus {
+        outline: 2px solid var(--gel-red);
+        outline-offset: 1px;
+      }
+      label.chk {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.85rem;
+        color: var(--gel-ink-soft);
+        cursor: pointer;
+      }
+      input[type="checkbox"] { accent-color: var(--gel-red); }
+      .card {
+        background: var(--gel-surface);
+        border: 1px solid var(--gel-border);
+        border-radius: var(--gel-radius);
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.86rem;
+      }
+      th, td {
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--gel-border);
+        text-align: left;
+        vertical-align: top;
+      }
+      thead th {
+        background: var(--gel-surface-subtle);
+        color: var(--gel-muted);
+        font-weight: 600;
+        font-size: 0.74rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      tbody tr:hover { background: var(--gel-surface-subtle); }
+      tbody tr:last-child td { border-bottom: none; }
+      .badge {
+        display: inline-block;
+        padding: 2px 9px;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+      .b-ok { background: var(--gel-ok-bg); color: var(--gel-ok-ink); }
+      .b-warn { background: var(--gel-warn-bg); color: var(--gel-warn-ink); }
+      .b-bad { background: var(--gel-bad-bg); color: var(--gel-bad-ink); }
+      .num { font-variant-numeric: tabular-nums; }
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.8rem;
+        color: var(--gel-ink-soft);
+      }
+      .muted { color: var(--gel-muted); font-size: 0.8rem; }
+      a.prod-link {
+        color: var(--gel-ink);
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid var(--gel-border-strong);
+      }
+      a.prod-link:hover {
+        color: var(--gel-red);
+        border-bottom-color: var(--gel-red);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <div>
+          <h1>Home Loan Rate &amp; Change Monitor</h1>
+          <div class="sub">Normalised residential mortgage rates, disclosure guardrails, quarantine audit, and snapshot diffs</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="notice">
+        <strong>Indicative market reference only:</strong> Built from public Australian CDR Product Reference Data plus synthetic edge-case fixtures. Not credit advice or a lending decision. Products lacking a valid comparison rate are flagged <code>MANUAL_REVIEW_REQUIRED</code>.
+      </div>
+
+      <section class="kpis">
+        <div class="kpi"><div class="kpi-label">Service health</div><div class="kpi-val" id="k-health">...</div></div>
+        <div class="kpi"><div class="kpi-label">Banks monitored</div><div class="kpi-val" id="k-banks">-</div></div>
+        <div class="kpi"><div class="kpi-label">Ready products</div><div class="kpi-val" id="k-ready">-</div></div>
+        <div class="kpi"><div class="kpi-label">Manual review</div><div class="kpi-val" id="k-manual">-</div></div>
+        <div class="kpi"><div class="kpi-label">Quarantined</div><div class="kpi-val" id="k-quarantine">-</div></div>
+      </section>
+
+      <nav class="tabs">
+        <button class="tab active" data-tab="products" onclick="switchTab('products')">Products</button>
+        <button class="tab" data-tab="changes" onclick="switchTab('changes')">Rate changes</button>
+        <button class="tab" data-tab="quarantine" onclick="switchTab('quarantine')">Quarantine audit</button>
+        <button class="tab" data-tab="health" onclick="switchTab('health')">Bank health</button>
+      </nav>
+
+      <section id="panel-products">
+        <div class="filters">
+          <input id="f-search" type="search" placeholder="Search bank or loan..." oninput="loadProducts()" />
+          <select id="f-rateType" onchange="loadProducts()">
+            <option value="">All rate types</option>
+            <option value="VARIABLE">Variable</option>
+            <option value="FIXED">Fixed</option>
+          </select>
+          <select id="f-status" onchange="loadProducts()">
+            <option value="">All review statuses</option>
+            <option value="READY">READY</option>
+            <option value="MANUAL_REVIEW_REQUIRED">MANUAL_REVIEW_REQUIRED</option>
+          </select>
+          <label class="chk"><input id="f-offset" type="checkbox" onchange="loadProducts()" /> Offset only</label>
+          <label class="chk"><input id="f-redraw" type="checkbox" onchange="loadProducts()" /> Redraw only</label>
+        </div>
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Bank</th>
+                <th>Product</th>
+                <th>Type</th>
+                <th>Headline</th>
+                <th>Comparison</th>
+                <th>Annual fee</th>
+                <th>Features</th>
+                <th>Guardrail</th>
+              </tr>
+            </thead>
+            <tbody id="tb-products"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="panel-changes" style="display:none">
+        <div class="card">
+          <table>
+            <thead>
+              <tr><th>Bank</th><th>Product</th><th>Headline</th><th>Delta (bps)</th><th>Comparison</th><th>Delta (bps)</th></tr>
+            </thead>
+            <tbody id="tb-changes"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="panel-quarantine" style="display:none">
+        <div class="card">
+          <table>
+            <thead>
+              <tr><th>Bank</th><th>Product ID</th><th>Validation error</th><th>Recorded at</th></tr>
+            </thead>
+            <tbody id="tb-quarantine"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="panel-health" style="display:none">
+        <div class="card">
+          <table>
+            <thead>
+              <tr><th>Bank</th><th>CDR version</th><th>Status</th><th>Valid</th><th>Quarantined</th><th>Last synced / error</th></tr>
+            </thead>
+            <tbody id="tb-health"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const fmtPct = (v) => (v == null ? "—" : `${Number(v).toFixed(2)}%`);
+      const fmtAud = (c) => `$${(c / 100).toFixed(0)}`;
+      const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m]));
+
+      function switchTab(name) {
+        for (const t of document.querySelectorAll(".tab")) t.classList.toggle("active", t.dataset.tab === name);
+        for (const p of ["products", "changes", "quarantine", "health"]) {
+          document.getElementById(`panel-${p}`).style.display = p === name ? "block" : "none";
+        }
+      }
+
+      async function loadProducts() {
+        const params = new URLSearchParams();
+        const search = document.getElementById("f-search").value.trim();
+        const rateType = document.getElementById("f-rateType").value;
+        const reviewStatus = document.getElementById("f-status").value;
+        if (search) params.set("search", search);
+        if (rateType) params.set("rateType", rateType);
+        if (reviewStatus) params.set("reviewStatus", reviewStatus);
+        if (document.getElementById("f-offset").checked) params.set("hasOffset", "true");
+        if (document.getElementById("f-redraw").checked) params.set("hasRedraw", "true");
+
+        const res = await fetch(`/api/products?${params.toString()}`);
+        const data = await res.json();
+        document.getElementById("k-ready").textContent = data.readyCount;
+        document.getElementById("k-manual").textContent = data.manualReviewCount;
+
+        const rows = data.products.map((p) => {
+          const link = p.overviewUri ? `<a class="prod-link" href="${esc(p.overviewUri)}" target="_blank" rel="noreferrer">${esc(p.name)}</a>` : esc(p.name);
+          const feats = [p.hasOffset ? "Offset" : null, p.hasRedraw ? "Redraw" : null].filter(Boolean).join(", ") || "—";
+          const badge = p.reviewStatus === "READY"
+            ? `<span class="badge b-ok">READY</span>`
+            : `<span class="badge b-warn">MANUAL REVIEW</span><div class="muted">${esc(p.reviewReasons.join(", "))}</div>`;
+          return `<tr>
+            <td><strong>${esc(p.bankName)}</strong></td>
+            <td>${link}</td>
+            <td class="mono">${esc(p.rateType)}</td>
+            <td class="num">${fmtPct(p.headlineRatePct)}</td>
+            <td class="num"><strong>${fmtPct(p.comparisonRatePct)}</strong></td>
+            <td class="num">${fmtAud(p.annualFeeCents)}</td>
+            <td>${feats}</td>
+            <td>${badge}</td>
+          </tr>`;
+        });
+        document.getElementById("tb-products").innerHTML = rows.join("") || `<tr><td colspan="8" class="muted">No matching products.</td></tr>`;
+      }
+
+      async function loadAll() {
+        const [health, changes, quarantine] = await Promise.all([
+          fetch("/health").then((r) => r.json()),
+          fetch("/api/changes").then((r) => r.json()),
+          fetch("/api/quarantine").then((r) => r.json()),
+        ]);
+
+        const healthEl = document.getElementById("k-health");
+        healthEl.innerHTML = health.status === "ok"
+          ? `<span class="badge b-ok">OK</span>`
+          : `<span class="badge b-warn">DEGRADED (${health.degradedCount})</span>`;
+        document.getElementById("k-banks").textContent = health.bankCount;
+        document.getElementById("k-quarantine").textContent = quarantine.total;
+
+        document.getElementById("tb-changes").innerHTML =
+          changes.changes.map((c) => {
+            const cls = (c.headlineDeltaBps ?? 0) > 0 ? "b-bad" : "b-ok";
+            const sign = (n) => (n == null ? "—" : `${n > 0 ? "+" : ""}${n} bps`);
+            return `<tr>
+              <td><strong>${esc(c.bankName)}</strong></td>
+              <td>${esc(c.productName)}</td>
+              <td class="num">${fmtPct(c.previousHeadlinePct)} → ${fmtPct(c.currentHeadlinePct)}</td>
+              <td><span class="badge ${cls}">${sign(c.headlineDeltaBps)}</span></td>
+              <td class="num">${fmtPct(c.previousComparisonPct)} → ${fmtPct(c.currentComparisonPct)}</td>
+              <td><span class="badge ${cls}">${sign(c.comparisonDeltaBps)}</span></td>
+            </tr>`;
+          }).join("") || `<tr><td colspan="6" class="muted">No rate changes recorded yet. Ingest a newer snapshot via CLI or API to compare rates.</td></tr>`;
+
+        document.getElementById("tb-quarantine").innerHTML =
+          quarantine.records.map((q) => `<tr>
+            <td><strong>${esc(q.bankSlug)}</strong></td>
+            <td class="mono">${esc(q.productId ?? "unknown")}</td>
+            <td class="mono">${esc(q.reason)}</td>
+            <td class="muted">${esc(q.recordedAt)}</td>
+          </tr>`).join("") || `<tr><td colspan="4" class="muted">No quarantined payloads.</td></tr>`;
+
+        document.getElementById("tb-health").innerHTML =
+          health.banks.map((b) => `<tr>
+            <td><strong>${esc(b.bankName)}</strong></td>
+            <td class="mono">x-v: ${esc(b.cdrVersion)}</td>
+            <td>${b.degraded ? `<span class="badge b-warn">DEGRADED</span>` : `<span class="badge b-ok">OK</span>`}</td>
+            <td class="num">${b.validProductCount}</td>
+            <td class="num">${b.quarantinedCount}</td>
+            <td class="muted">${esc(b.lastError ?? b.lastSyncedAt)}</td>
+          </tr>`).join("");
+
+        await loadProducts();
+      }
+
+      loadAll();
+    </script>
+  </body>
+</html>
