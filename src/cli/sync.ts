@@ -2,13 +2,13 @@ import { join } from "node:path";
 import { syncLiveBanks } from "../cdr/live-client.js";
 import { ingestSnapshotDirectory } from "../cdr/loader.js";
 import { loadConfig } from "../config.js";
-import { SqliteProductRepository } from "../db/sqlite-repository.js";
+import { createSqliteProductRepository } from "../db/sqlite-repository.js";
 import { createLogger } from "../logger.js";
 
 async function main() {
   const config = loadConfig();
   const logger = createLogger(config.logLevel, { service: "cdr-sync-cli" });
-  const repo = new SqliteProductRepository(config.dbPath);
+  const repo = createSqliteProductRepository(config.dbPath);
 
   const isLive = process.argv.includes("--live");
   const versionArg = process.argv.find((a) => a.startsWith("--version="))?.split("=")[1] ?? "v1";
