@@ -11,9 +11,9 @@ pnpm run verify
 - Typecheck (`tsc --noEmit` in strict mode): passed.
 - Lint (`oxlint`, 100 rules including custom rules banning comments, `let`/`var`, array mutations, and classes): passed with 0 warnings and 0 errors.
 - Format (`oxfmt --check`): passed.
-- Tests (`vitest`, 8 colocated BDD files, 37 tests): passed (37/37), covering config validation, rate and fee parsing, disclosure guardrails, basis-point diffs, 41-bank CDR normalisation, quarantine, Drizzle migrations and transaction rollback, degraded-sync preservation, snapshot loading, and HTTP routes.
+- Tests (`vitest`, 8 colocated BDD files, 36 tests): passed (36/36), covering config validation, rate and fee parsing, disclosure guardrails, basis-point diffs, 41-bank CDR normalisation, quarantine, Drizzle migrations and transaction rollback, degraded-sync preservation, snapshot loading, and HTTP routes.
 - Build (`tsc`): passed.
-- Live smoke test: boots the compiled server on an ephemeral port with a temporary SQLite database and verifies `/health`, Westpac product queries, quarantine audit, `v2` rate diffs, and degraded-mode handling. Passed.
+- Live smoke test: boots the compiled server on an ephemeral port with a temporary SQLite database and verifies `/health`, Westpac product queries, quarantine audit, rate changes endpoint, and degraded-mode handling. Passed.
 
 ## Local, PR, and pipeline split
 

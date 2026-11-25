@@ -10,15 +10,24 @@ function readSnapshot(relPath: string) {
 }
 
 describe("Snapshot Rate Change Diffing", () => {
-  describe("GIVEN consecutive v1 and v2 snapshots where Up Bank raised rates by 15 bps", () => {
+  describe("GIVEN consecutive snapshots where Up Bank raised rates by 15 bps", () => {
     it("THEN a +15 bps headline and comparison rate change is detected", () => {
-      const v1 = readSnapshot("sample-data/snapshots/v1/up.json");
-      const v2 = readSnapshot("sample-data/snapshots/v2/up.json");
+      const baseline = readSnapshot("sample-data/snapshots/v1/up.json");
+      const previous = validateAndNormaliseBatch(
+        baseline.bankSlug,
+        baseline.bankName,
+        baseline.products,
+      ).valid;
+      const updated = previous.map((product) => ({
+        ...product,
+        headlineRatePct: Number((product.headlineRatePct + 0.15).toFixed(4)),
+        comparisonRatePct:
+          product.comparisonRatePct === null
+            ? null
+            : Number((product.comparisonRatePct + 0.15).toFixed(4)),
+      }));
 
-      const diffs = computeRateDiffs(
-        validateAndNormaliseBatch(v1.bankSlug, v1.bankName, v1.products).valid,
-        validateAndNormaliseBatch(v2.bankSlug, v2.bankName, v2.products).valid,
-      );
+      const diffs = computeRateDiffs(previous, updated);
 
       expect(diffs).toHaveLength(1);
       expect(diffs[0]?.headlineDeltaBps).toBe(15);

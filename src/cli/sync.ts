@@ -8,11 +8,10 @@ function main() {
   const config = loadConfig();
   const logger = createLogger(config.logLevel, { service: "cdr-sync-cli" });
   const repo = createSqliteProductRepository(config.dbPath);
-  const versionArg = process.argv.find((a) => a.startsWith("--version="))?.split("=")[1] ?? "v1";
 
   try {
-    const dir = join(process.cwd(), "sample-data/snapshots", versionArg);
-    const summary = ingestSnapshotDirectory(repo, logger, dir, versionArg);
+    const dir = join(process.cwd(), "sample-data/snapshots/v1");
+    const summary = ingestSnapshotDirectory(repo, logger, dir);
     console.log(JSON.stringify(summary, null, 2));
   } finally {
     repo.close();

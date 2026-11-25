@@ -1,4 +1,3 @@
-import { join } from "node:path";
 import { Hono } from "hono";
 import { z } from "zod";
 import { ingestSnapshotDirectory } from "../../cdr/loader.js";
@@ -9,7 +8,6 @@ import type { Clock } from "../../ports.js";
 const ingestRequestSchema = z.discriminatedUnion("mode", [
   z.object({
     mode: z.literal("snapshot"),
-    version: z.enum(["v1", "v2"]).default("v1"),
   }),
   z.object({
     mode: z.literal("simulate-degrade"),
@@ -22,7 +20,7 @@ export interface IngestRouteDependencies {
   readonly repo: ProductRepository;
   readonly logger: Logger;
   readonly clock: Clock;
-  readonly snapshotsRootDir: string;
+  readonly snapshotsDir: string;
 }
 
 async function safeReadJson(
@@ -57,8 +55,7 @@ export function createIngestRoutes(deps: IngestRouteDependencies): Hono {
 
     const payload = parsed.data;
     if (payload.mode === "snapshot") {
-      const dir = join(deps.snapshotsRootDir, payload.version);
-      const summary = ingestSnapshotDirectory(deps.repo, deps.logger, dir, payload.version);
+      const summary = ingestSnapshotDirectory(deps.repo, deps.logger, deps.snapshotsDir);
       return c.json({ summary });
     }
 

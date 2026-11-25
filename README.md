@@ -18,12 +18,12 @@ pnpm install
 pnpm dev
 ```
 
-Open http://localhost:3000. On first boot, the server runs Drizzle SQL migrations from `drizzle/` against `./data/cdr-monitor.db` and loads the bundled `sample-data/snapshots/v1/` snapshot.
+Open http://localhost:3000. On first boot, the server runs Drizzle SQL migrations from `drizzle/` against `./data/cdr-monitor.db` and loads the bundled CDR snapshots.
 
-To ingest another snapshot via CLI:
+To re-ingest the bundled snapshots via CLI:
 
 ```bash
-pnpm run sync -- --version=v2
+pnpm run sync
 ```
 
 ## Verification
@@ -32,14 +32,13 @@ pnpm run sync -- --version=v2
 pnpm run verify
 ```
 
-Runs `tsc --noEmit`, `oxlint` (100 rules including custom `local/no-comments`, `local/no-let`, `local/no-array-mutation`, and `local/no-classes`), `oxfmt --check`, 37 Vitest BDD tests across 8 colocated test files, `tsc` build, and a live smoke test against `dist/index.js` using a temporary SQLite database.
+Runs `tsc --noEmit`, `oxlint` (100 rules including custom `local/no-comments`, `local/no-let`, `local/no-array-mutation`, and `local/no-classes`), `oxfmt --check`, 36 Vitest BDD tests across 8 colocated test files, `tsc` build, and a live smoke test against `dist/index.js` using a temporary SQLite database.
 
 ## Example workflow
 
 ```bash
 curl -s "http://localhost:3000/api/products?bank=westpac" | jq '.products[] | {name, headlineRatePct, comparisonRatePct, reviewStatus}'
 curl -s "http://localhost:3000/api/quarantine" | jq '.records'
-curl -s -X POST -H "content-type: application/json" -d '{"mode":"snapshot","version":"v2"}' http://localhost:3000/api/ingest
 curl -s "http://localhost:3000/api/changes" | jq '.changes'
 curl -s -X POST -H "content-type: application/json" -d '{"mode":"simulate-degrade","bankSlug":"up"}' http://localhost:3000/api/ingest
 curl -s "http://localhost:3000/health" | jq '{status, degradedCount}'

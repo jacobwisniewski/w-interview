@@ -5,7 +5,7 @@
 ```bash
 pnpm install
 pnpm dev
-pnpm run sync -- --version=v2
+pnpm run sync
 pnpm run verify
 ```
 

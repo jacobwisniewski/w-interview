@@ -36,10 +36,7 @@ done
 curl -sf http://127.0.0.1:3499/health | grep -q '"status":"ok"'
 curl -sf "http://127.0.0.1:3499/api/products?bank=westpac" | grep -q '"bankSlug":"westpac"'
 curl -sf http://127.0.0.1:3499/api/quarantine | grep -q '"productId":"ex-malformed-record"'
-curl -sf -X POST -H "content-type: application/json" \
-  -d '{"mode":"snapshot","version":"v2"}' \
-  http://127.0.0.1:3499/api/ingest >/dev/null
-curl -sf http://127.0.0.1:3499/api/changes | grep -q '"headlineDeltaBps":15'
+curl -sf http://127.0.0.1:3499/api/changes | grep -q '"changes":\['
 curl -sf -X POST -H "content-type: application/json" \
   -d '{"mode":"simulate-degrade","bankSlug":"up"}' \
   http://127.0.0.1:3499/api/ingest >/dev/null

@@ -11,8 +11,8 @@ const logger = createLogger(config.logLevel, { service: "cdr-home-loan-monitor" 
 const repo = createSqliteProductRepository(config.dbPath);
 
 if (repo.listBankStatuses().length === 0) {
-  const v1Dir = join(process.cwd(), "sample-data/snapshots/v1");
-  ingestSnapshotDirectory(repo, logger, v1Dir, "v1");
+  const snapshotsDir = join(process.cwd(), "sample-data/snapshots/v1");
+  ingestSnapshotDirectory(repo, logger, snapshotsDir);
 }
 
 const app = createApp({ config, repo, logger });
