@@ -1,0 +1,3951 @@
+{
+  "bankSlug": "regional-australia-bank",
+  "bankName": "Regional Australia Bank",
+  "sourceUrl": "https://public-data.cdr.regaustbank.io/cds-au/v1/banking/products",
+  "cdrVersion": "6",
+  "capturedAt": "2026-11-25T10:25:00Z",
+  "products": [
+    {
+      "brand": "Regional Australia Bank",
+      "description": "Reduce interest charges on your variable rate home loan and pay your mortgage off sooner.",
+      "isTailored": false,
+      "lastUpdated": "2026-11-19T01:40:58.792297Z",
+      "name": "Regional Australia Bank Home Loan (Offset)",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "productId": "20f4e08a-09a1-418a-85ab-287ceefd191f",
+      "additionalInformation": {
+        "overviewUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+        "termsUri": "https://www.regionalaustraliabank.com.au/about-us/corporate-documents",
+        "eligibilityUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+        "feesAndPricingUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+        "bundleUri": null,
+        "additionalOverviewUris": [],
+        "additionalTermsUris": [],
+        "additionalEligibilityUris": [],
+        "additionalFeesAndPricingUris": [],
+        "additionalBundleUris": []
+      },
+      "applicationUri": "https://apply.regionalaustraliabank.com.au/cip/rab/p/community/mortgage/application.html",
+      "brandName": "Regional Australia Bank",
+      "cardArt": [],
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "bundles": [],
+      "constraints": [
+        {
+          "constraintType": "MIN_LIMIT",
+          "additionalInfo": "The Regional Australia Bank Home Loan is only available for borrowings with over $500 of new lending.",
+          "additionalInfoUri": null,
+          "additionalValue": "500.00"
+        },
+        {
+          "constraintType": "MAX_LVR",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "0.95"
+        }
+      ],
+      "depositRates": [],
+      "eligibility": [
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "Product is available to approved borrowers only. Terms, conditions, fees, charges and normal lending criteria apply.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "RESIDENCY_STATUS",
+          "additionalInfo": "Individuals must be citizens or permanent residents of Australia.",
+          "additionalInfoUri": null,
+          "additionalValue": "Australian Resident"
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "As a customer-owned bank, customers must also become a shareholder of Regional Australia Bank to be eligible to open an account.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "Minimum Deposit of 5% is required (with Lenders Mortgage Insurance)",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "MIN_AGE",
+          "additionalInfo": "Borrowers must be aged 16 or older to apply. Applicants under 18 years of age, but over 16 years, may only enter into a loan contract with an adult as co-applicant or guarantor.",
+          "additionalInfoUri": null,
+          "additionalValue": "18"
+        }
+      ],
+      "features": [
+        {
+          "featureType": "OTHER",
+          "additionalInfo": "split loans allowed",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "OFFSET",
+          "additionalInfo": "Up to 8 100% Offset accounts per variable loan account",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "RELATIONSHIP_MANAGEMENT",
+          "additionalInfo": "Dedicated Relationship Manager",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalInfo": "Weekly, Fortnightly or Monthly repayments",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "GUARANTOR",
+          "additionalInfo": "A Guarantor can be nominated to the loan during the origination process",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "EXTRA_REPAYMENTS",
+          "additionalInfo": "Allows advance payments at no additional cost",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "REDRAW",
+          "additionalInfo": "Minimum redraw amount is $500",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        }
+      ],
+      "fees": [
+        {
+          "feeType": "EVENT",
+          "name": "Late Payment Notice Fee",
+          "additionalInfo": "Applies when you fail to make your contracted repayments by the repayment due date.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "20.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Title Search",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to perform a title search relating to a property offered, or held, as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Loan Top Up Fee",
+          "additionalInfo": "A “top up” is additional borrowing against a property that we hold an existing mortgage over. This fee applies on approval of the additional borrowing.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "195.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Registration of Transfer",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to register a transfer of land relating to a property held as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Registration of Discharge of Mortgage",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to register a discharge of mortgage relating to a property held as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Loan Restructure Fee",
+          "additionalInfo": "Applies when you switch your existing Regional Australia Bank home loan to a different loan type, other than a Partnership Advantage.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "200.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Agency Settlement/Handing Fee",
+          "additionalInfo": " Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies in the event that we require an agent to attend a settlement or handle documentation, relating to your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EXIT",
+          "name": "Break Cost Fee",
+          "additionalInfo": "This fee applies when you want to payout the facility early. ",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Property Valuation Costs",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to value each property offered or held as security at the commencement of your loan, and when required throughout the life of your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "PEXA Processing Fee",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we process a settlement relating to your loan through PEXA.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Discharge of Mortgage Preparation",
+          "additionalInfo": "Applies when we are required to prepare discharge of mortgage documentation relating to a property held as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "395.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Approval Fee ",
+          "additionalInfo": "Applies when you get your loan approval for funding. ",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Settlement Fee",
+          "additionalInfo": "This fee applies when we process an incoming mortgage-secured settlement.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "225.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "PERIODIC",
+          "name": "Annual Fee ",
+          "additionalInfo": "Applies every year in the month in which your Regional Australia Bank Home Loan was first funded.",
+          "additionalInfoUri": null,
+          "additionalValue": "P1Y",
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "PERIODIC",
+          "name": "Monthly Service Fee ",
+          "additionalInfo": "The Monthly Service Fee is a flat monthly fee which entitles your Loan. ",
+          "additionalInfoUri": null,
+          "additionalValue": "P1M",
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Registration of Mortgage",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to register a mortgage relating to a property offered as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Default Notice Fee",
+          "additionalInfo": "Applies when you fail to make your contracted repayments and we are required to issue a default notice to you.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "30.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        }
+      ],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0665",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0668",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0765",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0768",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR More than 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.90",
+              "maximumValue": "0.95",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0685",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0665",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0685",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0688",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0695",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0698",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0754",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0757",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0675",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0678",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.066",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change. ",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0663",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 60% or less",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.07",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.068",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0695",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0698",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0685",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0688",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.069",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.067",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.079",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0771",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR More than 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.90",
+              "maximumValue": "0.95",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0754",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0757",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0723",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0726",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.068",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0683",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.068",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0683",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.0748",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": null,
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0728",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        }
+      ]
+    },
+    {
+      "brand": "Regional Australia Bank",
+      "description": "Our fixed-rate home loan is a great option if you'd prefer to lock in your home loan repayments and stay on top of your budgeting.",
+      "isTailored": false,
+      "lastUpdated": "2026-11-19T00:16:28.13011Z",
+      "name": "Regional Australia Bank Home Loan (Fixed Investor) ",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "productId": "bc944d2a-80d9-4f81-bbd5-aed6f87caa8c",
+      "additionalInformation": {
+        "overviewUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+        "termsUri": "https://www.regionalaustraliabank.com.au/about-us/corporate-documents",
+        "eligibilityUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+        "feesAndPricingUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+        "bundleUri": null,
+        "additionalOverviewUris": [],
+        "additionalTermsUris": [],
+        "additionalEligibilityUris": [],
+        "additionalFeesAndPricingUris": [],
+        "additionalBundleUris": []
+      },
+      "applicationUri": "https://apply.regionalaustraliabank.com.au/cip/rab/p/community/mortgage/application.html",
+      "brandName": "Regional Australia Bank",
+      "cardArt": [],
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "bundles": [],
+      "constraints": [
+        {
+          "constraintType": "MAX_LVR",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "0.90"
+        },
+        {
+          "constraintType": "MIN_LIMIT",
+          "additionalInfo": "The Regional Australia Bank Home Loan is only available for borrowings with over $500 of new lending.",
+          "additionalInfoUri": null,
+          "additionalValue": "500.00"
+        }
+      ],
+      "depositRates": [],
+      "eligibility": [
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "Product is available to approved borrowers only. Terms, conditions, fees, charges and normal lending criteria apply.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "RESIDENCY_STATUS",
+          "additionalInfo": "Individuals must be citizens or permanent residents of Australia.",
+          "additionalInfoUri": null,
+          "additionalValue": "Australian Resident"
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "As a customer-owned bank, customers must also become a shareholder of Regional Australia Bank to be eligible to open an account.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "Minimum Deposit of 5% is required (with Lenders Mortgage Insurance)",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "MIN_AGE",
+          "additionalInfo": "Borrowers must be aged 16 or older to apply. Applicants under 18 years of age, but over 16 years, may only enter into a loan contract with an adult as co-applicant or guarantor.",
+          "additionalInfoUri": null,
+          "additionalValue": "18"
+        }
+      ],
+      "features": [
+        {
+          "featureType": "RELATIONSHIP_MANAGEMENT",
+          "additionalInfo": "Dedicated Relationship Manager",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalInfo": "Ability to split your loan is available with this product",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalInfo": "No Approval, Monthly or Annual Fees.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalInfo": "A fixed interest rate provides you with certainty over your future repayments during the fixed period.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalInfo": "Weekly, Fortnightly or Monthly repayments available.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "GUARANTOR",
+          "additionalInfo": "A Guarantor can be nominated to the loan during the origination process",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        }
+      ],
+      "fees": [
+        {
+          "feeType": "EVENT",
+          "name": "Late Payment Notice Fee",
+          "additionalInfo": "Applies when you fail to make your contracted repayments by the repayment due date.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "20.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Title Search",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to perform a title search relating to a property offered, or held, as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Loan Top Up Fee",
+          "additionalInfo": "A “top up” is additional borrowing against a property that we hold an existing mortgage over. This fee applies on approval of the additional borrowing.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "195.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Registration of Transfer",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to register a transfer of land relating to a property held as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Registration of Discharge of Mortgage",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to register a discharge of mortgage relating to a property held as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Loan Restructure Fee",
+          "additionalInfo": "Applies when you switch your existing Regional Australia Bank home loan to a different loan type, other than a Partnership Advantage.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "200.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Agency Settlement/Handing Fee",
+          "additionalInfo": " Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies in the event that we require an agent to attend a settlement or handle documentation, relating to your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EXIT",
+          "name": "Break Cost Fee",
+          "additionalInfo": "This fee applies when you want to payout the facility early. ",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Property Valuation Costs",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to value each property offered or held as security at the commencement of your loan, and when required throughout the life of your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "PEXA Processing Fee",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we process a settlement relating to your loan through PEXA.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Discharge of Mortgage Preparation",
+          "additionalInfo": "Applies when we are required to prepare discharge of mortgage documentation relating to a property held as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "395.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Approval Fee ",
+          "additionalInfo": "Applies when you get your loan approval for funding. ",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Settlement Fee",
+          "additionalInfo": "This fee applies when we process an incoming mortgage-secured settlement.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "225.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "PERIODIC",
+          "name": "Annual Fee ",
+          "additionalInfo": "Applies every year in the month in which your Regional Australia Bank Home Loan was first funded.",
+          "additionalInfoUri": null,
+          "additionalValue": "P1Y",
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "PERIODIC",
+          "name": "Monthly Service Fee ",
+          "additionalInfo": "The Monthly Service Fee is a flat monthly fee which entitles your Loan. ",
+          "additionalInfoUri": null,
+          "additionalValue": "P1M",
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Registration of Mortgage",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to register a mortgage relating to a property offered as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Default Notice Fee",
+          "additionalInfo": "Applies when you fail to make your contracted repayments and we are required to issue a default notice to you.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "30.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        }
+      ],
+      "lendingRates": [
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0657",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0665",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0751",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0744",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0654",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0666",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0654",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0675",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0709",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0733",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0712",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0731",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0651",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.066",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0712",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.073",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0694",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0684",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0694",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0677",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0744",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.074",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0649",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0661",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0709",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0733",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0651",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.066",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0657",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0665",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0654",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0675",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0654",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0666",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0712",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.073",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0694",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0677",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0649",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0661",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0694",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0678",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0751",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0744",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0657",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0673",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0657",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0673",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0657",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0672",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0657",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0672",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0679",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0669",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0694",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0678",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0694",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0684",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0709",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0686",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0709",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0687",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0709",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0692",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0709",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0692",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0651",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.066",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0651",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.066",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0657",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0665",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0679",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0669",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0712",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0732",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0657",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0665",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0744",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.074",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "INVESTMENT",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        }
+      ]
+    },
+    {
+      "brand": "Regional Australia Bank",
+      "description": "Our fixed-rate home loan is a great option if you'd prefer to lock in your home loan repayments and stay on top of your budgeting.",
+      "isTailored": false,
+      "lastUpdated": "2026-11-19T00:00:49.562895Z",
+      "name": "Regional Australia Bank Home Loan (Fixed Owner Occupied)",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "productId": "f4968da6-55cc-4b5e-9ef7-4ca5a276001f",
+      "additionalInformation": {
+        "overviewUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+        "termsUri": "https://www.regionalaustraliabank.com.au/about-us/corporate-documents",
+        "eligibilityUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+        "feesAndPricingUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+        "bundleUri": null,
+        "additionalOverviewUris": [],
+        "additionalTermsUris": [],
+        "additionalEligibilityUris": [],
+        "additionalFeesAndPricingUris": [],
+        "additionalBundleUris": []
+      },
+      "applicationUri": "https://apply.regionalaustraliabank.com.au/cip/rab/p/community/mortgage/application.html",
+      "brandName": "Regional Australia Bank",
+      "cardArt": [],
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "bundles": [],
+      "constraints": [
+        {
+          "constraintType": "MIN_LIMIT",
+          "additionalInfo": "The Regional Australia Bank Home Loan is only available for borrowings with over $500 of new lending.",
+          "additionalInfoUri": null,
+          "additionalValue": "500.00"
+        },
+        {
+          "constraintType": "MAX_LVR",
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "additionalValue": "0.95"
+        }
+      ],
+      "depositRates": [],
+      "eligibility": [
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "Product is available to approved borrowers only. Terms, conditions, fees, charges and normal lending criteria apply.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "RESIDENCY_STATUS",
+          "additionalInfo": "Individuals must be citizens or permanent residents of Australia.",
+          "additionalInfoUri": null,
+          "additionalValue": "Australian Resident"
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "As a customer-owned bank, customers must also become a shareholder of Regional Australia Bank to be eligible to open an account.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalInfo": "Minimum Deposit of 5% is required (with Lenders Mortgage Insurance)",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "eligibilityType": "MIN_AGE",
+          "additionalInfo": "Borrowers must be aged 16 or older to apply. Applicants under 18 years of age, but over 16 years, may only enter into a loan contract with an adult as co-applicant or guarantor.",
+          "additionalInfoUri": null,
+          "additionalValue": "18"
+        }
+      ],
+      "features": [
+        {
+          "featureType": "RELATIONSHIP_MANAGEMENT",
+          "additionalInfo": "Dedicated Relationship Manager",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalInfo": "Ability to split your loan is available with this product",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalInfo": "No Approval, Monthly or Annual Fees.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalInfo": "A fixed interest rate provides you with certainty over your future repayments during the fixed period.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalInfo": "Weekly, Fortnightly or Monthly repayments available.",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        },
+        {
+          "featureType": "GUARANTOR",
+          "additionalInfo": "A Guarantor can be nominated to the loan during the origination process",
+          "additionalInfoUri": null,
+          "additionalValue": null
+        }
+      ],
+      "fees": [
+        {
+          "feeType": "EVENT",
+          "name": "Late Payment Notice Fee",
+          "additionalInfo": "Applies when you fail to make your contracted repayments by the repayment due date.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "20.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Title Search",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to perform a title search relating to a property offered, or held, as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Loan Top Up Fee",
+          "additionalInfo": "A “top up” is additional borrowing against a property that we hold an existing mortgage over. This fee applies on approval of the additional borrowing.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "195.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Registration of Transfer",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to register a transfer of land relating to a property held as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Registration of Discharge of Mortgage",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to register a discharge of mortgage relating to a property held as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Loan Restructure Fee",
+          "additionalInfo": "Applies when you switch your existing Regional Australia Bank home loan to a different loan type, other than a Partnership Advantage.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "200.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Agency Settlement/Handing Fee",
+          "additionalInfo": " Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies in the event that we require an agent to attend a settlement or handle documentation, relating to your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EXIT",
+          "name": "Break Cost Fee",
+          "additionalInfo": "This fee applies when you want to payout the facility early. ",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Property Valuation Costs",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to value each property offered or held as security at the commencement of your loan, and when required throughout the life of your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "PEXA Processing Fee",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we process a settlement relating to your loan through PEXA.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Discharge of Mortgage Preparation",
+          "additionalInfo": "Applies when we are required to prepare discharge of mortgage documentation relating to a property held as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "395.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Approval Fee ",
+          "additionalInfo": "Applies when you get your loan approval for funding. ",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Settlement Fee",
+          "additionalInfo": "This fee applies when we process an incoming mortgage-secured settlement.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "225.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "PERIODIC",
+          "name": "Annual Fee ",
+          "additionalInfo": "Applies every year in the month in which your Regional Australia Bank Home Loan was first funded.",
+          "additionalInfoUri": null,
+          "additionalValue": "P1Y",
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "PERIODIC",
+          "name": "Monthly Service Fee ",
+          "additionalInfo": "The Monthly Service Fee is a flat monthly fee which entitles your Loan. ",
+          "additionalInfoUri": null,
+          "additionalValue": "P1M",
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "UPFRONT",
+          "name": "Registration of Mortgage",
+          "additionalInfo": "Contain service fees charged to us, on behalf of members, by other financial institutions or organisations. This fee applies when we are required to register a mortgage relating to a property offered as security for your loan.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "1.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null
+        },
+        {
+          "feeType": "EVENT",
+          "name": "Default Notice Fee",
+          "additionalInfo": "Applies when you fail to make your contracted repayments and we are required to issue a default notice to you.",
+          "additionalInfoUri": null,
+          "additionalValue": null,
+          "currency": "AUD",
+          "discounts": [],
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "30.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null
+        }
+      ],
+      "lendingRates": [
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0639",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0646",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0637",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0641",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0641",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0646",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.071",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0707",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0765",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0753",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR More than 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.90",
+              "maximumValue": "0.95",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0666",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0661",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0677",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0659",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0664",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0649",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0735",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0711",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0664",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0658",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0735",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0714",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.079",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.076",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR More than 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.90",
+              "maximumValue": "0.95",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0691",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.067",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0702",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0669",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0706",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0679",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0666",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0655",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0681",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0663",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0736",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0717",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0639",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0655",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0641",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0653",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0681",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0669",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0687",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0659",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0789",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0764",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR More than 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.90",
+              "maximumValue": "0.95",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0788",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0766",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR More than 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.90",
+              "maximumValue": "0.95",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0667",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0659",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0666",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0653",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0706",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0673",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0763",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0756",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR More than 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.90",
+              "maximumValue": "0.95",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0733",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0708",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0719",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0713",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0663",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0646",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0708",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0705",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0642",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0646",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0642",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0654",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.071",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0707",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR Less than 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0765",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0751",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR More than 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.90",
+              "maximumValue": "0.95",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0762",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0749",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR More than 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.90",
+              "maximumValue": "0.95",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0764",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0755",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR More than 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.90",
+              "maximumValue": "0.95",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0787",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0751",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR More than 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.90",
+              "maximumValue": "0.95",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.079",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0756",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR More than 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.90",
+              "maximumValue": "0.95",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0662",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0648",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0635",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0641",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0638",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0642",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0662",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.065",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0711",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0708",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.066",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P1Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0644",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR Less than 60%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.00",
+              "maximumValue": "0.60",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0667",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P2Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0651",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0666",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P3Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.066",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 70% to 80%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.70",
+              "maximumValue": "0.80",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0691",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P4Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0664",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 60% to 70%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.60",
+              "maximumValue": "0.70",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        },
+        {
+          "lendingRateType": "FIXED",
+          "rate": "0.0744",
+          "additionalInfo": "Loan to Value Ratio (LVR) is calculated by dividing the loan amount by the value of the property (as assessed by Regional Australia Bank). There may be a difference between the purchase price and the value of the property. Interest rates are on a per annum basis and are current for new loan contracts as of today's date and are subject to change.",
+          "additionalInfoUri": "https://www.regionalaustraliabank.com.au/home-loans/regional-australia-bank-home-loan",
+          "additionalValue": "P5Y",
+          "applicationFrequency": "P1M",
+          "calculationFrequency": "P1D",
+          "comparisonRate": "0.0723",
+          "interestPaymentDue": "IN_ARREARS",
+          "loanPurpose": "OWNER_OCCUPIED",
+          "repaymentType": "INTEREST_ONLY",
+          "tiers": [
+            {
+              "name": "LVR 80% to 90%",
+              "unitOfMeasure": "PERCENT",
+              "minimumValue": "0.80",
+              "maximumValue": "0.90",
+              "rateApplicationMethod": "WHOLE_BALANCE",
+              "applicabilityConditions": []
+            }
+          ],
+          "applicabilityConditions": [],
+          "applicationType": "PERIODIC"
+        }
+      ]
+    }
+  ]
+}

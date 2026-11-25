@@ -1,0 +1,841 @@
+{
+  "bankSlug": "liberty-financial",
+  "bankName": "Liberty Financial",
+  "sourceUrl": "https://services.liberty.com.au/api/data-holder-public/cds-au/v1/banking/products",
+  "cdrVersion": "6",
+  "capturedAt": "2026-11-25T10:25:00Z",
+  "products": [
+    {
+      "bundles": [],
+      "features": [
+        {
+          "featureType": "OFFSET",
+          "additionalValue": null,
+          "additionalInfo": "100% offset facility with Visa Debit card. Any available redraw funds held in the offset facility connected with your loan account will be used to reduce the amount of interest you pay on your loan.",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "REDRAW",
+          "additionalValue": null,
+          "additionalInfo": "Free online redraw",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "BILL_PAYMENT",
+          "additionalValue": "BPAY",
+          "additionalInfo": "BPAY payment facility available",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "EXTRA_REPAYMENTS",
+          "additionalValue": null,
+          "additionalInfo": "Additional repayments allowed",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Third party account transfers",
+          "additionalInfo": "Transfer funds to third party accounts",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Owner occupied borrowers",
+          "additionalInfo": "Available for both owner-occupiers and investors",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Investors",
+          "additionalInfo": "Available for both owner-occupiers and investors",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Split loans",
+          "additionalInfo": "$495 fee applies for loans with more than 4 splits.",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Principal and interest",
+          "additionalInfo": "Standard repayment option covering both principal and interest",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Interest only",
+          "additionalInfo": "Interest Only loans are subject to LVR restrictions and interest rates are higher than the advertised interest rates.",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Flexible repayment frequency",
+          "additionalInfo": "Repay weekly, fortnightly, monthly",
+          "additionalInfoUri": null
+        }
+      ],
+      "constraints": [
+        {
+          "constraintType": "MAX_LVR",
+          "additionalValue": "0.9",
+          "additionalInfo": "Borrow up to 90% of property value. Higher interest rates may apply. The actual interest rate applicable will depend on our assessment criteria and the loan to value ratio.",
+          "additionalInfoUri": null
+        },
+        {
+          "constraintType": "MAX_LIMIT",
+          "additionalValue": "10000000.00",
+          "additionalInfo": "Subject to LVR and postcode restrictions.",
+          "additionalInfoUri": null
+        },
+        {
+          "constraintType": "MIN_LIMIT",
+          "additionalValue": "50000.00",
+          "additionalInfo": "Minimum loan amount of $50,000",
+          "additionalInfoUri": null
+        },
+        {
+          "constraintType": "OTHER",
+          "additionalValue": "10-40 years",
+          "additionalInfo": "Loan terms >30 years are subject to an interest rate loading of 0.25%. Lending criteria applies.",
+          "additionalInfoUri": null
+        }
+      ],
+      "eligibility": [
+        {
+          "eligibilityType": "NATURAL_PERSON",
+          "additionalValue": "Individuals",
+          "additionalInfo": null,
+          "additionalInfoUri": null
+        },
+        {
+          "eligibilityType": "RESIDENCY_STATUS",
+          "additionalValue": "Australian citizen/resident",
+          "additionalInfo": "At least one applicant must reside in Australia",
+          "additionalInfoUri": null
+        },
+        {
+          "eligibilityType": "BUSINESS",
+          "additionalValue": "Non-individual borrowers",
+          "additionalInfo": "Corporate trustees for family trusts",
+          "additionalInfoUri": null
+        },
+        {
+          "eligibilityType": "EMPLOYMENT_STATUS",
+          "additionalValue": "Self-employed & PAYG",
+          "additionalInfo": "Self-employed & PAYG applicants accepted",
+          "additionalInfoUri": null
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalValue": "Professional Investor",
+          "additionalInfo": "Professional Investors accepted",
+          "additionalInfoUri": null
+        }
+      ],
+      "fees": [
+        {
+          "name": "Application fee",
+          "feeType": "UPFRONT",
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "0.00",
+            "feeMaximum": "995.00"
+          },
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": "Other fees, charges and commissions may apply.",
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Valuation fee",
+          "feeType": "UPFRONT",
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "0.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": "Additional valuation expenses may be payable where the anticipated security property value is >$1.5m, where the security property is in a regional location or for additional securities.",
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Annual fee",
+          "feeType": "PERIODIC",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "295.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": "P1Y",
+          "additionalInfo": "Payable on group loans only",
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Manual redraw fee",
+          "feeType": "TRANSACTION",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "50.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Professional investor & Company/Trust fee",
+          "feeType": "UPFRONT",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "995.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": "Application fee and interest rate loadings apply for company/trust or professional investor applicants with >=4 properties.",
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Discharge fee",
+          "feeType": "EXIT",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "395.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "discounts": null
+        }
+      ],
+      "depositRates": [],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.070900",
+          "comparisonRate": "0.073600",
+          "calculationFrequency": null,
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": null,
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "UNCONSTRAINED",
+          "tiers": null,
+          "applicabilityConditions": null,
+          "additionalValue": null,
+          "additionalInfo": "Higher interest rates may apply. The actual interest rate applicable will depend on our assessment criteria and the loan to value ratio.",
+          "additionalInfoUri": null
+        }
+      ],
+      "productId": "690e034e-a1c5-4aea-ba09-830b86a129b6",
+      "effectiveFrom": "2026-11-13T00:00:00Z",
+      "effectiveTo": "9999-12-30T13:00:00Z",
+      "lastUpdated": "2026-11-13T00:00:00Z",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "name": "Debt consolidation home loan",
+      "description": "This product is also referred to as the Liberty Star home loan.",
+      "brand": "Liberty Financial",
+      "brandName": "Liberty Financial",
+      "applicationUri": null,
+      "isTailored": false,
+      "additionalInformation": {
+        "overviewUri": "https://liberty.com.au/home-loans/debt-consolidation-home-loans",
+        "termsUri": null,
+        "eligibilityUri": null,
+        "feesAndPricingUri": null,
+        "bundleUri": null,
+        "additionalOverviewUris": null,
+        "additionalTermsUris": null,
+        "additionalEligibilityUris": null,
+        "additionalFeesAndPricingUris": null,
+        "additionalBundleUris": null
+      },
+      "cardArt": null
+    },
+    {
+      "bundles": [],
+      "features": [
+        {
+          "featureType": "REDRAW",
+          "additionalValue": "Free online redraw",
+          "additionalInfo": "Redraw facility allows you to access extra repayments made",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "EXTRA_REPAYMENTS",
+          "additionalValue": null,
+          "additionalInfo": "Additional repayments allowed",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "BILL_PAYMENT",
+          "additionalValue": "BPAY",
+          "additionalInfo": "BPAY payment option available",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Professional investor",
+          "additionalInfo": "Application fee and interest rate loadings apply for company/trust or professional investor applicants with >=4 properties.",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Third party account transfers",
+          "additionalInfo": "Transfer funds to third party accounts",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Principal and interest",
+          "additionalInfo": "Principal and interest only",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Flexible repayment frequency",
+          "additionalInfo": "Repay weekly, fortnightly, monthly",
+          "additionalInfoUri": null
+        }
+      ],
+      "constraints": [
+        {
+          "constraintType": "MAX_LVR",
+          "additionalValue": "0.95",
+          "additionalInfo": "Maximum loan-to-value ratio of 95%",
+          "additionalInfoUri": null
+        },
+        {
+          "constraintType": "MAX_LIMIT",
+          "additionalValue": "500000.00",
+          "additionalInfo": "Maximum loan amount of $500,000",
+          "additionalInfoUri": null
+        },
+        {
+          "constraintType": "MIN_LIMIT",
+          "additionalValue": "100000.00",
+          "additionalInfo": "Minimum loan amount of $100,000",
+          "additionalInfoUri": null
+        },
+        {
+          "constraintType": "OTHER",
+          "additionalValue": "10-40 years",
+          "additionalInfo": "Loan terms >30 years are subject to an interest rate loading of 0.25%. Lending criteria applies.",
+          "additionalInfoUri": null
+        }
+      ],
+      "eligibility": [
+        {
+          "eligibilityType": "NATURAL_PERSON",
+          "additionalValue": "Individuals",
+          "additionalInfo": null,
+          "additionalInfoUri": null
+        },
+        {
+          "eligibilityType": "RESIDENCY_STATUS",
+          "additionalValue": "Australian citizen/resident",
+          "additionalInfo": "At least one applicant must reside in Australia",
+          "additionalInfoUri": null
+        },
+        {
+          "eligibilityType": "BUSINESS",
+          "additionalValue": "Non-individual borrowers",
+          "additionalInfo": "Corporate trustees for family trusts",
+          "additionalInfoUri": null
+        },
+        {
+          "eligibilityType": "EMPLOYMENT_STATUS",
+          "additionalValue": "Self-employed & PAYG",
+          "additionalInfo": "Self-employed & PAYG applicants accepted",
+          "additionalInfoUri": null
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalValue": "Professional Investor",
+          "additionalInfo": "Professional Investors accepted",
+          "additionalInfoUri": null
+        }
+      ],
+      "fees": [
+        {
+          "name": "Application fee",
+          "feeType": "UPFRONT",
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "0.00",
+            "feeMaximum": "995.00"
+          },
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Valuation fee",
+          "feeType": "UPFRONT",
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "0.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": "Valuation fee not applicable for loans under 90% LVR. Additional valuation expenses may be payable where the anticipated security property value is >1.5m, where the security property is in a regional location or for additional securities.",
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Settlement fee",
+          "feeType": "UPFRONT",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": "Other fees, charges and commissions may apply.",
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Annual fee",
+          "feeType": "PERIODIC",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": "P1Y",
+          "additionalInfo": "Ongoing annual fee $0.00",
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Manual redraw fee",
+          "feeType": "TRANSACTION",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "50.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Discharge fee",
+          "feeType": "EXIT",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "395.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Professional investor & Company/Trust fee",
+          "feeType": "UPFRONT",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "995.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": "Application fee and interest rate loadings apply for company/trust or professional investor applicants with >=4 properties.",
+          "additionalInfoUri": null,
+          "discounts": null
+        }
+      ],
+      "depositRates": [],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.073400",
+          "comparisonRate": "0.074200",
+          "calculationFrequency": null,
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": null,
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "INVESTMENT",
+          "tiers": null,
+          "applicabilityConditions": null,
+          "additionalValue": null,
+          "additionalInfo": "Higher interest rates may apply. The actual interest rate applicable will depend on our assessment criteria and the loan to value ratio.",
+          "additionalInfoUri": null
+        }
+      ],
+      "productId": "d42e3fdd-ff27-47ca-812b-2dc54aad75af",
+      "effectiveFrom": "2026-11-13T00:00:00Z",
+      "effectiveTo": "9999-12-30T13:00:00Z",
+      "lastUpdated": "2026-11-13T00:00:00Z",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "name": "Low rate investment loan",
+      "description": "This product is also referred to as the Liberty Sharp home loan.",
+      "brand": "Liberty Financial",
+      "brandName": "Liberty Financial",
+      "applicationUri": null,
+      "isTailored": false,
+      "additionalInformation": {
+        "overviewUri": "https://liberty.com.au/home-loans/low-rate-investment-loans",
+        "termsUri": null,
+        "eligibilityUri": null,
+        "feesAndPricingUri": null,
+        "bundleUri": null,
+        "additionalOverviewUris": null,
+        "additionalTermsUris": null,
+        "additionalEligibilityUris": null,
+        "additionalFeesAndPricingUris": null,
+        "additionalBundleUris": null
+      },
+      "cardArt": null
+    },
+    {
+      "bundles": [],
+      "features": [
+        {
+          "featureType": "OFFSET",
+          "additionalValue": null,
+          "additionalInfo": "100% offset facility with Visa Debit card. Any available redraw funds held in the offset facility connected with your loan account will be used to reduce the amount of interest you pay on your loan.",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "REDRAW",
+          "additionalValue": null,
+          "additionalInfo": "Free online redraw",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "EXTRA_REPAYMENTS",
+          "additionalValue": null,
+          "additionalInfo": "Additional repayments allowed",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Third party account transfers",
+          "additionalInfo": "Transfer funds to third party accounts",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Split loans",
+          "additionalInfo": "$0 for loans with <= 4 splits. Additional fee of $495 applies for loans with > 4 splits.",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Principal and interest",
+          "additionalInfo": "Standard repayment option covering both principal and interest",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Flexible repayment frequency",
+          "additionalInfo": "Repay weekly, fortnightly, monthly",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "BILL_PAYMENT",
+          "additionalValue": "BPAY",
+          "additionalInfo": "BPAY payment facility available",
+          "additionalInfoUri": null
+        },
+        {
+          "featureType": "OTHER",
+          "additionalValue": "Professional investor",
+          "additionalInfo": "Application fee and interest rate loadings apply for company/trust or professional investor applicants with >=4 properties.",
+          "additionalInfoUri": null
+        }
+      ],
+      "constraints": [
+        {
+          "constraintType": "MAX_LVR",
+          "additionalValue": "0.95",
+          "additionalInfo": "Borrow up to 95% of purchase price.",
+          "additionalInfoUri": null
+        },
+        {
+          "constraintType": "MAX_LIMIT",
+          "additionalValue": "2500000.00",
+          "additionalInfo": "Subject to LVR and postcode restrictions.",
+          "additionalInfoUri": null
+        },
+        {
+          "constraintType": "MIN_LIMIT",
+          "additionalValue": "50000.00",
+          "additionalInfo": "Minimum loan amount of $50,000",
+          "additionalInfoUri": null
+        },
+        {
+          "constraintType": "OTHER",
+          "additionalValue": "10-40 years",
+          "additionalInfo": "Loan terms >30 years are subject to an interest rate loading of 0.25%. Lending criteria applies.",
+          "additionalInfoUri": null
+        }
+      ],
+      "eligibility": [
+        {
+          "eligibilityType": "NATURAL_PERSON",
+          "additionalValue": "Individuals",
+          "additionalInfo": null,
+          "additionalInfoUri": null
+        },
+        {
+          "eligibilityType": "RESIDENCY_STATUS",
+          "additionalValue": "Australian citizen/resident",
+          "additionalInfo": "At least one applicant must reside in Australia",
+          "additionalInfoUri": null
+        },
+        {
+          "eligibilityType": "BUSINESS",
+          "additionalValue": "Non-individual borrowers",
+          "additionalInfo": "Corporate trustees for family trusts",
+          "additionalInfoUri": null
+        },
+        {
+          "eligibilityType": "EMPLOYMENT_STATUS",
+          "additionalValue": "Self-employed & PAYG",
+          "additionalInfo": "Self-employed & PAYG applicants accepted",
+          "additionalInfoUri": null
+        },
+        {
+          "eligibilityType": "OTHER",
+          "additionalValue": "Professional Investor",
+          "additionalInfo": "Professional Investors accepted",
+          "additionalInfoUri": null
+        }
+      ],
+      "fees": [
+        {
+          "name": "Application fee",
+          "feeType": "UPFRONT",
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "0.00",
+            "feeMaximum": "995.00"
+          },
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": "Other fees, charges and commissions may apply.",
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Valuation fee",
+          "feeType": "UPFRONT",
+          "feeMethodUType": "variable",
+          "fixedAmount": null,
+          "rateBased": null,
+          "variable": {
+            "feeMinimum": "0.00",
+            "feeMaximum": null
+          },
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": "Valuation fee not applicable for loans under 90% LVR. Additional valuation expenses may be payable where the anticipated security property value is >1.5m, where the security property is in a regional location or for additional securities.",
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Settlement fee",
+          "feeType": "UPFRONT",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "0.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": "Other fees, charges and commissions may apply.",
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Annual fee",
+          "feeType": "PERIODIC",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "295.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": "P1Y",
+          "additionalInfo": "Ongoing annual fee $295",
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Manual redraw fee",
+          "feeType": "TRANSACTION",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "50.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Discharge fee",
+          "feeType": "EXIT",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "395.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": null,
+          "additionalInfoUri": null,
+          "discounts": null
+        },
+        {
+          "name": "Professional investor & Company/Trust fee",
+          "feeType": "UPFRONT",
+          "feeMethodUType": "fixedAmount",
+          "fixedAmount": {
+            "amount": "995.00"
+          },
+          "rateBased": null,
+          "variable": null,
+          "feeCap": null,
+          "feeCapPeriod": null,
+          "currency": "AUD",
+          "additionalValue": null,
+          "additionalInfo": "Application fee and interest rate loadings apply for company/trust or professional investor applicants with >=4 properties.",
+          "additionalInfoUri": null,
+          "discounts": null
+        }
+      ],
+      "depositRates": [],
+      "lendingRates": [
+        {
+          "lendingRateType": "VARIABLE",
+          "rate": "0.097400",
+          "comparisonRate": "0.105000",
+          "calculationFrequency": null,
+          "applicationType": "PERIODIC",
+          "applicationFrequency": "P1M",
+          "interestPaymentDue": null,
+          "repaymentType": "PRINCIPAL_AND_INTEREST",
+          "loanPurpose": "INVESTMENT",
+          "tiers": null,
+          "applicabilityConditions": null,
+          "additionalValue": null,
+          "additionalInfo": "Higher interest rates may apply. The actual interest rate applicable will depend on our assessment criteria and the loan to value ratio.",
+          "additionalInfoUri": null
+        }
+      ],
+      "productId": "ea0a982d-f0ad-40c9-9d92-9b8234ae839c",
+      "effectiveFrom": "2026-11-13T00:00:00Z",
+      "effectiveTo": "9999-12-30T13:00:00Z",
+      "lastUpdated": "2026-11-13T00:00:00Z",
+      "productCategory": "RESIDENTIAL_MORTGAGES",
+      "name": "Low deposit investment loan",
+      "description": "This product is also referred to as the Liberty Star home loan.",
+      "brand": "Liberty Financial",
+      "brandName": "Liberty Financial",
+      "applicationUri": null,
+      "isTailored": false,
+      "additionalInformation": {
+        "overviewUri": "https://liberty.com.au/home-loans/low-deposit-investment-loans",
+        "termsUri": null,
+        "eligibilityUri": null,
+        "feesAndPricingUri": null,
+        "bundleUri": null,
+        "additionalOverviewUris": null,
+        "additionalTermsUris": null,
+        "additionalEligibilityUris": null,
+        "additionalFeesAndPricingUris": null,
+        "additionalBundleUris": null
+      },
+      "cardArt": null
+    }
+  ]
+}
