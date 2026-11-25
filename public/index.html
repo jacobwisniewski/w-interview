@@ -3,120 +3,297 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AU CDR Home Loan Rate & Change Monitor</title>
+    <title>AU CDR Home Loan Monitor</title>
     <style>
       :root {
-        --bg: #0f172a;
-        --panel: #1e293b;
-        --border: #334155;
-        --text: #f8fafc;
-        --muted: #94a3b8;
-        --accent: #38bdf8;
-        --ok: #22c55e;
-        --warn: #f59e0b;
-        --bad: #ef4444;
+        --gel-primary: #da1710;
+        --gel-primary-hover: #b8130d;
+        --gel-hero: #1f1c4f;
+        --gel-canvas: #f3f4f6;
+        --gel-surface: #ffffff;
+        --gel-surface-alt: #f8f9fb;
+        --gel-border: #dedee0;
+        --gel-border-strong: #c2c4c9;
+        --gel-ink: #181b25;
+        --gel-muted: #595d66;
+        --gel-link: #da1710;
+        --gel-ok-bg: #e6f4ea;
+        --gel-ok-ink: #0f6a36;
+        --gel-warn-bg: #fef3e2;
+        --gel-warn-ink: #9a4b00;
+        --gel-bad-bg: #fdecec;
+        --gel-bad-ink: #b42318;
+        --gel-radius: 4px;
       }
       * { box-sizing: border-box; }
       body {
         margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.45;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background: var(--gel-canvas);
+        color: var(--gel-ink);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
       }
-      .wrap { max-width: 1200px; margin: 0 auto; padding: 24px 16px 48px; }
-      header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 18px; }
-      h1 { margin: 0; font-size: 1.5rem; }
-      .sub { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
-      .disclaimer {
-        background: rgba(56, 189, 248, 0.1);
-        border: 1px solid rgba(56, 189, 248, 0.35);
-        border-radius: 8px;
-        padding: 10px 14px;
-        font-size: 0.85rem;
-        color: #bae6fd;
+      .top-bar {
+        height: 4px;
+        background: var(--gel-primary);
+      }
+      .hero {
+        background: var(--gel-hero);
+        color: #ffffff;
+        padding: 28px 16px 32px;
+      }
+      .hero-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 16px;
+      }
+      .eyebrow {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #c7c9e8;
+        margin-bottom: 6px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 1.75rem;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+        line-height: 1.2;
+      }
+      .sub {
+        color: #d6d8ef;
+        font-size: 0.92rem;
+        margin-top: 6px;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      button {
+        font-family: inherit;
+        font-size: 0.86rem;
+        font-weight: 600;
+        border-radius: var(--gel-radius);
+        padding: 9px 14px;
+        cursor: pointer;
+        transition: background 0.12s ease, border-color 0.12s ease;
+      }
+      button.primary {
+        background: var(--gel-primary);
+        color: #ffffff;
+        border: 1px solid var(--gel-primary);
+      }
+      button.primary:hover {
+        background: var(--gel-primary-hover);
+        border-color: var(--gel-primary-hover);
+      }
+      button.hero-ghost {
+        background: rgba(255, 255, 255, 0.08);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+      }
+      button.hero-ghost:hover {
+        background: rgba(255, 255, 255, 0.16);
+        border-color: rgba(255, 255, 255, 0.6);
+      }
+      .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 16px 48px;
+      }
+      .notice {
+        background: var(--gel-surface);
+        border: 1px solid var(--gel-border);
+        border-left: 4px solid var(--gel-hero);
+        border-radius: var(--gel-radius);
+        padding: 12px 16px;
+        font-size: 0.86rem;
+        color: var(--gel-muted);
         margin-bottom: 18px;
       }
-      .actions { display: flex; flex-wrap: wrap; gap: 8px; }
-      button {
-        background: var(--panel);
-        color: var(--text);
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        padding: 8px 12px;
-        cursor: pointer;
-        font-size: 0.85rem;
+      .notice strong { color: var(--gel-ink); }
+      .notice code {
+        background: var(--gel-canvas);
+        padding: 1px 5px;
+        border-radius: 3px;
+        color: var(--gel-ink);
+        font-size: 0.82rem;
+      }
+      #toast {
+        font-size: 0.84rem;
+        color: var(--gel-hero);
         font-weight: 500;
+        min-height: 1.25em;
+        margin-bottom: 10px;
       }
-      button:hover { border-color: var(--accent); }
-      button.primary { background: #0284c7; border-color: #0284c7; }
-      button.warn { border-color: var(--warn); color: #fde68a; }
-      .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 18px; }
-      .kpi { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
-      .kpi-label { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
-      .kpi-val { font-size: 1.4rem; font-weight: 700; margin-top: 4px; }
-      .tabs { display: flex; gap: 8px; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
-      .tab { background: transparent; border: none; border-bottom: 2px solid transparent; border-radius: 0; padding: 10px 14px; color: var(--muted); }
-      .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
-      .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; align-items: center; }
-      input, select {
-        background: var(--panel);
-        color: var(--text);
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        padding: 7px 10px;
-        font-size: 0.85rem;
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+        gap: 12px;
+        margin-bottom: 20px;
       }
-      label.chk { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--muted); }
-      .card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; overflow-x: auto; }
-      table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
-      th, td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
-      th { color: var(--muted); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
-      tr:last-child td { border-bottom: none; }
-      .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 0.74rem; font-weight: 600; }
-      .b-ok { background: rgba(34, 197, 94, 0.16); color: #86efac; }
-      .b-warn { background: rgba(245, 158, 11, 0.18); color: #fde68a; }
-      .b-bad { background: rgba(239, 68, 68, 0.18); color: #fca5a5; }
-      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
-      .muted { color: var(--muted); font-size: 0.8rem; }
-      a { color: var(--accent); text-decoration: none; }
+      .kpi {
+        background: var(--gel-surface);
+        border: 1px solid var(--gel-border);
+        border-radius: var(--gel-radius);
+        padding: 14px 16px;
+      }
+      .kpi-label {
+        color: var(--gel-muted);
+        font-size: 0.76rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .kpi-val {
+        font-size: 1.55rem;
+        font-weight: 700;
+        color: var(--gel-hero);
+        margin-top: 4px;
+        font-variant-numeric: tabular-nums;
+      }
+      .tabs {
+        display: flex;
+        gap: 4px;
+        border-bottom: 1px solid var(--gel-border);
+        margin-bottom: 16px;
+      }
+      .tab {
+        background: transparent;
+        border: none;
+        border-bottom: 3px solid transparent;
+        border-radius: 0;
+        padding: 10px 16px;
+        color: var(--gel-muted);
+        font-weight: 600;
+      }
+      .tab:hover { color: var(--gel-ink); }
+      .tab.active {
+        color: var(--gel-primary);
+        border-bottom-color: var(--gel-primary);
+      }
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 14px;
+        align-items: center;
+      }
+      input[type="search"], select {
+        background: var(--gel-surface);
+        color: var(--gel-ink);
+        border: 1px solid var(--gel-border-strong);
+        border-radius: var(--gel-radius);
+        padding: 8px 11px;
+        font-size: 0.86rem;
+        font-family: inherit;
+      }
+      input[type="search"]:focus, select:focus {
+        outline: 2px solid var(--gel-hero);
+        outline-offset: 1px;
+      }
+      label.chk {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.86rem;
+        color: var(--gel-ink);
+        cursor: pointer;
+      }
+      input[type="checkbox"] { accent-color: var(--gel-primary); }
+      .card {
+        background: var(--gel-surface);
+        border: 1px solid var(--gel-border);
+        border-radius: var(--gel-radius);
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.87rem;
+      }
+      th, td {
+        padding: 11px 14px;
+        border-bottom: 1px solid var(--gel-border);
+        text-align: left;
+        vertical-align: top;
+      }
+      thead th {
+        background: var(--gel-surface-alt);
+        color: var(--gel-muted);
+        font-weight: 700;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      tbody tr:hover { background: #fafbfd; }
+      tbody tr:last-child td { border-bottom: none; }
+      .badge {
+        display: inline-block;
+        padding: 2px 9px;
+        border-radius: 999px;
+        font-size: 0.73rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+      .b-ok { background: var(--gel-ok-bg); color: var(--gel-ok-ink); }
+      .b-warn { background: var(--gel-warn-bg); color: var(--gel-warn-ink); }
+      .b-bad { background: var(--gel-bad-bg); color: var(--gel-bad-ink); }
+      .num { font-variant-numeric: tabular-nums; }
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.82rem;
+      }
+      .muted { color: var(--gel-muted); font-size: 0.8rem; }
+      a { color: var(--gel-link); text-decoration: none; font-weight: 500; }
       a:hover { text-decoration: underline; }
-      #toast { margin-bottom: 12px; font-size: 0.85rem; color: #bae6fd; min-height: 1.2em; }
     </style>
   </head>
   <body>
-    <div class="wrap">
-      <header>
+    <div class="top-bar"></div>
+    <header class="hero">
+      <div class="hero-inner">
         <div>
-          <h1>AU Open Banking (CDR) Home Loan Monitor</h1>
-          <div class="sub">Normalised residential mortgage rates, compliance guardrails, quarantine audit, and snapshot diffs</div>
+          <div class="eyebrow">Australian Open Banking · CDR Product Reference Data</div>
+          <h1>Home Loan Rate &amp; Change Monitor</h1>
+          <div class="sub">Normalised residential mortgage rates, disclosure guardrails, quarantine audit, and snapshot diffs</div>
         </div>
         <div class="actions">
-          <button class="primary" onclick="runIngest({ mode: 'snapshot', version: 'v2' })">Apply v2 Rate Delta</button>
-          <button class="warn" onclick="runIngest({ mode: 'simulate-degrade', bankSlug: 'up', reason: 'Simulated HTTP 406 UnsupportedVersion' })">Simulate 406 Degrade (Up)</button>
-          <button onclick="runIngest({ mode: 'snapshot', version: 'v1' })">Reload v1 Baseline</button>
+          <button class="primary" onclick="runIngest({ mode: 'snapshot', version: 'v2' })">Apply v2 rate delta</button>
+          <button class="hero-ghost" onclick="runIngest({ mode: 'simulate-degrade', bankSlug: 'up', reason: 'Simulated HTTP 406 UnsupportedVersion' })">Simulate degraded bank</button>
+          <button class="hero-ghost" onclick="runIngest({ mode: 'snapshot', version: 'v1' })">Reload v1 baseline</button>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <div class="disclaimer">
-        <strong>Indicative market reference only:</strong> Built from public Australian CDR Product Reference Data (PRD) plus synthetic edge-case fixtures. Not credit advice or a lending decision. Products lacking a valid comparison rate are flagged <code>MANUAL_REVIEW_REQUIRED</code>.
+    <main class="wrap">
+      <div class="notice">
+        <strong>Indicative market reference only:</strong> Built from public Australian CDR Product Reference Data plus synthetic edge-case fixtures. Not credit advice or a lending decision. Products lacking a valid comparison rate are flagged <code>MANUAL_REVIEW_REQUIRED</code>.
       </div>
 
       <div id="toast"></div>
 
       <section class="kpis">
-        <div class="kpi"><div class="kpi-label">Service Health</div><div class="kpi-val" id="k-health">...</div></div>
-        <div class="kpi"><div class="kpi-label">Banks Monitored</div><div class="kpi-val" id="k-banks">-</div></div>
-        <div class="kpi"><div class="kpi-label">Ready Products</div><div class="kpi-val" id="k-ready">-</div></div>
-        <div class="kpi"><div class="kpi-label">Manual Review</div><div class="kpi-val" id="k-manual">-</div></div>
+        <div class="kpi"><div class="kpi-label">Service health</div><div class="kpi-val" id="k-health">...</div></div>
+        <div class="kpi"><div class="kpi-label">Banks monitored</div><div class="kpi-val" id="k-banks">-</div></div>
+        <div class="kpi"><div class="kpi-label">Ready products</div><div class="kpi-val" id="k-ready">-</div></div>
+        <div class="kpi"><div class="kpi-label">Manual review</div><div class="kpi-val" id="k-manual">-</div></div>
         <div class="kpi"><div class="kpi-label">Quarantined</div><div class="kpi-val" id="k-quarantine">-</div></div>
       </section>
 
       <nav class="tabs">
         <button class="tab active" data-tab="products" onclick="switchTab('products')">Products</button>
-        <button class="tab" data-tab="changes" onclick="switchTab('changes')">Rate Changes</button>
-        <button class="tab" data-tab="quarantine" onclick="switchTab('quarantine')">Quarantine Audit</button>
-        <button class="tab" data-tab="health" onclick="switchTab('health')">Bank Health</button>
+        <button class="tab" data-tab="changes" onclick="switchTab('changes')">Rate changes</button>
+        <button class="tab" data-tab="quarantine" onclick="switchTab('quarantine')">Quarantine audit</button>
+        <button class="tab" data-tab="health" onclick="switchTab('health')">Bank health</button>
       </nav>
 
       <section id="panel-products">
@@ -144,7 +321,7 @@
                 <th>Type</th>
                 <th>Headline</th>
                 <th>Comparison</th>
-                <th>Annual Fee</th>
+                <th>Annual fee</th>
                 <th>Features</th>
                 <th>Guardrail</th>
               </tr>
@@ -169,7 +346,7 @@
         <div class="card">
           <table>
             <thead>
-              <tr><th>Bank</th><th>Product ID</th><th>Validation Error</th><th>Recorded At</th></tr>
+              <tr><th>Bank</th><th>Product ID</th><th>Validation error</th><th>Recorded at</th></tr>
             </thead>
             <tbody id="tb-quarantine"></tbody>
           </table>
@@ -180,13 +357,13 @@
         <div class="card">
           <table>
             <thead>
-              <tr><th>Bank</th><th>CDR x-v</th><th>Status</th><th>Valid</th><th>Quarantined</th><th>Last Synced / Error</th></tr>
+              <tr><th>Bank</th><th>CDR version</th><th>Status</th><th>Valid</th><th>Quarantined</th><th>Last synced / error</th></tr>
             </thead>
             <tbody id="tb-health"></tbody>
           </table>
         </div>
       </section>
-    </div>
+    </main>
 
     <script>
       const fmtPct = (v) => (v == null ? "—" : `${Number(v).toFixed(2)}%`);
@@ -226,9 +403,9 @@
             <td><strong>${esc(p.bankName)}</strong></td>
             <td>${link}</td>
             <td class="mono">${esc(p.rateType)}</td>
-            <td class="mono">${fmtPct(p.headlineRatePct)}</td>
-            <td class="mono"><strong>${fmtPct(p.comparisonRatePct)}</strong></td>
-            <td class="mono">${fmtAud(p.annualFeeCents)}</td>
+            <td class="num">${fmtPct(p.headlineRatePct)}</td>
+            <td class="num"><strong>${fmtPct(p.comparisonRatePct)}</strong></td>
+            <td class="num">${fmtAud(p.annualFeeCents)}</td>
             <td>${feats}</td>
             <td>${badge}</td>
           </tr>`;
@@ -257,12 +434,12 @@
             return `<tr>
               <td><strong>${esc(c.bankName)}</strong></td>
               <td>${esc(c.productName)}</td>
-              <td class="mono">${fmtPct(c.previousHeadlinePct)} → ${fmtPct(c.currentHeadlinePct)}</td>
+              <td class="num">${fmtPct(c.previousHeadlinePct)} → ${fmtPct(c.currentHeadlinePct)}</td>
               <td><span class="badge ${cls}">${sign(c.headlineDeltaBps)}</span></td>
-              <td class="mono">${fmtPct(c.previousComparisonPct)} → ${fmtPct(c.currentComparisonPct)}</td>
+              <td class="num">${fmtPct(c.previousComparisonPct)} → ${fmtPct(c.currentComparisonPct)}</td>
               <td><span class="badge ${cls}">${sign(c.comparisonDeltaBps)}</span></td>
             </tr>`;
-          }).join("") || `<tr><td colspan="6" class="muted">No rate changes yet. Click "Apply v2 Rate Delta" above to compare snapshots.</td></tr>`;
+          }).join("") || `<tr><td colspan="6" class="muted">No rate changes yet. Click "Apply v2 rate delta" above to compare snapshots.</td></tr>`;
 
         document.getElementById("tb-quarantine").innerHTML =
           quarantine.records.map((q) => `<tr>
@@ -277,8 +454,8 @@
             <td><strong>${esc(b.bankName)}</strong></td>
             <td class="mono">x-v: ${esc(b.cdrVersion)}</td>
             <td>${b.degraded ? `<span class="badge b-warn">DEGRADED</span>` : `<span class="badge b-ok">OK</span>`}</td>
-            <td class="mono">${b.validProductCount}</td>
-            <td class="mono">${b.quarantinedCount}</td>
+            <td class="num">${b.validProductCount}</td>
+            <td class="num">${b.quarantinedCount}</td>
             <td class="muted">${esc(b.lastError ?? b.lastSyncedAt)}</td>
           </tr>`).join("");
 
@@ -294,7 +471,7 @@
           body: JSON.stringify(payload),
         });
         const data = await res.json();
-        toast.textContent = res.ok ? `Done: ${JSON.stringify(data.summary ?? data)}` : `Error: ${data.message ?? res.status}`;
+        toast.textContent = res.ok ? `Completed: ${JSON.stringify(data.summary ?? data)}` : `Error: ${data.message ?? res.status}`;
         await loadAll();
       }
 
