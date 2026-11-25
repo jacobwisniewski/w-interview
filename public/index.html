@@ -61,11 +61,6 @@
         font-size: 0.88rem;
         margin-top: 3px;
       }
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
       button {
         font-family: inherit;
         font-size: 0.84rem;
@@ -74,24 +69,6 @@
         padding: 9px 14px;
         cursor: pointer;
         transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
-      }
-      button.primary {
-        background: var(--gel-red);
-        color: #ffffff;
-        border: 1px solid var(--gel-red);
-      }
-      button.primary:hover {
-        background: var(--gel-red-hover);
-        border-color: var(--gel-red-hover);
-      }
-      button.faint {
-        background: var(--gel-surface);
-        color: var(--gel-ink);
-        border: 1px solid var(--gel-border-strong);
-      }
-      button.faint:hover {
-        background: var(--gel-surface-subtle);
-        border-color: var(--gel-ink);
       }
       .wrap {
         max-width: 1200px;
@@ -261,11 +238,6 @@
           <h1>Home Loan Rate &amp; Change Monitor</h1>
           <div class="sub">Normalised residential mortgage rates, disclosure guardrails, quarantine audit, and snapshot diffs</div>
         </div>
-        <div class="actions">
-          <button class="primary" onclick="runIngest({ mode: 'snapshot', version: 'v2' })">Apply v2 rate delta</button>
-          <button class="faint" onclick="runIngest({ mode: 'simulate-degrade', bankSlug: 'up', reason: 'Simulated HTTP 406 UnsupportedVersion' })">Simulate degraded bank</button>
-          <button class="faint" onclick="runIngest({ mode: 'snapshot', version: 'v1' })">Reload v1 baseline</button>
-        </div>
       </div>
     </header>
 
@@ -273,8 +245,6 @@
       <div class="notice">
         <strong>Indicative market reference only:</strong> Built from public Australian CDR Product Reference Data plus synthetic edge-case fixtures. Not credit advice or a lending decision. Products lacking a valid comparison rate are flagged <code>MANUAL_REVIEW_REQUIRED</code>.
       </div>
-
-      <div id="toast"></div>
 
       <section class="kpis">
         <div class="kpi"><div class="kpi-label">Service health</div><div class="kpi-val" id="k-health">...</div></div>
@@ -434,7 +404,7 @@
               <td class="num">${fmtPct(c.previousComparisonPct)} → ${fmtPct(c.currentComparisonPct)}</td>
               <td><span class="badge ${cls}">${sign(c.comparisonDeltaBps)}</span></td>
             </tr>`;
-          }).join("") || `<tr><td colspan="6" class="muted">No rate changes yet. Click "Apply v2 rate delta" above to compare snapshots.</td></tr>`;
+          }).join("") || `<tr><td colspan="6" class="muted">No rate changes recorded yet. Ingest a newer snapshot via CLI or API to compare rates.</td></tr>`;
 
         document.getElementById("tb-quarantine").innerHTML =
           quarantine.records.map((q) => `<tr>
@@ -455,19 +425,6 @@
           </tr>`).join("");
 
         await loadProducts();
-      }
-
-      async function runIngest(payload) {
-        const toast = document.getElementById("toast");
-        toast.textContent = "Running operation...";
-        const res = await fetch("/api/ingest", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-        const data = await res.json();
-        toast.textContent = res.ok ? `Completed: ${JSON.stringify(data.summary ?? data)}` : `Error: ${data.message ?? res.status}`;
-        await loadAll();
       }
 
       loadAll();
