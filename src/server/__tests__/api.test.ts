@@ -19,9 +19,9 @@ async function withApiApp<T>(
   }
 }
 
-describe("Feature: CDR Home Loan Monitor HTTP API", () => {
-  describe("Given v1 and v2 snapshots are ingested through the API", () => {
-    it("Then analysts can query Westpac products, inspect quarantine records, and view basis-point rate changes", async () => {
+describe("CDR Home Loan Monitor HTTP API", () => {
+  describe("GIVEN v1 and v2 snapshots are ingested through the API", () => {
+    it("THEN analysts can query Westpac products, inspect quarantine records, and view basis-point rate changes", async () => {
       await withApiApp({}, async (app) => {
         const ingestV1 = await app.request("/api/ingest", {
           method: "POST",
@@ -81,8 +81,8 @@ describe("Feature: CDR Home Loan Monitor HTTP API", () => {
     });
   });
 
-  describe("Given invalid queries, disabled live sync, or an upstream degrade event", () => {
-    it("Then the API rejects bad input with 400, blocks live sync with 403, and surfaces degraded health without losing data", async () => {
+  describe("GIVEN invalid queries, disabled live sync, or an upstream degrade event", () => {
+    it("THEN the API rejects bad input with 400, blocks live sync with 403, and surfaces degraded health without losing data", async () => {
       await withApiApp({ ALLOW_LIVE_SYNC: "false" }, async (app) => {
         await app.request("/api/ingest", {
           method: "POST",
