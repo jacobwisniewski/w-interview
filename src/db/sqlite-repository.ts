@@ -18,45 +18,45 @@ import type {
 } from "./repository.js";
 
 interface ProductRow {
-  bank_slug: string;
-  bank_name: string;
-  product_id: string;
-  name: string;
-  description: string;
-  last_updated: string | null;
-  overview_uri: string | null;
-  rate_type: string;
-  headline_rate_pct: number | null;
-  comparison_rate_pct: number | null;
-  annual_fee_cents: number;
-  upfront_fee_cents: number;
-  has_offset: number;
-  has_redraw: number;
-  review_status: string;
-  review_reasons_json: string;
-  raw_rate_count: number;
+  readonly bank_slug: string;
+  readonly bank_name: string;
+  readonly product_id: string;
+  readonly name: string;
+  readonly description: string;
+  readonly last_updated: string | null;
+  readonly overview_uri: string | null;
+  readonly rate_type: string;
+  readonly headline_rate_pct: number | null;
+  readonly comparison_rate_pct: number | null;
+  readonly annual_fee_cents: number;
+  readonly upfront_fee_cents: number;
+  readonly has_offset: number;
+  readonly has_redraw: number;
+  readonly review_status: string;
+  readonly review_reasons_json: string;
+  readonly raw_rate_count: number;
 }
 
 interface BankStatusRow {
-  bank_slug: string;
-  bank_name: string;
-  source_url: string;
-  cdr_version: string;
-  last_synced_at: string;
-  last_good_sync_run_id: number | null;
-  degraded: number;
-  last_error: string | null;
-  valid_product_count: number;
-  quarantined_count: number;
+  readonly bank_slug: string;
+  readonly bank_name: string;
+  readonly source_url: string;
+  readonly cdr_version: string;
+  readonly last_synced_at: string;
+  readonly last_good_sync_run_id: number | null;
+  readonly degraded: number;
+  readonly last_error: string | null;
+  readonly valid_product_count: number;
+  readonly quarantined_count: number;
 }
 
 interface QuarantinedRow {
-  id: number;
-  bank_slug: string;
-  product_id: string | null;
-  reason: string;
-  raw_payload: string;
-  recorded_at: string;
+  readonly id: number;
+  readonly bank_slug: string;
+  readonly product_id: string | null;
+  readonly reason: string;
+  readonly raw_payload: string;
+  readonly recorded_at: string;
 }
 
 function mapProductRow(row: ProductRow): NormalisedProduct {
@@ -76,7 +76,7 @@ function mapProductRow(row: ProductRow): NormalisedProduct {
     hasOffset: row.has_offset === 1,
     hasRedraw: row.has_redraw === 1,
     reviewStatus: row.review_status as ReviewStatus,
-    reviewReasons: JSON.parse(row.review_reasons_json) as string[],
+    reviewReasons: JSON.parse(row.review_reasons_json) as readonly string[],
     rawRateCount: row.raw_rate_count,
   };
 }
@@ -172,7 +172,7 @@ export class SqliteProductRepository implements ProductRepository {
     }
   }
 
-  recordSnapshot(input: RecordSnapshotInput): { syncRunId: number } {
+  recordSnapshot(input: RecordSnapshotInput): { readonly syncRunId: number } {
     return this.runInTransaction(() => {
       const insertRun = this.db.prepare(`
         INSERT INTO sync_runs (bank_slug, bank_name, source, outcome, cdr_version, captured_at, valid_count, quarantined_count)
@@ -268,7 +268,7 @@ export class SqliteProductRepository implements ProductRepository {
     });
   }
 
-  recordDegradedSync(input: RecordDegradedInput): { syncRunId: number } {
+  recordDegradedSync(input: RecordDegradedInput): { readonly syncRunId: number } {
     return this.runInTransaction(() => {
       const insertRun = this.db.prepare(`
         INSERT INTO sync_runs (bank_slug, bank_name, source, outcome, cdr_version, captured_at, valid_count, quarantined_count, error_message)
@@ -284,7 +284,6 @@ export class SqliteProductRepository implements ProductRepository {
       );
       const syncRunId = Number(runResult.lastInsertRowid);
 
-      // Preserve last_good_sync_run_id and valid_product_count so readers continue seeing the last verified snapshot
       const upsertStatus = this.db.prepare(`
         INSERT INTO bank_status (
           bank_slug, bank_name, source_url, cdr_version, last_synced_at,
@@ -307,41 +306,41 @@ export class SqliteProductRepository implements ProductRepository {
     });
   }
 
-  listLatestProducts(filters: ProductQueryFilters = {}): NormalisedProduct[] {
-    const clauses: string[] = ["p.sync_run_id = bs.last_good_sync_run_id"];
-    const params: Array<string | number> = [];
+  listLatestProducts(filters: ProductQueryFilters = {}): readonly NormalisedProduct[] {
+    const filterEntries: readonly {
+      readonly clause: string;
+      readonly params: readonly (string | number)[];
+    }[] = [
+      { clause: "p.sync_run_id = bs.last_good_sync_run_id", params: [] },
+      ...(filters.bankSlug ? [{ clause: "p.bank_slug = ?", params: [filters.bankSlug] }] : []),
+      ...(filters.rateType ? [{ clause: "p.rate_type = ?", params: [filters.rateType] }] : []),
+      ...(filters.hasOffset !== undefined
+        ? [{ clause: "p.has_offset = ?", params: [filters.hasOffset ? 1 : 0] }]
+        : []),
+      ...(filters.hasRedraw !== undefined
+        ? [{ clause: "p.has_redraw = ?", params: [filters.hasRedraw ? 1 : 0] }]
+        : []),
+      ...(filters.reviewStatus
+        ? [{ clause: "p.review_status = ?", params: [filters.reviewStatus] }]
+        : []),
+      ...(filters.search
+        ? [
+            {
+              clause: "(LOWER(p.name) LIKE ? OR LOWER(p.bank_name) LIKE ?)",
+              params: [`%${filters.search.toLowerCase()}%`, `%${filters.search.toLowerCase()}%`],
+            },
+          ]
+        : []),
+    ];
 
-    if (filters.bankSlug) {
-      clauses.push("p.bank_slug = ?");
-      params.push(filters.bankSlug);
-    }
-    if (filters.rateType) {
-      clauses.push("p.rate_type = ?");
-      params.push(filters.rateType);
-    }
-    if (filters.hasOffset !== undefined) {
-      clauses.push("p.has_offset = ?");
-      params.push(filters.hasOffset ? 1 : 0);
-    }
-    if (filters.hasRedraw !== undefined) {
-      clauses.push("p.has_redraw = ?");
-      params.push(filters.hasRedraw ? 1 : 0);
-    }
-    if (filters.reviewStatus) {
-      clauses.push("p.review_status = ?");
-      params.push(filters.reviewStatus);
-    }
-    if (filters.search) {
-      clauses.push("(LOWER(p.name) LIKE ? OR LOWER(p.bank_name) LIKE ?)");
-      const term = `%${filters.search.toLowerCase()}%`;
-      params.push(term, term);
-    }
+    const whereSql = filterEntries.map((entry) => entry.clause).join(" AND ");
+    const params = filterEntries.flatMap((entry) => entry.params);
 
     const sql = `
       SELECT p.*
       FROM products p
       INNER JOIN bank_status bs ON bs.bank_slug = p.bank_slug
-      WHERE ${clauses.join(" AND ")}
+      WHERE ${whereSql}
       ORDER BY
         CASE WHEN p.review_status = 'READY' THEN 0 ELSE 1 END ASC,
         CASE WHEN p.comparison_rate_pct IS NULL THEN 999 ELSE p.comparison_rate_pct END ASC,
@@ -349,7 +348,7 @@ export class SqliteProductRepository implements ProductRepository {
         p.name ASC
     `;
 
-    const rows = this.db.prepare(sql).all(...params) as unknown as ProductRow[];
+    const rows = this.db.prepare(sql).all(...params) as unknown as readonly ProductRow[];
     return rows.map(mapProductRow);
   }
 
@@ -371,7 +370,11 @@ export class SqliteProductRepository implements ProductRepository {
     return row ? mapProductRow(row) : null;
   }
 
-  listQuarantined(limit = 50): Array<QuarantinedRecord & { id: number; recordedAt: string }> {
+  listQuarantined(
+    limit = 50,
+  ): readonly Array<
+    QuarantinedRecord & { readonly id: number; readonly recordedAt: string }
+  >[number][] {
     const rows = this.db
       .prepare(
         `
@@ -381,7 +384,7 @@ export class SqliteProductRepository implements ProductRepository {
         LIMIT ?
       `,
       )
-      .all(limit) as unknown as QuarantinedRow[];
+      .all(limit) as unknown as readonly QuarantinedRow[];
 
     return rows.map((r) => ({
       id: r.id,
@@ -393,10 +396,10 @@ export class SqliteProductRepository implements ProductRepository {
     }));
   }
 
-  listBankStatuses(): BankStatus[] {
+  listBankStatuses(): readonly BankStatus[] {
     const rows = this.db
       .prepare(`SELECT * FROM bank_status ORDER BY bank_name ASC`)
-      .all() as unknown as BankStatusRow[];
+      .all() as unknown as readonly BankStatusRow[];
 
     return rows.map((r) => ({
       bankSlug: r.bank_slug,
@@ -412,10 +415,8 @@ export class SqliteProductRepository implements ProductRepository {
     }));
   }
 
-  getRateChanges(): RateChange[] {
+  getRateChanges(): readonly RateChange[] {
     const banks = this.listBankStatuses();
-    const allChanges: RateChange[] = [];
-
     const getLastTwoRuns = this.db.prepare(`
       SELECT id
       FROM sync_runs
@@ -423,29 +424,25 @@ export class SqliteProductRepository implements ProductRepository {
       ORDER BY id DESC
       LIMIT 2
     `);
+    const getProductsForRun = this.db.prepare(`SELECT * FROM products WHERE sync_run_id = ?`);
 
-    const getProductsForRun = this.db.prepare(`
-      SELECT * FROM products WHERE sync_run_id = ?
-    `);
-
-    for (const bank of banks) {
-      const runs = getLastTwoRuns.all(bank.bankSlug) as unknown as Array<{ id: number }>;
-      if (runs.length < 2) continue;
+    return banks.flatMap((bank): readonly RateChange[] => {
+      const runs = getLastTwoRuns.all(bank.bankSlug) as unknown as readonly {
+        readonly id: number;
+      }[];
       const latestRunId = runs[0]?.id;
       const previousRunId = runs[1]?.id;
-      if (latestRunId === undefined || previousRunId === undefined) continue;
+      if (latestRunId === undefined || previousRunId === undefined) return [];
 
-      const latestProducts = (getProductsForRun.all(latestRunId) as unknown as ProductRow[]).map(
-        mapProductRow,
-      );
-      const prevProducts = (getProductsForRun.all(previousRunId) as unknown as ProductRow[]).map(
-        mapProductRow,
-      );
+      const latestProducts = (
+        getProductsForRun.all(latestRunId) as unknown as readonly ProductRow[]
+      ).map(mapProductRow);
+      const prevProducts = (
+        getProductsForRun.all(previousRunId) as unknown as readonly ProductRow[]
+      ).map(mapProductRow);
 
-      allChanges.push(...computeRateDiffs(prevProducts, latestProducts));
-    }
-
-    return allChanges;
+      return computeRateDiffs(prevProducts, latestProducts);
+    });
   }
 
   close(): void {

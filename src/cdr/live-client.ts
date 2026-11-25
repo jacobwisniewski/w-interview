@@ -6,64 +6,183 @@ import type { Logger } from "../logger.js";
 import type { IngestSummary } from "./loader.js";
 
 export interface BankRegistryEntry {
-  bankSlug: string;
-  bankName: string;
-  cdrVersion: string;
-  sourceUrl: string;
+  readonly bankSlug: string;
+  readonly bankName: string;
+  readonly cdrVersion: string;
+  readonly sourceUrl: string;
 }
 
 export interface LiveSyncOptions {
-  timeoutMs: number;
-  bankSlug?: string;
-  fetchFn?: typeof fetch;
-  manifestPath?: string;
+  readonly timeoutMs: number;
+  readonly bankSlug?: string;
+  readonly fetchFn?: typeof fetch;
+  readonly manifestPath?: string;
 }
 
-const CANDIDATE_VERSIONS = ["7", "6", "5", "4", "3"];
+const CANDIDATE_VERSIONS = ["7", "6", "5", "4", "3"] as const;
 
 export function loadAllowedBanks(
   manifestPath = join(process.cwd(), "sample-data/manifest.json"),
-): BankRegistryEntry[] {
-  const raw = JSON.parse(readFileSync(manifestPath, "utf8")) as { banks?: BankRegistryEntry[] };
+): readonly BankRegistryEntry[] {
+  const raw = JSON.parse(readFileSync(manifestPath, "utf8")) as {
+    readonly banks?: readonly BankRegistryEntry[];
+  };
   return raw.banks ?? [];
 }
 
-async function fetchWithVersionNegotiation(
+type FetchNegotiationResult =
+  | { readonly ok: true; readonly version: string; readonly body: unknown }
+  | { readonly ok: false; readonly error: string };
+
+async function tryVersions(
+  url: string,
+  remainingVersions: readonly string[],
+  timeoutMs: number,
+  fetchFn: typeof fetch,
+  lastError: string,
+): Promise<FetchNegotiationResult> {
+  const [version, ...rest] = remainingVersions;
+  if (!version) {
+    return { ok: false, error: lastError };
+  }
+
+  try {
+    const response = await fetchFn(url, {
+      headers: { "x-v": version, Accept: "application/json" },
+      signal: AbortSignal.timeout(timeoutMs),
+    });
+
+    if (response.ok) {
+      return { ok: true, version, body: await response.json() };
+    }
+
+    const error = `HTTP ${response.status} (x-v=${version})`;
+    if (response.status === 406) {
+      return tryVersions(url, rest, timeoutMs, fetchFn, error);
+    }
+    return { ok: false, error };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    return { ok: false, error: `Network/timeout error: ${message}` };
+  }
+}
+
+function fetchWithVersionNegotiation(
   url: string,
   preferredVersion: string,
   timeoutMs: number,
   fetchFn: typeof fetch,
-): Promise<{ ok: true; version: string; body: unknown } | { ok: false; error: string }> {
+): Promise<FetchNegotiationResult> {
   const versions = [preferredVersion, ...CANDIDATE_VERSIONS.filter((v) => v !== preferredVersion)];
-  let lastError = "No supported CDR version found";
+  return tryVersions(url, versions, timeoutMs, fetchFn, "No supported CDR version found");
+}
 
-  for (const version of versions) {
-    try {
-      const response = await fetchFn(url, {
-        headers: {
-          "x-v": version,
-          Accept: "application/json",
-        },
-        signal: AbortSignal.timeout(timeoutMs),
-      });
+interface BankSyncOutcome {
+  readonly banksProcessed: number;
+  readonly banksDegraded: number;
+  readonly validProducts: number;
+  readonly quarantinedProducts: number;
+}
 
-      if (response.ok) {
-        const body = await response.json();
-        return { ok: true, version, body };
-      }
+async function syncSingleBank(
+  bank: BankRegistryEntry,
+  repo: ProductRepository,
+  logger: Logger,
+  timeoutMs: number,
+  fetchFn: typeof fetch,
+): Promise<BankSyncOutcome> {
+  const attemptedAt = new Date().toISOString();
+  const listUrl = `${bank.sourceUrl}?product-category=RESIDENTIAL_MORTGAGES&page-size=5`;
+  const listResult = await fetchWithVersionNegotiation(
+    listUrl,
+    bank.cdrVersion,
+    timeoutMs,
+    fetchFn,
+  );
 
-      lastError = `HTTP ${response.status} (x-v=${version})`;
-      // Only retry other x-v versions on 406 UnsupportedVersion
-      if (response.status !== 406) {
-        return { ok: false, error: lastError };
-      }
-    } catch (err) {
-      const message = err instanceof Error ? err.message : String(err);
-      return { ok: false, error: `Network/timeout error: ${message}` };
-    }
+  if (!listResult.ok) {
+    repo.recordDegradedSync({
+      bankSlug: bank.bankSlug,
+      bankName: bank.bankName,
+      sourceUrl: bank.sourceUrl,
+      cdrVersion: bank.cdrVersion,
+      source: "live",
+      attemptedAt,
+      errorMessage: listResult.error,
+    });
+    logger.warn("CDR live sync degraded; preserving last verified snapshot", {
+      bankSlug: bank.bankSlug,
+      error: listResult.error,
+    });
+    return { banksProcessed: 0, banksDegraded: 1, validProducts: 0, quarantinedProducts: 0 };
   }
 
-  return { ok: false, error: lastError };
+  const listPayload = listResult.body as {
+    readonly data?: {
+      readonly products?: readonly {
+        readonly productId?: string;
+        readonly productCategory?: string;
+      }[];
+    };
+  };
+  const mortgages = (listPayload.data?.products ?? [])
+    .filter((p) => p.productCategory === "RESIDENTIAL_MORTGAGES" && typeof p.productId === "string")
+    .slice(0, 3);
+
+  const detailResults = await Promise.all(
+    mortgages.map((m) =>
+      fetchWithVersionNegotiation(
+        `${bank.sourceUrl}/${encodeURIComponent(m.productId!)}`,
+        listResult.version,
+        timeoutMs,
+        fetchFn,
+      ),
+    ),
+  );
+
+  const successfulDetails = detailResults.filter(
+    (r): r is Extract<FetchNegotiationResult, { readonly ok: true }> => r.ok,
+  );
+  const rawDetails = successfulDetails
+    .map((r) => (r.body as { readonly data?: unknown }).data)
+    .filter((d): d is unknown => d !== undefined);
+  const detailVersion = successfulDetails[0]?.version ?? listResult.version;
+
+  if (rawDetails.length === 0) {
+    repo.recordDegradedSync({
+      bankSlug: bank.bankSlug,
+      bankName: bank.bankName,
+      sourceUrl: bank.sourceUrl,
+      cdrVersion: detailVersion,
+      source: "live",
+      attemptedAt,
+      errorMessage: "No RESIDENTIAL_MORTGAGES product details returned by upstream CDR endpoint",
+    });
+    return { banksProcessed: 0, banksDegraded: 1, validProducts: 0, quarantinedProducts: 0 };
+  }
+
+  const { valid, quarantined } = validateAndNormaliseBatch(
+    bank.bankSlug,
+    bank.bankName,
+    rawDetails,
+  );
+  repo.recordSnapshot({
+    bankSlug: bank.bankSlug,
+    bankName: bank.bankName,
+    sourceUrl: bank.sourceUrl,
+    cdrVersion: detailVersion,
+    source: "live",
+    capturedAt: attemptedAt,
+    products: valid,
+    quarantined,
+  });
+
+  return {
+    banksProcessed: 1,
+    banksDegraded: 0,
+    validProducts: valid.length,
+    quarantinedProducts: quarantined.length,
+  };
 }
 
 export async function syncLiveBanks(
@@ -81,105 +200,19 @@ export async function syncLiveBanks(
     throw new Error(`Bank "${options.bankSlug}" is not in the allowlisted CDR manifest`);
   }
 
-  let banksProcessed = 0;
-  let banksDegraded = 0;
-  let validProducts = 0;
-  let quarantinedProducts = 0;
+  const outcomes = await Promise.all(
+    targets.map((bank) => syncSingleBank(bank, repo, logger, options.timeoutMs, fetchFn)),
+  );
 
-  for (const bank of targets) {
-    const attemptedAt = new Date().toISOString();
-    const listUrl = `${bank.sourceUrl}?product-category=RESIDENTIAL_MORTGAGES&page-size=5`;
-    const listResult = await fetchWithVersionNegotiation(
-      listUrl,
-      bank.cdrVersion,
-      options.timeoutMs,
-      fetchFn,
-    );
+  const totals = outcomes.reduce<BankSyncOutcome>(
+    (acc, item) => ({
+      banksProcessed: acc.banksProcessed + item.banksProcessed,
+      banksDegraded: acc.banksDegraded + item.banksDegraded,
+      validProducts: acc.validProducts + item.validProducts,
+      quarantinedProducts: acc.quarantinedProducts + item.quarantinedProducts,
+    }),
+    { banksProcessed: 0, banksDegraded: 0, validProducts: 0, quarantinedProducts: 0 },
+  );
 
-    if (!listResult.ok) {
-      repo.recordDegradedSync({
-        bankSlug: bank.bankSlug,
-        bankName: bank.bankName,
-        sourceUrl: bank.sourceUrl,
-        cdrVersion: bank.cdrVersion,
-        source: "live",
-        attemptedAt,
-        errorMessage: listResult.error,
-      });
-      banksDegraded += 1;
-      logger.warn("CDR live sync degraded; preserving last verified snapshot", {
-        bankSlug: bank.bankSlug,
-        error: listResult.error,
-      });
-      continue;
-    }
-
-    const listPayload = listResult.body as {
-      data?: { products?: Array<{ productId?: string; productCategory?: string }> };
-    };
-    const mortgages = (listPayload.data?.products ?? [])
-      .filter(
-        (p) => p.productCategory === "RESIDENTIAL_MORTGAGES" && typeof p.productId === "string",
-      )
-      .slice(0, 3);
-
-    const rawDetails: unknown[] = [];
-    let detailVersion = listResult.version;
-    for (const m of mortgages) {
-      const detailUrl = `${bank.sourceUrl}/${encodeURIComponent(m.productId!)}`;
-      const detailResult = await fetchWithVersionNegotiation(
-        detailUrl,
-        detailVersion,
-        options.timeoutMs,
-        fetchFn,
-      );
-      if (detailResult.ok) {
-        detailVersion = detailResult.version;
-        const detailData = (detailResult.body as { data?: unknown }).data;
-        if (detailData) rawDetails.push(detailData);
-      }
-    }
-
-    if (rawDetails.length === 0) {
-      repo.recordDegradedSync({
-        bankSlug: bank.bankSlug,
-        bankName: bank.bankName,
-        sourceUrl: bank.sourceUrl,
-        cdrVersion: detailVersion,
-        source: "live",
-        attemptedAt,
-        errorMessage: "No RESIDENTIAL_MORTGAGES product details returned by upstream CDR endpoint",
-      });
-      banksDegraded += 1;
-      continue;
-    }
-
-    const { valid, quarantined } = validateAndNormaliseBatch(
-      bank.bankSlug,
-      bank.bankName,
-      rawDetails,
-    );
-    repo.recordSnapshot({
-      bankSlug: bank.bankSlug,
-      bankName: bank.bankName,
-      sourceUrl: bank.sourceUrl,
-      cdrVersion: detailVersion,
-      source: "live",
-      capturedAt: attemptedAt,
-      products: valid,
-      quarantined,
-    });
-
-    banksProcessed += 1;
-    validProducts += valid.length;
-    quarantinedProducts += quarantined.length;
-  }
-
-  return {
-    mode: "live",
-    banksProcessed,
-    banksDegraded,
-    validProducts,
-    quarantinedProducts,
-  };
+  return { mode: "live", ...totals };
 }

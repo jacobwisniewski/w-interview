@@ -72,4 +72,5 @@ export const BankSnapshotSchema = z.object({
 
 export type CdrProductDetail = z.infer<typeof CdrProductDetailSchema>;
 export type CdrLendingRate = z.infer<typeof CdrLendingRateSchema>;
+export type CdrFee = z.infer<typeof CdrFeeSchema>;
 export type BankSnapshotEnvelope = z.infer<typeof BankSnapshotSchema>;

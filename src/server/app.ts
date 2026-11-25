@@ -41,12 +41,22 @@ const ingestRequestSchema = z.discriminatedUnion("mode", [
 ]);
 
 export interface AppDependencies {
-  config: AppConfig;
-  repo: ProductRepository;
-  logger: Logger;
-  snapshotsRootDir?: string;
-  publicDir?: string;
-  fetchFn?: typeof fetch;
+  readonly config: AppConfig;
+  readonly repo: ProductRepository;
+  readonly logger: Logger;
+  readonly snapshotsRootDir?: string;
+  readonly publicDir?: string;
+  readonly fetchFn?: typeof fetch;
+}
+
+async function safeReadJson(
+  read: () => Promise<unknown>,
+): Promise<{ readonly ok: true; readonly data: unknown } | { readonly ok: false }> {
+  try {
+    return { ok: true, data: await read() };
+  } catch {
+    return { ok: false };
+  }
 }
 
 export function createApp(deps: AppDependencies) {
@@ -55,7 +65,6 @@ export function createApp(deps: AppDependencies) {
   const publicDir = deps.publicDir ?? join(process.cwd(), "public");
   const app = new Hono();
 
-  // Request correlation ID + structured request logging
   app.use("*", async (c, next) => {
     const requestId = c.req.header("x-request-id") ?? randomUUID();
     const start = Date.now();
@@ -129,14 +138,13 @@ export function createApp(deps: AppDependencies) {
     });
 
     const readyCount = products.filter((p) => p.reviewStatus === "READY").length;
-    const manualReviewCount = products.length - readyCount;
 
     return c.json({
       disclaimer:
         "Indicative comparison from public AU CDR Product Reference Data only. Not financial or credit advice.",
       total: products.length,
       readyCount,
-      manualReviewCount,
+      manualReviewCount: products.length - readyCount,
       products,
     });
   });
@@ -161,14 +169,12 @@ export function createApp(deps: AppDependencies) {
   });
 
   app.post("/api/ingest", async (c) => {
-    let rawBody: unknown;
-    try {
-      rawBody = await c.req.json();
-    } catch {
+    const jsonBody = await safeReadJson(() => c.req.json());
+    if (!jsonBody.ok) {
       return c.json({ error: "INVALID_JSON", message: "Request body must be valid JSON" }, 400);
     }
 
-    const parsed = ingestRequestSchema.safeParse(rawBody);
+    const parsed = ingestRequestSchema.safeParse(jsonBody.data);
     if (!parsed.success) {
       return c.json(
         {

@@ -10,7 +10,6 @@ const config = loadConfig();
 const logger = createLogger(config.logLevel, { service: "cdr-home-loan-monitor" });
 const repo = new SqliteProductRepository(config.dbPath);
 
-// Seed local v1 snapshot automatically on first boot so a clean checkout works immediately
 if (repo.listBankStatuses().length === 0) {
   const v1Dir = join(process.cwd(), "sample-data/snapshots/v1");
   ingestSnapshotDirectory(repo, logger, v1Dir, "v1");

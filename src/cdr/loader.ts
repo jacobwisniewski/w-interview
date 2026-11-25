@@ -6,12 +6,12 @@ import type { Logger } from "../logger.js";
 import { BankSnapshotSchema } from "./schema.js";
 
 export interface IngestSummary {
-  mode: "snapshot" | "live";
-  version?: string;
-  banksProcessed: number;
-  banksDegraded: number;
-  validProducts: number;
-  quarantinedProducts: number;
+  readonly mode: "snapshot" | "live";
+  readonly version?: string;
+  readonly banksProcessed: number;
+  readonly banksDegraded: number;
+  readonly validProducts: number;
+  readonly quarantinedProducts: number;
 }
 
 export function ingestSnapshotDirectory(
@@ -22,59 +22,55 @@ export function ingestSnapshotDirectory(
 ): IngestSummary {
   const files = readdirSync(snapshotDir)
     .filter((f) => f.endsWith(".json"))
-    .sort();
+    .toSorted();
 
-  let banksProcessed = 0;
-  let validProducts = 0;
-  let quarantinedProducts = 0;
+  const totals = files.reduce(
+    (acc, file) => {
+      const raw = JSON.parse(readFileSync(join(snapshotDir, file), "utf8"));
+      const envelope = BankSnapshotSchema.parse(raw);
+      const { valid, quarantined } = validateAndNormaliseBatch(
+        envelope.bankSlug,
+        envelope.bankName,
+        envelope.products,
+      );
 
-  for (const file of files) {
-    const filePath = join(snapshotDir, file);
-    const raw = JSON.parse(readFileSync(filePath, "utf8"));
-    const envelope = BankSnapshotSchema.parse(raw);
-    const { valid, quarantined } = validateAndNormaliseBatch(
-      envelope.bankSlug,
-      envelope.bankName,
-      envelope.products,
-    );
-
-    repo.recordSnapshot({
-      bankSlug: envelope.bankSlug,
-      bankName: envelope.bankName,
-      sourceUrl: envelope.sourceUrl,
-      cdrVersion: envelope.cdrVersion,
-      source: "snapshot",
-      capturedAt: envelope.capturedAt,
-      products: valid,
-      quarantined,
-    });
-
-    banksProcessed += 1;
-    validProducts += valid.length;
-    quarantinedProducts += quarantined.length;
-
-    if (quarantined.length > 0) {
-      logger.warn("Quarantined malformed CDR products during snapshot ingest", {
+      repo.recordSnapshot({
         bankSlug: envelope.bankSlug,
-        quarantinedCount: quarantined.length,
-        version: versionLabel,
+        bankName: envelope.bankName,
+        sourceUrl: envelope.sourceUrl,
+        cdrVersion: envelope.cdrVersion,
+        source: "snapshot",
+        capturedAt: envelope.capturedAt,
+        products: valid,
+        quarantined,
       });
-    }
-  }
+
+      if (quarantined.length > 0) {
+        logger.warn("Quarantined malformed CDR products during snapshot ingest", {
+          bankSlug: envelope.bankSlug,
+          quarantinedCount: quarantined.length,
+          version: versionLabel,
+        });
+      }
+
+      return {
+        banksProcessed: acc.banksProcessed + 1,
+        validProducts: acc.validProducts + valid.length,
+        quarantinedProducts: acc.quarantinedProducts + quarantined.length,
+      };
+    },
+    { banksProcessed: 0, validProducts: 0, quarantinedProducts: 0 },
+  );
 
   logger.info("Completed snapshot ingest", {
     version: versionLabel,
-    banksProcessed,
-    validProducts,
-    quarantinedProducts,
+    ...totals,
   });
 
   return {
     mode: "snapshot",
     version: versionLabel,
-    banksProcessed,
     banksDegraded: 0,
-    validProducts,
-    quarantinedProducts,
+    ...totals,
   };
 }
