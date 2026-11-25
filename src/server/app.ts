@@ -5,7 +5,7 @@ import { Hono } from "hono";
 import type { AppConfig } from "../config.js";
 import type { ProductRepository } from "../db/repository.js";
 import type { Logger } from "../logger.js";
-import { systemClock, type Clock, type HttpFetcher } from "../ports.js";
+import { systemClock, type Clock } from "../ports.js";
 import { createRequestLoggerMiddleware } from "./middleware/request-logger.js";
 import { createHealthRoutes } from "./routes/health.js";
 import { createIngestRoutes } from "./routes/ingest.js";
@@ -18,7 +18,6 @@ export interface AppDependencies {
   readonly clock?: Clock;
   readonly snapshotsRootDir?: string;
   readonly publicDir?: string;
-  readonly fetchFn?: HttpFetcher;
 }
 
 export function createApp(deps: AppDependencies): Hono {
@@ -51,12 +50,10 @@ export function createApp(deps: AppDependencies): Hono {
   app.route(
     "/api",
     createIngestRoutes({
-      config: deps.config,
       repo: deps.repo,
       logger: deps.logger,
       clock,
       snapshotsRootDir,
-      fetchFn: deps.fetchFn,
     }),
   );
 
