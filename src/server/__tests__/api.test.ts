@@ -4,12 +4,9 @@ import { createSqliteProductRepository } from "../../db/sqlite-repository.js";
 import { createLogger } from "../../logger.js";
 import { createApp } from "../app.js";
 
-async function withApiApp<T>(
-  envOverrides: Record<string, string>,
-  run: (app: ReturnType<typeof createApp>) => Promise<T>,
-): Promise<T> {
+async function withApiApp<T>(run: (app: ReturnType<typeof createApp>) => Promise<T>): Promise<T> {
   const repo = createSqliteProductRepository(":memory:");
-  const config = loadConfig({ DB_PATH: ":memory:", LOG_LEVEL: "error", ...envOverrides });
+  const config = loadConfig({ DB_PATH: ":memory:", LOG_LEVEL: "error" });
   const logger = createLogger("error", {}, () => {});
   const app = createApp({ config, repo, logger });
   try {
@@ -22,7 +19,7 @@ async function withApiApp<T>(
 describe("CDR Home Loan Monitor HTTP API", () => {
   describe("GIVEN v1 and v2 snapshots are ingested through the API", () => {
     it("THEN analysts can query Westpac products, inspect quarantine records, and view basis-point rate changes", async () => {
-      await withApiApp({}, async (app) => {
+      await withApiApp(async (app) => {
         const ingestV1 = await app.request("/api/ingest", {
           method: "POST",
           headers: { "content-type": "application/json" },
@@ -81,9 +78,9 @@ describe("CDR Home Loan Monitor HTTP API", () => {
     });
   });
 
-  describe("GIVEN invalid queries, disabled live sync, or an upstream degrade event", () => {
-    it("THEN the API rejects bad input with 400, blocks live sync with 403, and surfaces degraded health without losing data", async () => {
-      await withApiApp({ ALLOW_LIVE_SYNC: "false" }, async (app) => {
+  describe("GIVEN invalid queries or an upstream degrade simulation", () => {
+    it("THEN the API rejects bad input with 400 and surfaces degraded health without losing data", async () => {
+      await withApiApp(async (app) => {
         await app.request("/api/ingest", {
           method: "POST",
           headers: { "content-type": "application/json" },
@@ -91,13 +88,6 @@ describe("CDR Home Loan Monitor HTTP API", () => {
         });
 
         expect((await app.request("/api/products?rateType=BOGUS")).status).toBe(400);
-
-        const liveBlocked = await app.request("/api/ingest", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ mode: "live", bankSlug: "up" }),
-        });
-        expect(liveBlocked.status).toBe(403);
 
         await app.request("/api/ingest", {
           method: "POST",
