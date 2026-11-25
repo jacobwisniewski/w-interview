@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { loadConfig } from "../config.js";
 
-describe("Feature: Fail-Fast Application Configuration", () => {
-  describe("Given no environment overrides are provided", () => {
-    it("Then safe local defaults are applied", () => {
+describe("Fail-Fast Application Configuration", () => {
+  describe("GIVEN no environment overrides are provided", () => {
+    it("THEN safe local defaults are applied", () => {
       expect(loadConfig({})).toEqual({
         port: 3000,
         dbPath: "./data/cdr-monitor.db",
@@ -14,8 +14,8 @@ describe("Feature: Fail-Fast Application Configuration", () => {
     });
   });
 
-  describe("Given valid environment overrides are provided", () => {
-    it("Then typed configuration values are returned", () => {
+  describe("GIVEN valid environment overrides are provided", () => {
+    it("THEN typed configuration values are returned", () => {
       expect(
         loadConfig({
           PORT: "8080",
@@ -34,8 +34,8 @@ describe("Feature: Fail-Fast Application Configuration", () => {
     });
   });
 
-  describe("Given invalid port or timeout values are configured", () => {
-    it("Then configuration loading fails fast with a descriptive error", () => {
+  describe("GIVEN invalid port or timeout values are configured", () => {
+    it("THEN configuration loading fails fast with a descriptive error", () => {
       expect(() => loadConfig({ PORT: "99999" })).toThrow(
         /Invalid application configuration.*PORT/,
       );
