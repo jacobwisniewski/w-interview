@@ -4,6 +4,7 @@
   "rules": {
     "local/no-comments": "error",
     "local/no-let": "error",
-    "local/no-array-mutation": "error"
+    "local/no-array-mutation": "error",
+    "local/no-classes": "error"
   }
 }
