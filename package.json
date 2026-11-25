@@ -12,9 +12,9 @@
     "format": "oxfmt src",
     "format:check": "oxfmt --check src",
     "test": "vitest run --passWithNoTests",
-    "sync:live": "tsx src/cli/sync.ts --live",
     "verify": "bash scripts/verify.sh",
-    "db:generate": "drizzle-kit generate"
+    "db:generate": "drizzle-kit generate",
+    "sync": "tsx src/cli/sync.ts"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",

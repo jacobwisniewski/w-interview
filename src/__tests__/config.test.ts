@@ -8,8 +8,6 @@ describe("Fail-Fast Application Configuration", () => {
         port: 3000,
         dbPath: "./data/cdr-monitor.db",
         logLevel: "info",
-        cdrTimeoutMs: 5000,
-        allowLiveSync: true,
       });
     });
   });
@@ -21,26 +19,22 @@ describe("Fail-Fast Application Configuration", () => {
           PORT: "8080",
           DB_PATH: ":memory:",
           LOG_LEVEL: "debug",
-          CDR_TIMEOUT_MS: "2500",
-          ALLOW_LIVE_SYNC: "false",
         }),
       ).toEqual({
         port: 8080,
         dbPath: ":memory:",
         logLevel: "debug",
-        cdrTimeoutMs: 2500,
-        allowLiveSync: false,
       });
     });
   });
 
-  describe("GIVEN invalid port or timeout values are configured", () => {
-    it("THEN configuration loading fails fast with a descriptive error", () => {
-      expect(() => loadConfig({ PORT: "99999" })).toThrow(
-        /Invalid application configuration.*PORT/,
-      );
-      expect(() => loadConfig({ CDR_TIMEOUT_MS: "50" })).toThrow(
-        /Invalid application configuration.*CDR_TIMEOUT_MS/,
+  describe("GIVEN an invalid port or log level is configured", () => {
+    it.each([
+      { env: { PORT: "99999" }, field: "PORT" },
+      { env: { LOG_LEVEL: "verbose" }, field: "LOG_LEVEL" },
+    ])("THEN configuration loading fails fast citing $field", ({ env, field }) => {
+      expect(() => loadConfig(env)).toThrow(
+        new RegExp(`Invalid application configuration.*${field}`),
       );
     });
   });
