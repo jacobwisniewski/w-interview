@@ -6,7 +6,7 @@ The service is a small TypeScript/Node.js monolith separated into ingestion, pur
 
 ```mermaid
 flowchart LR
-  Snapshots["Bundled CDR Snapshots (v1 / v2)"] --> Loader["Snapshot Loader"]
+  Snapshots["Bundled CDR Snapshots"] --> Loader["Snapshot Loader"]
   Loader --> Validation["Zod Boundary Validation"]
   Validation -->|Invalid| Quarantine["Quarantined Payloads"]
   Validation -->|Valid| Normalise["Normalisation & Guardrails"]

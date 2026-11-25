@@ -7,7 +7,6 @@ import { BankSnapshotSchema } from "./schema.js";
 
 export interface IngestSummary {
   readonly mode: "snapshot";
-  readonly version: string;
   readonly banksProcessed: number;
   readonly validProducts: number;
   readonly quarantinedProducts: number;
@@ -17,7 +16,6 @@ export function ingestSnapshotDirectory(
   repo: ProductRepository,
   logger: Logger,
   snapshotDir: string,
-  versionLabel: string,
 ): IngestSummary {
   const files = readdirSync(snapshotDir)
     .filter((f) => f.endsWith(".json"))
@@ -48,7 +46,6 @@ export function ingestSnapshotDirectory(
         logger.warn("Quarantined malformed CDR products during snapshot ingest", {
           bankSlug: envelope.bankSlug,
           quarantinedCount: quarantined.length,
-          version: versionLabel,
         });
       }
 
@@ -61,14 +58,10 @@ export function ingestSnapshotDirectory(
     { banksProcessed: 0, validProducts: 0, quarantinedProducts: 0 },
   );
 
-  logger.info("Completed snapshot ingest", {
-    version: versionLabel,
-    ...totals,
-  });
+  logger.info("Completed snapshot ingest", totals);
 
   return {
     mode: "snapshot",
-    version: versionLabel,
     ...totals,
   };
 }

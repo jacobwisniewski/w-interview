@@ -105,19 +105,27 @@ describe("Transactional SQLite Snapshot Persistence", () => {
   describe("GIVEN two consecutive verified snapshots exist for a bank", () => {
     it("THEN rate changes between the two snapshots are surfaced in basis points", () => {
       withInMemoryRepo((repo) => {
-        const upV1 = loadFixture("sample-data/snapshots/v1/up.json");
-        const upV2 = loadFixture("sample-data/snapshots/v2/up.json");
+        const up = loadFixture("sample-data/snapshots/v1/up.json");
+        const raisedProducts = up.batch.valid.map((product) => ({
+          ...product,
+          headlineRatePct: Number((product.headlineRatePct + 0.15).toFixed(4)),
+          comparisonRatePct:
+            product.comparisonRatePct === null
+              ? null
+              : Number((product.comparisonRatePct + 0.15).toFixed(4)),
+        }));
 
         repo.recordSnapshot({
-          ...upV1.envelope,
+          ...up.envelope,
           source: "snapshot",
-          products: upV1.batch.valid,
+          products: up.batch.valid,
           quarantined: [],
         });
         repo.recordSnapshot({
-          ...upV2.envelope,
+          ...up.envelope,
+          capturedAt: "2026-11-26T00:00:00Z",
           source: "snapshot",
-          products: upV2.batch.valid,
+          products: raisedProducts,
           quarantined: [],
         });
 

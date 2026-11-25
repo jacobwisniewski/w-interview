@@ -16,13 +16,13 @@ export interface AppDependencies {
   readonly repo: ProductRepository;
   readonly logger: Logger;
   readonly clock?: Clock;
-  readonly snapshotsRootDir?: string;
+  readonly snapshotsDir?: string;
   readonly publicDir?: string;
 }
 
 export function createApp(deps: AppDependencies): Hono {
   const clock = deps.clock ?? systemClock;
-  const snapshotsRootDir = deps.snapshotsRootDir ?? join(process.cwd(), "sample-data/snapshots");
+  const snapshotsDir = deps.snapshotsDir ?? join(process.cwd(), "sample-data/snapshots/v1");
   const publicDir = deps.publicDir ?? join(process.cwd(), "public");
   const app = new Hono();
 
@@ -53,7 +53,7 @@ export function createApp(deps: AppDependencies): Hono {
       repo: deps.repo,
       logger: deps.logger,
       clock,
-      snapshotsRootDir,
+      snapshotsDir,
     }),
   );
 
