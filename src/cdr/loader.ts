@@ -6,10 +6,9 @@ import type { Logger } from "../logger.js";
 import { BankSnapshotSchema } from "./schema.js";
 
 export interface IngestSummary {
-  readonly mode: "snapshot" | "live";
-  readonly version?: string;
+  readonly mode: "snapshot";
+  readonly version: string;
   readonly banksProcessed: number;
-  readonly banksDegraded: number;
   readonly validProducts: number;
   readonly quarantinedProducts: number;
 }
@@ -70,7 +69,6 @@ export function ingestSnapshotDirectory(
   return {
     mode: "snapshot",
     version: versionLabel,
-    banksDegraded: 0,
     ...totals,
   };
 }
