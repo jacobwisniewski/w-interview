@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { deriveReviewReasons, deriveReviewStatus } from "../guardrails.js";
 
-describe("Feature: Compliance-Safe Mortgage Disclosure Guardrails", () => {
-  describe("Given headline and comparison rates for a mortgage product", () => {
+describe("Compliance-Safe Mortgage Disclosure Guardrails", () => {
+  describe("GIVEN headline and comparison rates for a mortgage product", () => {
     it.each([
       {
         caseName: "valid headline and comparison rates",
@@ -40,7 +40,7 @@ describe("Feature: Compliance-Safe Mortgage Disclosure Guardrails", () => {
         expectedStatus: "MANUAL_REVIEW_REQUIRED",
       },
     ])(
-      "When evaluated for $caseName Then status is $expectedStatus with $expectedReasons",
+      "WHEN evaluated for $caseName THEN status is $expectedStatus with $expectedReasons",
       ({ headline, comparison, expectedReasons, expectedStatus }) => {
         const reasons = deriveReviewReasons(headline, comparison);
         expect(reasons).toEqual(expectedReasons);
