@@ -8,9 +8,9 @@
     "start": "node dist/index.js",
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc --noEmit",
-    "lint": "oxlint src __tests__",
-    "format": "oxfmt src __tests__",
-    "format:check": "oxfmt --check src __tests__",
+    "lint": "oxlint src",
+    "format": "oxfmt src",
+    "format:check": "oxfmt --check src",
     "test": "vitest run --passWithNoTests",
     "sync:live": "tsx src/cli/sync.ts --live",
     "verify": "bash scripts/verify.sh"

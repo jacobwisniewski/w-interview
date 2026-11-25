@@ -82,6 +82,27 @@ const plugin = {
         };
       },
     },
+    'no-classes': {
+      meta: {
+        type: 'problem',
+        docs: {
+          description: 'Disallow class declarations and expressions; prefer functions and closures',
+        },
+        schema: [],
+      },
+      create(context) {
+        const report = (node) => {
+          context.report({
+            node,
+            message: 'Classes are disallowed; prefer factory functions and plain typed objects.',
+          });
+        };
+        return {
+          ClassDeclaration: report,
+          ClassExpression: report,
+        };
+      },
+    },
   },
 };
 
