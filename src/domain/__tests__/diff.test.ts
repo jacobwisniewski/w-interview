@@ -1,9 +1,9 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { BankSnapshotSchema } from "../../src/cdr/schema.js";
-import { computeRateDiffs } from "../../src/domain/diff.js";
-import { validateAndNormaliseBatch } from "../../src/domain/normalise.js";
+import { BankSnapshotSchema } from "../../cdr/schema.js";
+import { computeRateDiffs } from "../diff.js";
+import { validateAndNormaliseBatch } from "../normalise.js";
 
 function readSnapshot(relPath: string) {
   return BankSnapshotSchema.parse(JSON.parse(readFileSync(join(process.cwd(), relPath), "utf8")));

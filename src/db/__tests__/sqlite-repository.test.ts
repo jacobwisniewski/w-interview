@@ -1,9 +1,9 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { BankSnapshotSchema } from "../src/cdr/schema.js";
-import { SqliteProductRepository } from "../src/db/sqlite-repository.js";
-import { validateAndNormaliseBatch } from "../src/domain/normalise.js";
+import { BankSnapshotSchema } from "../../cdr/schema.js";
+import { SqliteProductRepository } from "../sqlite-repository.js";
+import { validateAndNormaliseBatch } from "../../domain/normalise.js";
 
 function loadFixture(relPath: string) {
   const envelope = BankSnapshotSchema.parse(

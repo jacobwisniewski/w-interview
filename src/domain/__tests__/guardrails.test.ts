@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { deriveReviewReasons, deriveReviewStatus } from "../../src/domain/guardrails.js";
+import { deriveReviewReasons, deriveReviewStatus } from "../guardrails.js";
 
 describe("Feature: Compliance-Safe Mortgage Disclosure Guardrails", () => {
   describe("Given a mortgage with valid headline and comparison rates", () => {

@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { loadConfig } from "../src/config.js";
-import { SqliteProductRepository } from "../src/db/sqlite-repository.js";
-import { createLogger } from "../src/logger.js";
-import { createApp } from "../src/server/app.js";
+import { loadConfig } from "../../config.js";
+import { SqliteProductRepository } from "../../db/sqlite-repository.js";
+import { createLogger } from "../../logger.js";
+import { createApp } from "../app.js";
 
 async function withApiApp<T>(
   envOverrides: Record<string, string>,

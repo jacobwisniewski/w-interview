@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { syncLiveBanks } from "../src/cdr/live-client.js";
-import { SqliteProductRepository } from "../src/db/sqlite-repository.js";
-import { createLogger } from "../src/logger.js";
+import { syncLiveBanks } from "../live-client.js";
+import { SqliteProductRepository } from "../../db/sqlite-repository.js";
+import { createLogger } from "../../logger.js";
 
 const silentLogger = createLogger("error", {}, () => {});
 
