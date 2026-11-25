@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "jsPlugins": ["./lint/strict-style-plugin.mjs"],
+  "rules": {
+    "local/no-comments": "error",
+    "local/no-let": "error",
+    "local/no-array-mutation": "error"
+  }
+}
