@@ -28,15 +28,7 @@
           "additionalInfoUri": "https://www.bankaust.com.au/banking/home-loans/offset-home-loan",
           "description": "Offset Loan",
           "name": "Offset Loan",
-          "productIds": [
-            "194",
-            "216",
-            "225",
-            "229",
-            "238",
-            "490",
-            "494"
-          ]
+          "productIds": ["194", "216", "225", "229", "238", "490", "494"]
         }
       ],
       "constraints": [
@@ -1035,15 +1027,7 @@
           "additionalInfoUri": "https://www.bankaust.com.au/banking/home-loans/offset-home-loan",
           "description": "Offset Loan",
           "name": "Offset Loan",
-          "productIds": [
-            "194",
-            "216",
-            "225",
-            "229",
-            "238",
-            "490",
-            "494"
-          ]
+          "productIds": ["194", "216", "225", "229", "238", "490", "494"]
         }
       ],
       "constraints": [

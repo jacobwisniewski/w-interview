@@ -3,19 +3,15 @@
   "version": "0.1.0",
   "description": "AU Open Banking (CDR) Home Loan Product & Rate Monitor — locally runnable regulated-enterprise vertical slice",
   "type": "module",
-  "packageManager": "pnpm@10.0.0",
-  "engines": {
-    "node": ">=22.5.0"
-  },
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc --noEmit",
-    "lint": "oxlint src tests",
-    "format": "oxfmt src tests",
-    "format:check": "oxfmt --check src tests",
-    "test": "vitest run",
+    "lint": "oxlint",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "test": "vitest run --passWithNoTests",
     "sync:live": "tsx src/cli/sync.ts --live",
     "verify": "bash scripts/verify.sh"
   },
@@ -31,5 +27,9 @@
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "vitest": "^3.0.5"
-  }
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "packageManager": "pnpm@10.0.0"
 }
