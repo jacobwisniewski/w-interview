@@ -1,7 +1,7 @@
 {
   "capturedAt": "2026-11-25T10:25:00Z",
   "source": "Australian Consumer Data Right (CDR) Public Product Reference Data",
-  "realBankCount": 40,
+  "realBankCount": 41,
   "banks": [
     {
       "bankSlug": "afg-home-loans-alpha",
@@ -275,6 +275,13 @@
       "cdrVersion": "6",
       "productCount": 2,
       "sourceUrl": "https://api.cds.virginmoney.com.au/cds-au/v1/banking/products"
+    },
+    {
+      "bankSlug": "westpac",
+      "bankName": "Westpac",
+      "cdrVersion": "7",
+      "productCount": 3,
+      "sourceUrl": "https://digital-api.westpac.com.au/cds-au/v1/banking/products"
     },
     {
       "bankSlug": "woolworths-team-bank",
