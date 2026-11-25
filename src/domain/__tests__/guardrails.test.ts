@@ -2,30 +2,50 @@ import { describe, expect, it } from "vitest";
 import { deriveReviewReasons, deriveReviewStatus } from "../guardrails.js";
 
 describe("Feature: Compliance-Safe Mortgage Disclosure Guardrails", () => {
-  describe("Given a mortgage with valid headline and comparison rates", () => {
-    it("Then it is marked READY with zero review reasons", () => {
-      const reasons = deriveReviewReasons(6.19, 6.24);
-      expect(reasons).toEqual([]);
-      expect(deriveReviewStatus(reasons)).toBe("READY");
-    });
-  });
-
-  describe("Given a mortgage missing a comparison rate", () => {
-    it("Then it abstains as MANUAL_REVIEW_REQUIRED with MISSING_COMPARISON_RATE", () => {
-      const reasons = deriveReviewReasons(6.19, null);
-      expect(reasons).toContain("MISSING_COMPARISON_RATE");
-      expect(deriveReviewStatus(reasons)).toBe("MANUAL_REVIEW_REQUIRED");
-    });
-  });
-
-  describe("Given a mortgage with out-of-bounds or suspiciously diverging rates", () => {
-    it("Then out-of-bounds and spread guardrails flag MANUAL_REVIEW_REQUIRED", () => {
-      expect(deriveReviewReasons(35.0, 6.2)).toContain("RATE_OUT_OF_BOUNDS");
-      expect(deriveReviewReasons(9.5, 6.0)).toContain("SUSPICIOUS_RATE_SPREAD");
-      expect(deriveReviewReasons(null, null)).toEqual([
-        "NO_VALID_LENDING_RATE",
-        "MISSING_COMPARISON_RATE",
-      ]);
-    });
+  describe("Given headline and comparison rates for a mortgage product", () => {
+    it.each([
+      {
+        caseName: "valid headline and comparison rates",
+        headline: 6.19,
+        comparison: 6.24,
+        expectedReasons: [],
+        expectedStatus: "READY",
+      },
+      {
+        caseName: "missing comparison rate",
+        headline: 6.19,
+        comparison: null,
+        expectedReasons: ["MISSING_COMPARISON_RATE"],
+        expectedStatus: "MANUAL_REVIEW_REQUIRED",
+      },
+      {
+        caseName: "out-of-bounds headline rate",
+        headline: 35.0,
+        comparison: 6.2,
+        expectedReasons: ["RATE_OUT_OF_BOUNDS", "SUSPICIOUS_RATE_SPREAD"],
+        expectedStatus: "MANUAL_REVIEW_REQUIRED",
+      },
+      {
+        caseName: "suspicious spread between headline and comparison rate",
+        headline: 9.5,
+        comparison: 6.0,
+        expectedReasons: ["SUSPICIOUS_RATE_SPREAD"],
+        expectedStatus: "MANUAL_REVIEW_REQUIRED",
+      },
+      {
+        caseName: "both rates missing",
+        headline: null,
+        comparison: null,
+        expectedReasons: ["NO_VALID_LENDING_RATE", "MISSING_COMPARISON_RATE"],
+        expectedStatus: "MANUAL_REVIEW_REQUIRED",
+      },
+    ])(
+      "When evaluated for $caseName Then status is $expectedStatus with $expectedReasons",
+      ({ headline, comparison, expectedReasons, expectedStatus }) => {
+        const reasons = deriveReviewReasons(headline, comparison);
+        expect(reasons).toEqual(expectedReasons);
+        expect(deriveReviewStatus(reasons)).toBe(expectedStatus);
+      },
+    );
   });
 });
