@@ -8,8 +8,8 @@ function readSnapshot(relPath: string) {
   return BankSnapshotSchema.parse(JSON.parse(readFileSync(join(process.cwd(), relPath), "utf8")));
 }
 
-describe("Feature: CDR Batch Validation and Normalisation", () => {
-  describe("Given a bank snapshot containing an incomplete product and a malformed product", () => {
+describe("CDR Batch Validation and Normalisation", () => {
+  describe("GIVEN a bank snapshot containing an incomplete product and a malformed product", () => {
     const snapshot = readSnapshot("sample-data/snapshots/v1/example-bank.json");
     const result = validateAndNormaliseBatch(
       snapshot.bankSlug,
@@ -17,14 +17,14 @@ describe("Feature: CDR Batch Validation and Normalisation", () => {
       snapshot.products,
     );
 
-    it("Then the malformed record is isolated into quarantine without failing valid siblings", () => {
+    it("THEN the malformed record is isolated into quarantine without failing valid siblings", () => {
       expect(result.valid).toHaveLength(1);
       expect(result.quarantined).toHaveLength(1);
       expect(result.quarantined[0]?.productId).toBe("ex-malformed-record");
       expect(result.quarantined[0]?.reason).toContain("lendingRates");
     });
 
-    it("Then the incomplete product is flagged MANUAL_REVIEW_REQUIRED with fees and features preserved", () => {
+    it("THEN the incomplete product is flagged MANUAL_REVIEW_REQUIRED with fees and features preserved", () => {
       const flagged = result.valid[0];
       expect(flagged?.reviewStatus).toBe("MANUAL_REVIEW_REQUIRED");
       expect(flagged?.reviewReasons).toContain("MISSING_COMPARISON_RATE");
@@ -33,8 +33,8 @@ describe("Feature: CDR Batch Validation and Normalisation", () => {
     });
   });
 
-  describe("Given all 41 real Australian bank snapshots in sample-data/snapshots/v1", () => {
-    it("Then zero real bank products are quarantined and over 100 mortgages are normalised", () => {
+  describe("GIVEN all 41 real Australian bank snapshots in sample-data/snapshots/v1", () => {
+    it("THEN zero real bank products are quarantined and over 100 mortgages are normalised", () => {
       const dir = join(process.cwd(), "sample-data/snapshots/v1");
       const files = readdirSync(dir).filter(
         (f) => f.endsWith(".json") && f !== "example-bank.json",
