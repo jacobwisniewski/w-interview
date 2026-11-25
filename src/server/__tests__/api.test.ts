@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { loadConfig } from "../../config.js";
-import { SqliteProductRepository } from "../../db/sqlite-repository.js";
+import { createSqliteProductRepository } from "../../db/sqlite-repository.js";
 import { createLogger } from "../../logger.js";
 import { createApp } from "../app.js";
 
@@ -8,7 +8,7 @@ async function withApiApp<T>(
   envOverrides: Record<string, string>,
   run: (app: ReturnType<typeof createApp>) => Promise<T>,
 ): Promise<T> {
-  const repo = new SqliteProductRepository(":memory:");
+  const repo = createSqliteProductRepository(":memory:");
   const config = loadConfig({ DB_PATH: ":memory:", LOG_LEVEL: "error", ...envOverrides });
   const logger = createLogger("error", {}, () => {});
   const app = createApp({ config, repo, logger });

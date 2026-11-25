@@ -1,12 +1,14 @@
 import { describe, expect, it } from "vitest";
 import { syncLiveBanks } from "../live-client.js";
-import { SqliteProductRepository } from "../../db/sqlite-repository.js";
+import { createSqliteProductRepository } from "../../db/sqlite-repository.js";
 import { createLogger } from "../../logger.js";
 
 const silentLogger = createLogger("error", {}, () => {});
 
-async function withRepo<T>(run: (repo: SqliteProductRepository) => Promise<T>): Promise<T> {
-  const repo = new SqliteProductRepository(":memory:");
+async function withRepo<T>(
+  run: (repo: ReturnType<typeof createSqliteProductRepository>) => Promise<T>,
+): Promise<T> {
+  const repo = createSqliteProductRepository(":memory:");
   try {
     return await run(repo);
   } finally {

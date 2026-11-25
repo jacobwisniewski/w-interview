@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { BankSnapshotSchema } from "../../cdr/schema.js";
-import { SqliteProductRepository } from "../sqlite-repository.js";
+import { createSqliteProductRepository } from "../sqlite-repository.js";
 import { validateAndNormaliseBatch } from "../../domain/normalise.js";
 
 function loadFixture(relPath: string) {
@@ -13,8 +13,10 @@ function loadFixture(relPath: string) {
   return { envelope, batch };
 }
 
-function withInMemoryRepo<T>(run: (repo: SqliteProductRepository) => T): T {
-  const repo = new SqliteProductRepository(":memory:");
+function withInMemoryRepo<T>(
+  run: (repo: ReturnType<typeof createSqliteProductRepository>) => T,
+): T {
+  const repo = createSqliteProductRepository(":memory:");
   try {
     return run(repo);
   } finally {
